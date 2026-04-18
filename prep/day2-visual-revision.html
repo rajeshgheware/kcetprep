@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 2 Visual Revision — Coordination, d &amp; f-Block</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --rule:#d8d8d8; --soft:#f5f5f2;
+    --accent:#2563a8; --core:#0b6b3a; --warn:#b8700a; --hl:#fff6d6;
+    --coord:#6b4aa8; --dfb:#8a5a2a;
+    --bg-coord:#f3efff; --bg-dfb:#f7efe2;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);background:#fff;font:14px/1.45 "Inter","Segoe UI",system-ui,sans-serif}
+  .page{max-width:1180px;margin:0 auto;padding:22px 28px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:9px;margin-bottom:16px}
+  h1{margin:0;font-size:22px}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:3px}
+  .sub a{color:var(--accent);text-decoration:none}
+  .chap{margin-top:22px;page-break-inside:avoid}
+  .chap-h{display:flex;align-items:center;gap:10px;padding:8px 14px;border-radius:6px;margin-bottom:12px;font-size:17px;font-weight:700;letter-spacing:.3px}
+  .chap-coord{background:var(--bg-coord);color:var(--coord)}
+  .chap-dfb{background:var(--bg-dfb);color:var(--dfb)}
+  .chap-h .badge{font-size:11px;padding:2px 8px;border-radius:10px;background:#fff;margin-left:auto;color:var(--muted);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .card{border:1px solid var(--rule);border-radius:6px;padding:10px 12px;background:#fff}
+  .card h3{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink)}
+  .card.coord h3{color:var(--coord)}
+  .card.dfb h3{color:var(--dfb)}
+  .formula{background:#fafafa;border-left:3px solid var(--accent);padding:6px 10px;border-radius:3px;font-size:13px;margin:4px 0;font-family:"Georgia",serif}
+  .formula.coord{border-color:var(--coord)}
+  .formula.dfb{border-color:var(--dfb)}
+  .note{font-size:11.5px;color:var(--muted);margin:4px 0 0}
+  .recall{background:var(--hl);padding:5px 9px;border-radius:3px;font-size:11.5px;color:#6b4a00;margin-top:6px;border-left:3px solid #c9a227}
+  svg{display:block;margin:2px auto;max-width:100%;height:auto}
+  .ktable{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+  .ktable th,.ktable td{padding:4px 6px;border:1px solid var(--rule);text-align:center}
+  .ktable th{background:var(--soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
+  .ktable td.l{text-align:left}
+  .mini{font-size:11.5px;margin:2px 0}
+  .tag{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10.5px;font-weight:600;color:#fff;background:var(--coord)}
+  .tag.dfb{background:var(--dfb)}
+  .swatch{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle;margin-right:4px;border:1px solid #ccc}
+  footer{margin-top:22px;padding-top:10px;border-top:1px solid var(--rule);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media print{
+    .page{max-width:none;padding:10px}
+    .card{padding:8px 10px}
+    .chap{page-break-before:always}
+    .chap:first-of-type{page-break-before:auto}
+    body{font-size:11.5px}
+    h1{font-size:18px}
+    svg{max-height:150px}
+  }
+  @media (max-width:820px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>Day 2 — Visual Revision</h1>
+  <div class="sub">Coordination Compounds &middot; d &amp; f-Block Elements &middot; scan, recall, then practice &middot; <a href="../practice/05-coord-q.html">Set 05</a> &middot; <a href="../practice/06-dfblock-q.html">Set 06</a> &middot; <a href="day1-visual-revision.html">← Day 1</a> &middot; <a href="../chemistry-strategy.html">strategy</a></div>
+</header>
+
+<!-- ============================= COORDINATION ============================= -->
+<section class="chap">
+<div class="chap-h chap-coord">COORDINATION COMPOUNDS<span class="badge">25 Q / 8 yrs &middot; 3.1 per paper</span></div>
+
+<div class="grid">
+
+<div class="card coord">
+<h3>IUPAC nomenclature — the 5-step recipe</h3>
+<svg viewBox="0 0 280 90" role="img" aria-label="IUPAC example">
+  <rect x="10" y="18" width="260" height="30" fill="#f3efff" stroke="#6b4aa8" rx="4"/>
+  <text x="140" y="38" font-size="13" text-anchor="middle" fill="#6b4aa8" font-family="Georgia,serif">[Co(NH₃)₄Cl₂]Cl → Tetraamminedichloridocobalt(III) chloride</text>
+  <text x="140" y="68" font-size="10" text-anchor="middle" fill="#555">cation first · ligands alphabetical · OS in Roman</text>
+</svg>
+<div class="mini"><b>1.</b> Cation before anion (same as simple salts).</div>
+<div class="mini"><b>2.</b> Inside bracket: <b>ligands alphabetical</b> (ignore di/tri prefixes when ordering).</div>
+<div class="mini"><b>3.</b> Anionic ligands end in <b>-o</b>: Cl = chlorido, OH = hydroxido, CN = cyanido, SO₄ = sulfato.</div>
+<div class="mini"><b>4.</b> Neutral ligands: NH₃ = ammine, H₂O = aqua, CO = carbonyl, NO = nitrosyl.</div>
+<div class="mini"><b>5.</b> If complex is <b>anion</b>, metal ends in <b>-ate</b>: Fe → ferrate, Cu → cuprate, Ag → argentate, Au → aurate, Pb → plumbate.</div>
+<div class="recall">Use <b>bis, tris, tetrakis</b> when ligand name already contains di/tri/tetra (e.g., bis(ethylenediamine)).</div>
+</div>
+
+<div class="card coord">
+<h3>Isomerism — structural + stereo</h3>
+<svg viewBox="0 0 260 110" role="img" aria-label="cis-trans of Pt(NH3)2Cl2">
+  <!-- cis -->
+  <g>
+    <circle cx="55" cy="55" r="6" fill="#6b4aa8"/>
+    <text x="55" y="58" font-size="8" text-anchor="middle" fill="#fff">Pt</text>
+    <circle cx="35" cy="55" r="5" fill="#8ec5d6"/><text x="35" y="57" font-size="7" text-anchor="middle">Cl</text>
+    <circle cx="55" cy="35" r="5" fill="#8ec5d6"/><text x="55" y="37" font-size="7" text-anchor="middle">Cl</text>
+    <circle cx="75" cy="55" r="5" fill="#a8d8a8"/><text x="75" y="57" font-size="7" text-anchor="middle">N</text>
+    <circle cx="55" cy="75" r="5" fill="#a8d8a8"/><text x="55" y="77" font-size="7" text-anchor="middle">N</text>
+    <line x1="55" y1="55" x2="35" y2="55" stroke="#333" stroke-width="1"/>
+    <line x1="55" y1="55" x2="55" y2="35" stroke="#333" stroke-width="1"/>
+    <line x1="55" y1="55" x2="75" y2="55" stroke="#333" stroke-width="1"/>
+    <line x1="55" y1="55" x2="55" y2="75" stroke="#333" stroke-width="1"/>
+    <text x="55" y="100" font-size="10" text-anchor="middle" fill="#0b6b3a" font-weight="600">cis (anticancer)</text>
+  </g>
+  <!-- trans -->
+  <g transform="translate(140,0)">
+    <circle cx="55" cy="55" r="6" fill="#6b4aa8"/>
+    <text x="55" y="58" font-size="8" text-anchor="middle" fill="#fff">Pt</text>
+    <circle cx="35" cy="55" r="5" fill="#8ec5d6"/><text x="35" y="57" font-size="7" text-anchor="middle">Cl</text>
+    <circle cx="75" cy="55" r="5" fill="#8ec5d6"/><text x="75" y="57" font-size="7" text-anchor="middle">Cl</text>
+    <circle cx="55" cy="35" r="5" fill="#a8d8a8"/><text x="55" y="37" font-size="7" text-anchor="middle">N</text>
+    <circle cx="55" cy="75" r="5" fill="#a8d8a8"/><text x="55" y="77" font-size="7" text-anchor="middle">N</text>
+    <line x1="55" y1="55" x2="35" y2="55" stroke="#333" stroke-width="1"/>
+    <line x1="55" y1="55" x2="75" y2="55" stroke="#333" stroke-width="1"/>
+    <line x1="55" y1="55" x2="55" y2="35" stroke="#333" stroke-width="1"/>
+    <line x1="55" y1="55" x2="55" y2="75" stroke="#333" stroke-width="1"/>
+    <text x="55" y="100" font-size="10" text-anchor="middle" fill="#b8700a" font-weight="600">trans (inactive)</text>
+  </g>
+</svg>
+<div class="mini"><b>Structural:</b> ionisation [Co(NH₃)₅Br]SO₄ vs [Co(NH₃)₅SO₄]Br · hydrate [Cr(H₂O)₆]Cl₃ vs [Cr(H₂O)₅Cl]Cl₂·H₂O · linkage (NO₂/ONO, SCN/NCS) · coordination [Co(NH₃)₆][Cr(CN)₆].</div>
+<div class="mini"><b>Stereo:</b> geometrical (cis/trans) · optical (d/l enantiomers, e.g., [Co(en)₃]³⁺).</div>
+<div class="recall">Octahedral MA₄B₂ has cis/trans · tetrahedral has <b>no</b> cis/trans · [M(en)₃] chiral.</div>
+</div>
+
+<div class="card coord">
+<h3>CFT — octahedral vs tetrahedral splitting</h3>
+<svg viewBox="0 0 280 150" role="img" aria-label="CFT splitting">
+  <!-- octahedral -->
+  <text x="70" y="15" font-size="11" text-anchor="middle" font-weight="600" fill="#6b4aa8">Octahedral</text>
+  <line x1="20" y1="80" x2="120" y2="80" stroke="#888" stroke-dasharray="3 2"/>
+  <text x="125" y="83" font-size="9" fill="#888">d avg</text>
+  <line x1="35" y1="50" x2="55" y2="50" stroke="#6b4aa8" stroke-width="2.5"/>
+  <line x1="75" y1="50" x2="95" y2="50" stroke="#6b4aa8" stroke-width="2.5"/>
+  <text x="65" y="44" font-size="10" text-anchor="middle" fill="#6b4aa8">e<tspan font-size="7" dy="3">g</tspan></text>
+  <line x1="25" y1="110" x2="45" y2="110" stroke="#6b4aa8" stroke-width="2.5"/>
+  <line x1="55" y1="110" x2="75" y2="110" stroke="#6b4aa8" stroke-width="2.5"/>
+  <line x1="85" y1="110" x2="105" y2="110" stroke="#6b4aa8" stroke-width="2.5"/>
+  <text x="65" y="124" font-size="10" text-anchor="middle" fill="#6b4aa8">t<tspan font-size="7" dy="3">2g</tspan></text>
+  <line x1="130" y1="50" x2="130" y2="110" stroke="#333" stroke-width="1" marker-start="url(#ar_u)" marker-end="url(#ar_d)"/>
+  <defs>
+    <marker id="ar_u" markerWidth="6" markerHeight="6" refX="3" refY="0" orient="auto"><path d="M0,6 L3,0 L6,6 Z" fill="#333"/></marker>
+    <marker id="ar_d" markerWidth="6" markerHeight="6" refX="3" refY="6" orient="auto"><path d="M0,0 L3,6 L6,0 Z" fill="#333"/></marker>
+  </defs>
+  <text x="145" y="85" font-size="11" fill="#333">Δ<tspan font-size="8" dy="3">o</tspan></text>
+  <!-- tetrahedral -->
+  <text x="230" y="15" font-size="11" text-anchor="middle" font-weight="600" fill="#b8700a">Tetrahedral</text>
+  <line x1="180" y1="80" x2="270" y2="80" stroke="#888" stroke-dasharray="3 2"/>
+  <line x1="185" y1="60" x2="205" y2="60" stroke="#b8700a" stroke-width="2.5"/>
+  <line x1="215" y1="60" x2="235" y2="60" stroke="#b8700a" stroke-width="2.5"/>
+  <line x1="245" y1="60" x2="265" y2="60" stroke="#b8700a" stroke-width="2.5"/>
+  <text x="225" y="54" font-size="10" text-anchor="middle" fill="#b8700a">t<tspan font-size="7" dy="3">2</tspan></text>
+  <line x1="195" y1="100" x2="215" y2="100" stroke="#b8700a" stroke-width="2.5"/>
+  <line x1="235" y1="100" x2="255" y2="100" stroke="#b8700a" stroke-width="2.5"/>
+  <text x="225" y="114" font-size="10" text-anchor="middle" fill="#b8700a">e</text>
+  <text x="195" y="140" font-size="9" fill="#555">Δ<tspan font-size="7" dy="3">t</tspan><tspan dy="-3"> ≈ (4/9) Δ</tspan><tspan font-size="7" dy="3">o</tspan></text>
+</svg>
+<div class="mini"><b>Octahedral:</b> d-orbitals split into lower <b>t₂g (3)</b> + upper <b>e_g (2)</b>. Energy: t₂g = −0.4Δ_o each, e_g = +0.6Δ_o each.</div>
+<div class="mini"><b>Tetrahedral:</b> inverted — lower <b>e (2)</b> + upper <b>t₂ (3)</b>. Δ_t ≈ (4/9)Δ_o.</div>
+<div class="recall"><b>CFSE</b> = (−0.4 × n<sub>t₂g</sub> + 0.6 × n<sub>e_g</sub>) Δ_o. Tetrahedral complexes are <b>always high-spin</b> (Δ_t too small to pair).</div>
+</div>
+
+<div class="card coord">
+<h3>Spectrochemical series &amp; spin state</h3>
+<svg viewBox="0 0 280 55" role="img" aria-label="spectrochemical series">
+  <rect x="10" y="18" width="260" height="20" fill="url(#grad)" stroke="#6b4aa8" rx="2"/>
+  <defs><linearGradient id="grad" x1="0" x2="1"><stop offset="0" stop-color="#fbe8a6"/><stop offset="1" stop-color="#5a3da8"/></linearGradient></defs>
+  <text x="14" y="32" font-size="9" fill="#6b4a00">I⁻ &lt; Br⁻ &lt; Cl⁻ &lt; F⁻ &lt; OH⁻ &lt; H₂O &lt; NH₃ &lt; en &lt; NO₂⁻ &lt; CN⁻ &lt; CO</text>
+  <text x="14" y="50" font-size="9" fill="#888">weak field (high spin)  →  strong field (low spin)</text>
+</svg>
+<div class="mini"><b>Weak field</b> (H₂O, halides, F⁻): Δ_o &lt; P → electrons <b>don't pair</b> → <b>high-spin</b>, more unpaired, more paramagnetic.</div>
+<div class="mini"><b>Strong field</b> (CN⁻, CO, en): Δ_o &gt; P → electrons <b>pair up</b> in t₂g → <b>low-spin</b>, fewer unpaired, often diamagnetic.</div>
+<div class="recall">Same metal+OS, change ligand → colour, μ, geometry can all flip. <b>[Fe(H₂O)₆]³⁺</b> high-spin (5 unpaired) vs <b>[Fe(CN)₆]³⁻</b> low-spin (1 unpaired).</div>
+</div>
+
+<div class="card coord">
+<h3>Hybridisation &amp; geometry — quick table</h3>
+<table class="ktable">
+<tr><th>CN</th><th>Hybrid</th><th>Geometry</th><th>Example</th></tr>
+<tr><td>2</td><td>sp</td><td>Linear</td><td>[Ag(NH₃)₂]⁺</td></tr>
+<tr><td>4</td><td>sp³</td><td>Tetrahedral</td><td>[NiCl₄]²⁻, [Zn(NH₃)₄]²⁺</td></tr>
+<tr><td>4</td><td>dsp²</td><td>Square planar</td><td>[Ni(CN)₄]²⁻, [Pt(NH₃)₂Cl₂]</td></tr>
+<tr><td>6</td><td>d²sp³ (inner)</td><td>Octahedral · low-spin</td><td>[Fe(CN)₆]⁴⁻, [Co(NH₃)₆]³⁺</td></tr>
+<tr><td>6</td><td>sp³d² (outer)</td><td>Octahedral · high-spin</td><td>[Fe(H₂O)₆]³⁺, [CoF₆]³⁻</td></tr>
+</table>
+<div class="recall"><b>Inner</b> uses (n−1)d (strong-field ligand pulls e into lower d). <b>Outer</b> uses nd (weak-field). Always match with μ to confirm.</div>
+</div>
+
+<div class="card coord">
+<h3>Colour &amp; magnetic moment</h3>
+<div class="formula coord">μ<sub>spin-only</sub> = √(n(n+2)) BM</div>
+<table class="ktable">
+<tr><th>n (unpaired)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+<tr><td>μ (BM)</td><td>0</td><td>1.73</td><td>2.83</td><td>3.87</td><td>4.90</td><td>5.92</td></tr>
+</table>
+<div class="mini"><b>Colour origin:</b> d-d transitions. White light minus absorbed λ = observed colour.</div>
+<div class="mini"><b>Ligand strength ↑ → Δ_o ↑</b> → absorbs shorter λ → <b>colour shifts</b>. [Ti(H₂O)₆]³⁺ purple; [Cu(H₂O)₄]²⁺ pale blue → [Cu(NH₃)₄]²⁺ deep blue.</div>
+<div class="recall"><b>d⁰ and d¹⁰ are colourless</b> — no d-d transition possible. Sc³⁺, Ti⁴⁺, Zn²⁺, Cu⁺, Ag⁺ all colourless.</div>
+</div>
+
+</div>
+</section>
+
+<!-- ============================= d & f-BLOCK ============================= -->
+<section class="chap">
+<div class="chap-h chap-dfb">d &amp; f-BLOCK ELEMENTS<span class="badge">27 Q / 8 yrs &middot; 3.4 per paper</span></div>
+
+<div class="grid">
+
+<div class="card dfb">
+<h3>General trends across 3d series</h3>
+<svg viewBox="0 0 280 120" role="img" aria-label="3d trends">
+  <g stroke="#888" stroke-width="1" fill="none">
+    <line x1="20" y1="100" x2="260" y2="100"/>
+    <line x1="20" y1="100" x2="20" y2="15"/>
+  </g>
+  <text x="140" y="115" font-size="9.5" fill="#555" text-anchor="middle">Sc → Ti → V → Cr → Mn → Fe → Co → Ni → Cu → Zn</text>
+  <text x="10" y="60" font-size="9" fill="#555" transform="rotate(-90 10 60)">radius →</text>
+  <polyline points="30,30 50,35 70,40 90,45 110,50 130,55 150,60 170,65 190,65 210,55" stroke="#8a5a2a" stroke-width="2" fill="none"/>
+  <text x="115" y="25" font-size="9" fill="#8a5a2a">atomic radius: slow ↓ then flat, slight ↑ at Zn</text>
+</svg>
+<div class="mini"><b>Density:</b> increases across (max around Cu/Ni zone). <b>Osmium</b> is densest element.</div>
+<div class="mini"><b>MP/BP:</b> high in middle (Cr, Mo, W highest), low at Zn (filled 3d¹⁰ → no d-electron bonding).</div>
+<div class="mini"><b>IE:</b> gradually increases; ns and (n−1)d electrons comparable.</div>
+<div class="recall"><b>Why trends flatten?</b> Added d-electrons poorly shield → effective nuclear charge rises slowly → size changes little after V.</div>
+</div>
+
+<div class="card dfb">
+<h3>Variable oxidation states</h3>
+<table class="ktable">
+<tr><th>Element</th><th>d config</th><th>Common OS</th></tr>
+<tr><td>Sc</td><td>3d¹4s²</td><td>+3</td></tr>
+<tr><td>Ti</td><td>3d²4s²</td><td>+3, <b>+4</b></td></tr>
+<tr><td>V</td><td>3d³4s²</td><td>+2 to <b>+5</b></td></tr>
+<tr><td>Cr</td><td>3d⁵4s¹</td><td>+2, <b>+3</b>, +6</td></tr>
+<tr><td>Mn</td><td>3d⁵4s²</td><td>+2 to <b>+7</b> (max)</td></tr>
+<tr><td>Fe</td><td>3d⁶4s²</td><td><b>+2, +3</b></td></tr>
+<tr><td>Co</td><td>3d⁷4s²</td><td>+2, +3</td></tr>
+<tr><td>Ni</td><td>3d⁸4s²</td><td><b>+2</b></td></tr>
+<tr><td>Cu</td><td>3d¹⁰4s¹</td><td>+1, <b>+2</b></td></tr>
+<tr><td>Zn</td><td>3d¹⁰4s²</td><td><b>+2</b> only</td></tr>
+</table>
+<div class="recall"><b>Max OS at Mn (+7)</b> — it has all 7 valence (3d⁵ + 4s²) available. Beyond Mn, pairing starts → fewer OS.</div>
+</div>
+
+<div class="card dfb">
+<h3>Lanthanoid &amp; Actinoid contraction</h3>
+<svg viewBox="0 0 280 90" role="img" aria-label="Ln contraction">
+  <g stroke="#888" stroke-width="1" fill="none">
+    <line x1="20" y1="70" x2="260" y2="70"/>
+    <line x1="20" y1="70" x2="20" y2="15"/>
+  </g>
+  <polyline points="25,25 45,30 65,33 85,36 105,40 125,43 145,45 165,48 185,51 205,53 225,55 245,57" stroke="#8a5a2a" stroke-width="2" fill="none"/>
+  <circle cx="25" cy="25" r="3" fill="#8a5a2a"/>
+  <text x="25" y="20" font-size="9" fill="#8a5a2a">La</text>
+  <circle cx="245" cy="57" r="3" fill="#8a5a2a"/>
+  <text x="245" y="52" font-size="9" fill="#8a5a2a">Lu</text>
+  <text x="140" y="83" font-size="9.5" fill="#555" text-anchor="middle">ionic radius decreases steadily across 4f</text>
+</svg>
+<div class="mini"><b>Cause:</b> 4f electrons shield very poorly → effective nuclear charge ↑ as Z ↑.</div>
+<div class="mini"><b>Consequences:</b> (1) Zr and Hf have nearly <b>identical radii</b> (impossible to separate). (2) 4d and 5d transition metals have similar properties. (3) Basicity of Ln hydroxides decreases La → Lu.</div>
+<div class="recall"><b>Actinoid contraction</b> is larger (5f electrons shield even worse than 4f). +3 is stable for all Ln; actinoids show +3 to +7.</div>
+</div>
+
+<div class="card dfb">
+<h3>KMnO₄ — oxidation in 3 media</h3>
+<svg viewBox="0 0 280 100" role="img">
+  <rect x="10" y="15" width="80" height="70" fill="#e6d4f0" stroke="#6b4aa8" rx="4"/>
+  <text x="50" y="35" font-size="10" text-anchor="middle" font-weight="600" fill="#6b4aa8">Acidic</text>
+  <text x="50" y="50" font-size="9" text-anchor="middle">MnO₄⁻ → Mn²⁺</text>
+  <text x="50" y="63" font-size="9" text-anchor="middle">n = 5</text>
+  <text x="50" y="78" font-size="9" text-anchor="middle" fill="#888">purple → colourless</text>
+  <rect x="100" y="15" width="80" height="70" fill="#3a3a3a" stroke="#222" rx="4"/>
+  <text x="140" y="35" font-size="10" text-anchor="middle" font-weight="600" fill="#fff">Neutral</text>
+  <text x="140" y="50" font-size="9" text-anchor="middle" fill="#fff">MnO₄⁻ → MnO₂</text>
+  <text x="140" y="63" font-size="9" text-anchor="middle" fill="#fff">n = 3</text>
+  <text x="140" y="78" font-size="9" text-anchor="middle" fill="#ccc">purple → brown ppt</text>
+  <rect x="190" y="15" width="80" height="70" fill="#a8d8a8" stroke="#0b6b3a" rx="4"/>
+  <text x="230" y="35" font-size="10" text-anchor="middle" font-weight="600" fill="#0b6b3a">Alkaline</text>
+  <text x="230" y="50" font-size="9" text-anchor="middle">MnO₄⁻ → MnO₄²⁻</text>
+  <text x="230" y="63" font-size="9" text-anchor="middle">n = 1</text>
+  <text x="230" y="78" font-size="9" text-anchor="middle" fill="#555">purple → green</text>
+</svg>
+<div class="formula dfb">Acidic: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O &nbsp; (E° = +1.51 V)</div>
+<div class="mini"><b>Prep:</b> MnO₂ fused with KOH + air → K₂MnO₄ (green) → electrolytic oxidation → KMnO₄ (purple).</div>
+<div class="recall">Acidic is most strongly oxidising (n=5). Use dil. H₂SO₄ (not HCl — HCl gets oxidised).</div>
+</div>
+
+<div class="card dfb">
+<h3>K₂Cr₂O₇ — structure &amp; chromate equilibrium</h3>
+<svg viewBox="0 0 280 110" role="img">
+  <!-- dichromate: two tetrahedra sharing oxygen -->
+  <g fill="none" stroke="#8a5a2a" stroke-width="1.5">
+    <polygon points="50,45 80,30 80,60" fill="#fbe8a6"/>
+    <polygon points="140,30 140,60 110,45" fill="#fbe8a6"/>
+  </g>
+  <circle cx="80" cy="30" r="5" fill="#e06b6b"/><text x="80" y="22" font-size="8" text-anchor="middle">O</text>
+  <circle cx="80" cy="60" r="5" fill="#e06b6b"/><text x="80" y="76" font-size="8" text-anchor="middle">O</text>
+  <circle cx="50" cy="45" r="5" fill="#e06b6b"/><text x="40" y="48" font-size="8" text-anchor="middle">O</text>
+  <circle cx="95" cy="45" r="6" fill="#8a5a2a"/><text x="95" y="47" font-size="8" text-anchor="middle" fill="#fff">Cr</text>
+  <circle cx="125" cy="45" r="6" fill="#8a5a2a"/><text x="125" y="47" font-size="8" text-anchor="middle" fill="#fff">Cr</text>
+  <circle cx="110" cy="45" r="5" fill="#e06b6b"/><text x="110" y="38" font-size="8" text-anchor="middle">O</text>
+  <text x="110" y="62" font-size="8" text-anchor="middle" fill="#555">bridge</text>
+  <circle cx="140" cy="30" r="5" fill="#e06b6b"/><text x="140" y="22" font-size="8" text-anchor="middle">O</text>
+  <circle cx="140" cy="60" r="5" fill="#e06b6b"/><text x="140" y="76" font-size="8" text-anchor="middle">O</text>
+  <circle cx="170" cy="45" r="5" fill="#e06b6b"/><text x="180" y="48" font-size="8" text-anchor="middle">O</text>
+  <text x="95" y="100" font-size="10" text-anchor="middle" fill="#8a5a2a" font-weight="600">Cr₂O₇²⁻ — two tetrahedra share one O (Cr–O–Cr ≈ 126°)</text>
+</svg>
+<div class="formula dfb">2 CrO₄²⁻ + 2H⁺ ⇌ Cr₂O₇²⁻ + H₂O  &nbsp;(yellow ⇌ orange)</div>
+<div class="formula dfb">Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O &nbsp;(E° = +1.33 V, n = 6)</div>
+<div class="mini"><b>Prep:</b> FeCr₂O₄ + Na₂CO₃/air → Na₂CrO₄ → Na₂Cr₂O₇ (acid) → K₂Cr₂O₇ (KCl metathesis).</div>
+<div class="recall"><b>Chromate (yellow) in base</b> ⇌ <b>dichromate (orange) in acid</b>. Never add HCl to KMnO₄/K₂Cr₂O₇ for titration — oxidises Cl⁻.</div>
+</div>
+
+<div class="card dfb">
+<h3>Coloured ions, interstitials, alloys</h3>
+<table class="ktable">
+<tr><th>Ion</th><th>d-config</th><th>Colour</th></tr>
+<tr><td>Ti³⁺</td><td>d¹</td><td><span class="swatch" style="background:#9370db"></span>violet</td></tr>
+<tr><td>V³⁺</td><td>d²</td><td><span class="swatch" style="background:#4a7c3a"></span>green</td></tr>
+<tr><td>Cr³⁺</td><td>d³</td><td><span class="swatch" style="background:#7a4abc"></span>violet</td></tr>
+<tr><td>Mn²⁺</td><td>d⁵</td><td><span class="swatch" style="background:#f5c3c3"></span>pale pink</td></tr>
+<tr><td>Fe³⁺</td><td>d⁵</td><td><span class="swatch" style="background:#d4a04a"></span>yellow</td></tr>
+<tr><td>Co²⁺</td><td>d⁷</td><td><span class="swatch" style="background:#e89ab5"></span>pink</td></tr>
+<tr><td>Ni²⁺</td><td>d⁸</td><td><span class="swatch" style="background:#6cb86c"></span>green</td></tr>
+<tr><td>Cu²⁺</td><td>d⁹</td><td><span class="swatch" style="background:#4a8bd4"></span>blue</td></tr>
+<tr><td>Zn²⁺, Sc³⁺, Ti⁴⁺, Cu⁺</td><td>d⁰ / d¹⁰</td><td><span class="swatch" style="background:#fff"></span>colourless</td></tr>
+</table>
+<div class="mini"><b>Interstitial compounds:</b> small atoms (H, B, C, N) in metal lattice voids. Hard, high MP, retain conductivity. e.g., steel, TiC, VH.</div>
+<div class="mini"><b>Alloys:</b> brass (Cu + Zn), bronze (Cu + Sn), stainless steel (Fe + Cr + Ni).</div>
+<div class="recall">Colour requires: <b>partially filled d</b> (d¹–d⁹) AND a <b>ligand field</b> producing Δ in the visible range.</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+  <span>Quick revision for Day 2 — skim, recall, then solve <a href="../practice/05-coord-q.html">Set 05 (Coordination)</a> &middot; <a href="../practice/06-dfblock-q.html">Set 06 (d &amp; f-Block)</a>.</span>
+  <span><a href="../chemistry-strategy.html">Strategy one-pager</a> &middot; <a href="day1-visual-revision.html">Day 1</a></span>
+</footer>
+
+</div>
+</body>
+</html>
