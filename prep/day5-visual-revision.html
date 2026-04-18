@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 5 Visual Revision — Final Flashcard Pass</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --rule:#d8d8d8; --soft:#f5f5f2;
+    --accent:#2563a8; --core:#0b6b3a; --warn:#b8700a; --hl:#fff6d6;
+    --org:#b8470a; --bnd:#5a3a9a; --phy:#2a6b5a;
+    --bg-org:#fbe9d9; --bg-bnd:#ece4f7; --bg-phy:#ddece8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);background:#fff;font:14px/1.45 "Inter","Segoe UI",system-ui,sans-serif}
+  .page{max-width:1180px;margin:0 auto;padding:22px 28px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:9px;margin-bottom:16px}
+  h1{margin:0;font-size:22px}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:3px}
+  .sub a{color:var(--accent);text-decoration:none}
+  .banner{background:#fbeeec;border-left:3px solid #b3261e;padding:8px 14px;border-radius:4px;font-size:12.5px;margin-bottom:14px}
+  .banner b{color:#b3261e}
+  .chap{margin-top:22px;page-break-inside:avoid}
+  .chap-h{display:flex;align-items:center;gap:10px;padding:8px 14px;border-radius:6px;margin-bottom:12px;font-size:17px;font-weight:700;letter-spacing:.3px}
+  .chap-org{background:var(--bg-org);color:var(--org)}
+  .chap-bnd{background:var(--bg-bnd);color:var(--bnd)}
+  .chap-phy{background:var(--bg-phy);color:var(--phy)}
+  .chap-h .badge{font-size:11px;padding:2px 8px;border-radius:10px;background:#fff;margin-left:auto;color:var(--muted);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .card{border:1px solid var(--rule);border-radius:6px;padding:10px 12px;background:#fff}
+  .card h3{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink)}
+  .card.org h3{color:var(--org)}
+  .card.bnd h3{color:var(--bnd)}
+  .card.phy h3{color:var(--phy)}
+  .formula{background:#fafafa;border-left:3px solid var(--accent);padding:6px 10px;border-radius:3px;font-size:13px;margin:4px 0;font-family:"Georgia",serif}
+  .formula.org{border-color:var(--org)}
+  .formula.bnd{border-color:var(--bnd)}
+  .formula.phy{border-color:var(--phy)}
+  .note{font-size:11.5px;color:var(--muted);margin:4px 0 0}
+  .recall{background:var(--hl);padding:5px 9px;border-radius:3px;font-size:11.5px;color:#6b4a00;margin-top:6px;border-left:3px solid #c9a227}
+  svg{display:block;margin:2px auto;max-width:100%;height:auto}
+  .ktable{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+  .ktable th,.ktable td{padding:4px 6px;border:1px solid var(--rule);text-align:center}
+  .ktable th{background:var(--soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
+  .ktable td.l{text-align:left}
+  .mini{font-size:11.5px;margin:2px 0}
+  footer{margin-top:22px;padding-top:10px;border-top:1px solid var(--rule);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media print{
+    .page{max-width:none;padding:10px}
+    .card{padding:8px 10px}
+    .chap{page-break-before:always}
+    .chap:first-of-type{page-break-before:auto}
+    body{font-size:11.5px}
+    h1{font-size:18px}
+    svg{max-height:150px}
+  }
+  @media (max-width:820px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>Day 5 — Final Flashcard Pass</h1>
+  <div class="sub">Hydrocarbons &middot; GOC &middot; Chemical Bonding &middot; Redox &middot; Thermodynamics &middot; Atomic Structure &middot; Periodicity &middot; Mole Concept &middot; <a href="day4-visual-revision.html">← Day 4</a> &middot; <a href="../chemistry-strategy.html">strategy</a></div>
+</header>
+
+<div class="banner">
+  <b>Wed evening use only.</b> This page is the "flashcard pass" from the Day 5 evening block. Don't learn anything new here — just recognise, recall, confirm. If something looks unfamiliar, star it and move on. Tomorrow's Chemistry paper has ~10–12 Qs from these chapters combined, so a 45-min scan now is pure ROI. After this, close the laptop; only re-read your sticky-note error log.
+</div>
+
+<!-- ============================= ORGANIC FINISHERS ============================= -->
+<section class="chap">
+<div class="chap-h chap-org">ORGANIC FINISHERS — Hydrocarbons + GOC<span class="badge">~20 Q / 8 yrs combined</span></div>
+
+<div class="grid">
+
+<div class="card org">
+<h3>Alkenes &amp; alkynes — the must-know reactions</h3>
+<svg viewBox="0 0 280 100" role="img" aria-label="alkene reactions">
+  <rect x="100" y="38" width="80" height="25" fill="#fbe9d9" stroke="#b8470a" rx="4"/>
+  <text x="140" y="55" font-size="11" text-anchor="middle" fill="#b8470a" font-weight="600">C=C</text>
+  <g font-size="9" fill="#555">
+    <text x="10" y="18">+ HX / Markovnikov</text>
+    <line x1="60" y1="22" x2="100" y2="42" stroke="#555" marker-end="url(#ar5)"/>
+    <text x="200" y="18">+ HBr/peroxide (Kharasch)</text>
+    <line x1="220" y1="22" x2="180" y2="42" stroke="#555" marker-end="url(#ar5)"/>
+    <text x="10" y="85">+ O₃ / Zn-H₂O → 2 carbonyls</text>
+    <line x1="70" y1="82" x2="100" y2="62" stroke="#555" marker-end="url(#ar5)"/>
+    <text x="200" y="85">+ cold dil. KMnO₄ → diol</text>
+    <line x1="220" y1="82" x2="180" y2="62" stroke="#555" marker-end="url(#ar5)"/>
+    <text x="140" y="93" text-anchor="middle">+ H₂/Ni → alkane &nbsp;·&nbsp; + Br₂/CCl₄ → vicinal dibromide</text>
+  </g>
+  <defs><marker id="ar5" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#555"/></marker></defs>
+</svg>
+<div class="mini"><b>Markovnikov:</b> H goes to the C with more H. <b>Anti-Markovnikov:</b> only with HBr + peroxide (free-radical mechanism), not HCl or HI.</div>
+<div class="mini"><b>Baeyer's test:</b> cold dil. alkaline KMnO₄ decolourises (purple → brown MnO₂ ppt) with alkenes/alkynes. Distinguishes unsaturation from alkanes.</div>
+<div class="mini"><b>Alkyne acidity:</b> terminal HC≡C–H has acidic H (sp ~50% s-character). Na/NaNH₂ forms acetylide → SN2 with RX → longer alkyne.</div>
+<div class="mini"><b>Ozonolysis:</b> reductive (Zn/H₂O) gives ald/ket. Oxidative (H₂O₂) gives acid/ketone. Used to locate double bond.</div>
+<div class="recall"><b>Alkyne + H₂O (HgSO₄/H₂SO₄):</b> HC≡CH → CH₃CHO (Markovnikov, enol tautomerises). Internal alkyne → ketone.</div>
+</div>
+
+<div class="card org">
+<h3>Aromatic electrophilic substitution (EAS)</h3>
+<table class="ktable">
+<tr><th>Reaction</th><th>Reagent</th><th>Electrophile</th><th>Product</th></tr>
+<tr><td class="l">Nitration</td><td>HNO₃ + H₂SO₄</td><td>NO₂⁺</td><td>Ar–NO₂</td></tr>
+<tr><td class="l">Sulfonation</td><td>fuming H₂SO₄</td><td>SO₃</td><td>Ar–SO₃H</td></tr>
+<tr><td class="l">Halogenation</td><td>X₂ / FeX₃</td><td>X⁺</td><td>Ar–X</td></tr>
+<tr><td class="l">Friedel-Crafts alkylation</td><td>R–X / AlCl₃</td><td>R⁺</td><td>Ar–R</td></tr>
+<tr><td class="l">Friedel-Crafts acylation</td><td>R–COCl / AlCl₃</td><td>R–CO⁺</td><td>Ar–COR</td></tr>
+</table>
+<div class="mini"><b>o,p-directors (activators):</b> –OH, –OR, –NH₂, –NHR, –NR₂, –R, halogens*.  *Halogens activate o,p but are <i>deactivators</i> overall (–I &gt; +M).</div>
+<div class="mini"><b>m-directors (deactivators):</b> –NO₂, –CN, –SO₃H, –COOH, –COR, –CHO, –NR₃⁺.</div>
+<div class="mini"><b>Friedel-Crafts fails</b> on strongly deactivated rings (nitrobenzene, aniline-as-ammonium) and in presence of –NH₂ (AlCl₃ complexes with N lone pair).</div>
+<div class="recall"><b>Memorise the trick:</b> lone pair donors o,p; multiple bonds to O/N m. The single exception is halogens (o,p but deactivating).</div>
+</div>
+
+<div class="card org">
+<h3>IUPAC naming — the 5-step algorithm</h3>
+<div class="formula org">1. Longest continuous C chain containing the highest-priority group</div>
+<div class="formula org">2. Number so principal group gets lowest locant</div>
+<div class="formula org">3. Name substituents alphabetically (ignore di/tri prefixes)</div>
+<div class="formula org">4. Indicate double/triple bonds with lowest locants</div>
+<div class="formula org">5. Principal group as suffix (-oic acid &gt; -oate &gt; -amide &gt; -nitrile &gt; -al &gt; -one &gt; -ol &gt; -amine)</div>
+<div class="mini"><b>Priority for suffix (high → low):</b> COOH &gt; COOR &gt; CONH₂ &gt; CN &gt; CHO &gt; CO &gt; OH &gt; NH₂. All others (halogen, –NO₂, –OR, –R) are prefixes only.</div>
+<div class="mini"><b>Common prefixes:</b> F=fluoro, Cl=chloro, Br=bromo, I=iodo, NO₂=nitro, OR=alkoxy, R=alkyl.</div>
+<div class="recall"><b>Tie-break for locants:</b> principal group first, then unsaturation, then substituents as a set, then alphabetical set.</div>
+</div>
+
+<div class="card org">
+<h3>Electronic effects &amp; reactive intermediates</h3>
+<table class="ktable">
+<tr><th>Effect</th><th>Definition</th><th>Example</th></tr>
+<tr><td class="l">+I (electron-donating)</td><td>σ-bond push</td><td>–CH₃, –CH₂CH₃, –(CH₃)₃</td></tr>
+<tr><td class="l">–I (withdrawing)</td><td>σ-bond pull</td><td>–NO₂ &gt; –CN &gt; –F &gt; –Cl &gt; –COOH</td></tr>
+<tr><td class="l">+M / +R</td><td>π-bond / lone pair donation</td><td>–OH, –OR, –NH₂, –NR₂, halogens</td></tr>
+<tr><td class="l">–M / –R</td><td>π-bond withdrawal</td><td>–NO₂, –CN, –COR, –COOH</td></tr>
+<tr><td class="l">Hyperconjugation</td><td>σ(C–H) overlap with π or empty orbital</td><td>stabilises alkyl cations, alkenes</td></tr>
+</table>
+<div class="mini"><b>Carbocation stability:</b> 3° &gt; 2° &gt; 1° &gt; methyl (hyperconjugation + inductive).</div>
+<div class="mini"><b>Carbanion stability:</b> methyl &gt; 1° &gt; 2° &gt; 3° (opposite of cation).</div>
+<div class="mini"><b>Free-radical stability:</b> 3° &gt; 2° &gt; 1° (same as cation, but smaller gaps).</div>
+<div class="recall"><b>Benzyl / allyl</b> cations and radicals are unusually stable (resonance with π system). Used in KCET comparison questions.</div>
+</div>
+
+</div>
+</section>
+
+<!-- ============================= BONDING + REDOX ============================= -->
+<section class="chap">
+<div class="chap-h chap-bnd">CHEMICAL BONDING + REDOX<span class="badge">~25 Q / 8 yrs combined</span></div>
+
+<div class="grid">
+
+<div class="card bnd">
+<h3>VSEPR shapes &amp; hybridisation</h3>
+<table class="ktable">
+<tr><th>Steric No.</th><th>Hybrid</th><th>Geometry (no LP)</th><th>LP → shape</th></tr>
+<tr><td>2</td><td>sp</td><td>Linear (180°)</td><td>BeCl₂, CO₂</td></tr>
+<tr><td>3</td><td>sp²</td><td>Trigonal planar (120°)</td><td>BF₃; 1 LP → bent (SO₂, O₃)</td></tr>
+<tr><td>4</td><td>sp³</td><td>Tetrahedral (109.5°)</td><td>CH₄; 1 LP → pyramidal (NH₃); 2 LP → bent (H₂O)</td></tr>
+<tr><td>5</td><td>sp³d</td><td>Trigonal bipyramidal</td><td>PCl₅; 1 LP → see-saw (SF₄); 2 LP → T-shape (ClF₃); 3 LP → linear (XeF₂)</td></tr>
+<tr><td>6</td><td>sp³d²</td><td>Octahedral (90°)</td><td>SF₆; 1 LP → square pyramidal (BrF₅); 2 LP → square planar (XeF₄)</td></tr>
+</table>
+<div class="mini"><b>Lone pair &gt; bond pair</b> in repulsion → compresses bond angles. H₂O (104.5°) &lt; NH₃ (107°) &lt; CH₄ (109.5°).</div>
+<div class="recall"><b>Trigonal bipyramidal:</b> LPs always go in equatorial positions (minimum repulsion) — remember SF₄ see-saw, not trigonal pyramidal.</div>
+</div>
+
+<div class="card bnd">
+<h3>MOT for diatomics &amp; bond order</h3>
+<svg viewBox="0 0 280 110" role="img" aria-label="MO diagram">
+  <text x="140" y="16" font-size="10" text-anchor="middle" font-weight="600" fill="#5a3a9a">MO filling order (up to N₂)</text>
+  <g font-size="9" fill="#555">
+    <text x="20" y="35">σ1s &lt; σ*1s &lt; σ2s &lt; σ*2s</text>
+    <text x="20" y="50">&lt; π2p_x = π2p_y &lt; σ2p_z</text>
+    <text x="20" y="65">&lt; π*2p_x = π*2p_y &lt; σ*2p_z</text>
+    <text x="20" y="88" fill="#b3261e" font-weight="600">O₂ &amp; F₂ onwards: σ2p_z moves BELOW π2p</text>
+  </g>
+</svg>
+<div class="formula bnd">Bond order = (N_b − N_a) / 2</div>
+<div class="mini"><b>O₂:</b> BO = 2, paramagnetic (2 unpaired e⁻ in π* — explained only by MOT, not VBT).</div>
+<div class="mini"><b>N₂:</b> BO = 3, diamagnetic, shortest N–N bond (110 pm).</div>
+<div class="mini"><b>Species comparison:</b> N₂ (3) &gt; N₂⁺ (2.5) = N₂⁻ (2.5) &gt; N₂²⁻ (2). Higher BO → shorter, stronger bond.</div>
+<div class="recall"><b>Noble-gas-like stability:</b> He₂ has BO = 0 (1 bonding, 1 antibonding) — no He₂ molecule. Be₂ same, BO = 0.</div>
+</div>
+
+<div class="card bnd">
+<h3>Dipole moment &amp; H-bonding</h3>
+<div class="formula bnd">μ = q × d &nbsp; (D, debye) &nbsp; μ_net = vector sum of bond dipoles</div>
+<div class="mini"><b>Non-polar despite polar bonds:</b> CO₂ (linear, cancels), BF₃ (trigonal planar), CCl₄ (tetrahedral), SF₆ (octahedral).</div>
+<div class="mini"><b>H-bonding needs:</b> H bonded to F, O, or N + lone pair acceptor. Ranking F–H...F &gt; O–H...O &gt; N–H...N.</div>
+<div class="mini"><b>Effects of H-bonding:</b> ↑ boiling point (HF, H₂O, NH₃ are anomalously high), ↑ solubility in water, ↑ viscosity (glycerol), ↓ volatility. Ice floats because H-bonds create open tetrahedral lattice.</div>
+<div class="mini"><b>Intramolecular H-bond:</b> <i>o</i>-nitrophenol (lower BP than <i>p</i>-isomer — cannot form intermolecular H-bond).</div>
+<div class="recall"><b>Fajan's rules:</b> covalent character ↑ with (a) small cation, (b) large anion, (c) high cation charge, (d) d¹⁰ cation (Cu⁺, Ag⁺). e.g., AgCl more covalent than NaCl.</div>
+</div>
+
+<div class="card bnd">
+<h3>Redox — oxidation numbers &amp; balancing</h3>
+<div class="formula bnd">Rules: F = −1 always; O = −2 (except peroxides −1, superoxides −½, OF₂ +2); H = +1 (except hydrides −1)</div>
+<div class="mini"><b>Tricky OS:</b> Cr in K₂Cr₂O₇ = +6; Mn in KMnO₄ = +7; S in Na₂S₂O₃ = +2 (avg); N in NH₄NO₃ = −3 & +5.</div>
+<div class="mini"><b>Half-reaction balancing (acidic):</b> balance atoms other than O/H → balance O with H₂O → balance H with H⁺ → balance charge with e⁻ → multiply to cancel e⁻.</div>
+<div class="mini"><b>Basic medium:</b> balance as acidic, then add OH⁻ equal to H⁺ on both sides, convert H⁺ + OH⁻ → H₂O, cancel.</div>
+<div class="mini"><b>Types:</b> combination, decomposition, displacement (single), disproportionation (same species oxidised + reduced, e.g., 2H₂O₂ → 2H₂O + O₂; Cl₂ in NaOH), comproportionation (two OSs merge).</div>
+<div class="recall"><b>Equivalent weight = M/n.</b> For KMnO₄ in acid: n = 5 → eq wt = 158/5 = 31.6. In neutral: n = 3 → 52.7. In base: n = 1 → 158.</div>
+</div>
+
+</div>
+</section>
+
+<!-- ============================= PHYSICAL FOUNDATIONS ============================= -->
+<section class="chap">
+<div class="chap-h chap-phy">PHYSICAL FOUNDATIONS — Thermo · Atomic · Periodicity · Mole<span class="badge">~14 Q / 8 yrs combined</span></div>
+
+<div class="grid">
+
+<div class="card phy">
+<h3>Thermodynamics — ΔH, ΔS, ΔG and spontaneity</h3>
+<div class="formula phy">ΔG = ΔH − TΔS &nbsp; (at constant T, P)</div>
+<svg viewBox="0 0 280 90" role="img">
+  <g font-size="9.5">
+    <rect x="10" y="14" width="125" height="30" fill="#ddece8" stroke="#2a6b5a" rx="3"/>
+    <text x="72" y="28" text-anchor="middle" fill="#2a6b5a" font-weight="600">ΔH − ve, ΔS + ve</text>
+    <text x="72" y="40" text-anchor="middle" fill="#555">spontaneous at all T</text>
+    <rect x="145" y="14" width="125" height="30" fill="#fbeeec" stroke="#b3261e" rx="3"/>
+    <text x="207" y="28" text-anchor="middle" fill="#b3261e" font-weight="600">ΔH + ve, ΔS − ve</text>
+    <text x="207" y="40" text-anchor="middle" fill="#555">never spontaneous</text>
+    <rect x="10" y="50" width="125" height="30" fill="#fff6d6" stroke="#c9a227" rx="3"/>
+    <text x="72" y="64" text-anchor="middle" fill="#6b4a00" font-weight="600">ΔH − ve, ΔS − ve</text>
+    <text x="72" y="76" text-anchor="middle" fill="#555">spontaneous at LOW T</text>
+    <rect x="145" y="50" width="125" height="30" fill="#fff6d6" stroke="#c9a227" rx="3"/>
+    <text x="207" y="64" text-anchor="middle" fill="#6b4a00" font-weight="600">ΔH + ve, ΔS + ve</text>
+    <text x="207" y="76" text-anchor="middle" fill="#555">spontaneous at HIGH T</text>
+  </g>
+</svg>
+<div class="mini"><b>First law:</b> ΔU = q + w. At constant V: q_v = ΔU. At constant P: q_p = ΔH. ΔH = ΔU + Δn_gas · RT.</div>
+<div class="mini"><b>Hess's law:</b> ΔH is state function — sum across steps.</div>
+<div class="mini"><b>Key signs:</b> exothermic → ΔH −ve; entropy of gas &gt; liquid &gt; solid; dissolution usually ΔS +ve.</div>
+<div class="recall"><b>ΔG° = −RT ln K</b> at equilibrium. At equilibrium ΔG = 0 (not ΔG°). Spontaneity is about ΔG, not ΔG°.</div>
+</div>
+
+<div class="card phy">
+<h3>Atomic structure — quantum numbers &amp; principles</h3>
+<table class="ktable">
+<tr><th>QN</th><th>Name</th><th>Range</th><th>Meaning</th></tr>
+<tr><td>n</td><td>Principal</td><td>1, 2, 3 ...</td><td>shell, size, energy</td></tr>
+<tr><td>l</td><td>Azimuthal</td><td>0 to (n−1)</td><td>sub-shell shape (s=0, p=1, d=2, f=3)</td></tr>
+<tr><td>m_l</td><td>Magnetic</td><td>−l to +l</td><td>orbital orientation</td></tr>
+<tr><td>m_s</td><td>Spin</td><td>+½ or −½</td><td>spin direction</td></tr>
+</table>
+<div class="formula phy">λ = h / (mv)  &nbsp;(de Broglie)  &nbsp;·&nbsp;  Δx · Δp ≥ h/4π  (Heisenberg)</div>
+<div class="mini"><b>Aufbau:</b> fill lowest (n + l) first; tie → lower n. Order: 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d → 6p ...</div>
+<div class="mini"><b>Hund's rule:</b> fill each orbital of a subshell singly before pairing.</div>
+<div class="mini"><b>Pauli:</b> no two electrons in an atom share all 4 QNs.</div>
+<div class="recall"><b>Extra-stable configs:</b> d⁵ and d¹⁰ (half / full). Cr = [Ar] 3d⁵ 4s¹ (not 3d⁴ 4s²). Cu = [Ar] 3d¹⁰ 4s¹.</div>
+</div>
+
+<div class="card phy">
+<h3>Periodicity — trends &amp; exceptions</h3>
+<svg viewBox="0 0 280 90" role="img">
+  <text x="140" y="15" font-size="11" text-anchor="middle" font-weight="600" fill="#2a6b5a">Across period →</text>
+  <g font-size="10" fill="#555">
+    <text x="20" y="35">atomic radius ↓</text>
+    <text x="20" y="50">IE₁ ↑ (with anomalies)</text>
+    <text x="20" y="65">EA ↑ (more −ve)</text>
+    <text x="20" y="80">electronegativity ↑</text>
+    <text x="160" y="35">metallic ↓</text>
+    <text x="160" y="50">ionic radius ↓ (cations)</text>
+    <text x="160" y="65">oxide basicity ↓</text>
+    <text x="160" y="80">density ↑ (d-block)</text>
+  </g>
+</svg>
+<div class="mini"><b>Down a group:</b> radius ↑, IE ↓, EA less −ve, EN ↓, metallic ↑. Extra shells override nuclear pull.</div>
+<div class="mini"><b>IE anomalies:</b> B &lt; Be (2p vs 2s), O &lt; N (paired p electron repulsion), Al &lt; Mg (same reasons one row down). Remember these dips.</div>
+<div class="mini"><b>EA anomaly:</b> F &lt; Cl (F's small 2p is electron-crowded). Cl has the most negative EA.</div>
+<div class="mini"><b>Diagonal relationships:</b> Li–Mg, Be–Al, B–Si. Similar size & polarizing power despite different groups.</div>
+<div class="recall"><b>Pauling EN scale:</b> F = 4.0 (max), Cs = 0.7 (min). Key numbers: O 3.5, N 3.0, Cl 3.0, C 2.5, H 2.1.</div>
+</div>
+
+<div class="card phy">
+<h3>Mole concept — the conversion hub</h3>
+<div class="formula phy">n = m / M = N / N_A = V_gas / 22.4 (STP, L) = V × C (solution, L × M)</div>
+<div class="mini"><b>Molarity M:</b> mol solute / L solution. <b>Molality m:</b> mol solute / kg solvent. <b>Mole fraction x:</b> mol component / total mol.</div>
+<div class="mini"><b>Empirical formula:</b> divide % by atomic mass → divide by smallest → simplest ratio. <b>Molecular formula:</b> (empirical formula)ₙ where n = M_mol / M_empirical.</div>
+<div class="mini"><b>Limiting reagent:</b> divide moles by stoichiometric coefficient → smallest quotient is limiting.</div>
+<div class="mini"><b>% yield:</b> (actual / theoretical) × 100. <b>Atom economy:</b> (M of desired product / total M of reactants) × 100.</div>
+<div class="recall"><b>STP values:</b> T = 273.15 K, P = 1 bar (not 1 atm in modern NCERT). 1 mol gas = 22.7 L at new STP (22.4 L at old). Problem statements usually specify.</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+  <span>Final flashcard pass for Day 5 evening. After this: error-log reread only. <b>Sleep by 10 PM.</b> Physics 10:30 AM tomorrow.</span>
+  <span><a href="../chemistry-strategy.html">Strategy</a> &middot; <a href="revised-plan.html">7-Day Tracker</a></span>
+</footer>
+
+</div>
+</body>
+</html>
