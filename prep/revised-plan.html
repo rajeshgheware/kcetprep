@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KCET Final-Week Tracker (JEE-Informed) — Shreyansi</title>
+<meta name="description" content="7-day KCET 2026 revision tracker from 18 April to 24 April, reweighted after JEE Main Session 1 percentiles. Chemistry-heavy, math-light, physics-tactical.">
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --rule:#d8d8d8; --soft:#f5f5f2;
+    --accent:#2563a8; --core:#0b6b3a; --warn:#b8700a; --danger:#b3261e;
+    --hl:#fff6d6; --chem:#0b6b3a; --phys:#2563a8; --math:#6b4a9a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);background:#fff;font:15px/1.55 "Inter","Segoe UI",system-ui,sans-serif}
+  .page{max-width:960px;margin:0 auto;padding:32px 28px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:14px;margin-bottom:22px}
+  .tag{display:inline-block;padding:2px 10px;background:var(--danger);color:#fff;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.4px;margin-bottom:10px;text-transform:uppercase}
+  h1{margin:0 0 6px;font-size:26px;letter-spacing:.2px}
+  .sub{color:var(--muted);font-size:13.5px}
+  .sub strong{color:var(--ink)}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.9px;margin:30px 0 12px;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:4px}
+  h3{margin:0 0 6px;font-size:15px}
+  p{margin:0 0 10px}
+
+  .scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:14px}
+  .sc{border:1px solid var(--rule);border-radius:8px;padding:14px 16px;background:#fafafa}
+  .sc .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:4px}
+  .sc .val{font-size:24px;font-weight:700;line-height:1}
+  .sc .note{font-size:12px;color:var(--muted);margin-top:6px}
+  .sc.math{border-left:4px solid var(--math);background:#f6f2fa}
+  .sc.phys{border-left:4px solid var(--phys);background:#eef5fb}
+  .sc.chem{border-left:4px solid var(--danger);background:#fbeeec}
+  .sc.chem .val{color:var(--danger)}
+  .sc.total{border-left:4px solid var(--ink);background:#f0f0f0}
+
+  .callout{background:var(--hl);border-left:3px solid #c9a227;padding:12px 16px;border-radius:4px;margin:14px 0;font-size:13.5px}
+  .callout.danger{background:#fbeeec;border-left-color:var(--danger)}
+  .callout b{color:var(--ink)}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0 14px}
+  th,td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f5f5f2;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+  td.chem{background:#f0f7f0}
+  td.phys{background:#eef5fb}
+  td.math{background:#f6f2fa}
+  td.exam{background:#fbeeec;font-weight:600}
+
+  .day{border:1px solid var(--rule);border-radius:8px;margin-bottom:14px;overflow:hidden}
+  .day-hd{background:#f5f5f2;padding:10px 16px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+  .day-hd .d{font-weight:700;font-size:15px}
+  .day-hd .when{font-size:12px;color:var(--muted)}
+  .day.today .day-hd{background:#fff6d6;border-bottom-color:#c9a227}
+  .day.exam .day-hd{background:#fbeeec;border-bottom-color:var(--danger)}
+  .day-bd{padding:12px 16px}
+  .blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:6px}
+  .block{border:1px solid var(--rule);border-radius:6px;padding:10px 12px;background:#fafafa;font-size:13px}
+  .block.chem{border-left:3px solid var(--chem);background:#f0f7f0}
+  .block.phys{border-left:3px solid var(--phys);background:#eef5fb}
+  .block.math{border-left:3px solid var(--math);background:#f6f2fa}
+  .block.rest{border-left:3px solid var(--muted);background:#f5f5f2}
+  .block .bt{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:3px;font-weight:600}
+  .block ul{margin:4px 0 0;padding-left:18px}
+  .block li{margin-bottom:2px}
+  .block a{color:var(--accent);text-decoration:none}
+  .block a:hover{text-decoration:underline}
+
+  .rules{background:#fafafa;border:1px solid var(--rule);border-radius:8px;padding:14px 18px}
+  .rules ul{margin:4px 0 0;padding-left:20px}
+  .rules li{margin-bottom:6px;font-size:13.5px}
+  .rules b{color:var(--ink)}
+
+  .target{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:10px 0}
+  .target .t{border:1px solid var(--rule);border-radius:6px;padding:10px 14px;background:#fafafa;text-align:center}
+  .target .t .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+  .target .t .v{font-size:20px;font-weight:700;margin-top:3px}
+  .target .t.chem{border-top:3px solid var(--chem)}
+  .target .t.phys{border-top:3px solid var(--phys)}
+  .target .t.math{border-top:3px solid var(--math)}
+  .target .t.total{border-top:3px solid var(--ink);background:#f0f0f0}
+
+  footer{margin-top:32px;padding-top:12px;border-top:1px solid var(--rule);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media (max-width:680px){
+    .page{padding:22px 16px}
+    .day-hd{flex-direction:column;align-items:flex-start}
+  }
+  @media print{
+    body{font-size:11.5px}
+    .page{padding:10px;max-width:100%}
+    .day{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="tag">Final-Week Tracker · JEE-Informed Revision</div>
+  <h1>7-Day KCET Plan: 18 Apr → 24 Apr</h1>
+  <div class="sub">Updated after <strong>JEE Main 2026 Session 1</strong> scorecard (declared 16 Feb 2026). Exam: <strong>Thu 23 Apr (Maths, 2:30 PM)</strong> &middot; <strong>Fri 24 Apr (Physics 10:30 AM, Chemistry 2:30 PM)</strong>.</div>
+</header>
+
+<h2>Why this plan changed</h2>
+
+<div class="scores">
+  <div class="sc math">
+    <div class="lbl">Mathematics</div>
+    <div class="val">94.12</div>
+    <div class="note">Top ~6% — strong. Maintenance mode only.</div>
+  </div>
+  <div class="sc phys">
+    <div class="lbl">Physics</div>
+    <div class="val">77.50</div>
+    <div class="note">Top ~22% — formula recall + careful units will clear KCET.</div>
+  </div>
+  <div class="sc chem">
+    <div class="lbl">Chemistry</div>
+    <div class="val">58.09</div>
+    <div class="note">Barely above median — this is where the plan's mass goes.</div>
+  </div>
+  <div class="sc total">
+    <div class="lbl">Total (JEE S1)</div>
+    <div class="val">83.87</div>
+    <div class="note">Chem is the single biggest drag on overall percentile.</div>
+  </div>
+</div>
+
+<div class="callout danger">
+  <b>The diagnosis:</b> Chemistry at 58th percentile on JEE is the biggest lever in KCET because (a) KCET Chemistry is much more NCERT-line-item than JEE, so raw memory pays off fast, and (b) no negative marking means every confidently-eliminated option is worth attempting. Over the next 6 days, roughly <b>60% of study time should go to Chemistry, 25% to Physics, 15% to Maths</b> — the inverse of the JEE percentile ranking.
+</div>
+
+<h2>Target scores (out of 180 PCM, 60 each)</h2>
+<div class="target">
+  <div class="t math"><div class="lbl">Maths</div><div class="v">56–58 / 60</div></div>
+  <div class="t phys"><div class="lbl">Physics</div><div class="v">48–52 / 60</div></div>
+  <div class="t chem"><div class="lbl">Chemistry</div><div class="v">42–46 / 60</div></div>
+  <div class="t total"><div class="lbl">PCM Total</div><div class="v">148–156 / 180</div></div>
+</div>
+<p style="font-size:13px;color:var(--muted)">A 150/180 KCET raw score + CBSE qualifying + Karnataka domicile has historically put candidates in the <strong>CET rank range 2,000–5,000</strong> — the MSRIT CSE / BMS AI&amp;DS / PES CSE band per the KEA 2025 mock cut-offs.</p>
+
+<h2>Day-by-day tracker</h2>
+
+<div class="day today">
+  <div class="day-hd"><span class="d">Day 1 — Sat 18 April (today, evening only)</span><span class="when">~3 hrs active study</span></div>
+  <div class="day-bd">
+    <p><b>Theme:</b> Physical Chemistry core. The three biggest-weighting Chem chapters. Do not skip the visual revision before practice sets.</p>
+    <div class="blocks">
+      <div class="block chem">
+        <div class="bt">Chemistry · 7:00–9:30 PM</div>
+        <ul>
+          <li>Open <a href="day1-visual-revision.html">Day 1 Visual Revision</a> — 20 min scan</li>
+          <li><a href="../practice/01-solutions-q.html">Set 01 Solutions</a> — 13 min timed</li>
+          <li><a href="../practice/02-electrochem-q.html">Set 02 Electrochem</a> — 13 min timed</li>
+          <li><a href="../practice/03-kinetics-q.html">Set 03 Kinetics</a> — 13 min timed</li>
+          <li>Error log every wrong answer on sticky notes</li>
+        </ul>
+      </div>
+      <div class="block rest">
+        <div class="bt">Wind-down · 10:00 PM</div>
+        <ul>
+          <li>No phone after 10. Lights out by 10:30.</li>
+          <li>Long week ahead — protect sleep.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-hd"><span class="d">Day 2 — Sun 19 April</span><span class="when">~7 hrs active study</span></div>
+  <div class="day-bd">
+    <p><b>Theme:</b> Chemistry Inorganic (memory-heavy) + start Organic name reactions.</p>
+    <div class="blocks">
+      <div class="block chem">
+        <div class="bt">Chemistry AM · 9:00–12:30</div>
+        <ul>
+          <li>Open <a href="day2-visual-revision.html">Day 2 Visual Revision</a> (Coord + d/f)</li>
+          <li><a href="../practice/05-coord-q.html">Set 05 Coordination</a></li>
+          <li><a href="../practice/06-dfblock-q.html">Set 06 d &amp; f-Block</a></li>
+          <li>Re-read NCERT: lanthanide contraction, colour of transition-metal ions, KMnO₄ in 3 media</li>
+        </ul>
+      </div>
+      <div class="block chem">
+        <div class="bt">Chemistry PM · 3:00–6:00</div>
+        <ul>
+          <li>Organic: <a href="../practice/09-halo-q.html">Set 09 Haloalkanes</a></li>
+          <li><a href="../practice/07-alcohols-q.html">Set 07 Alcohols/Phenols</a></li>
+          <li>NCERT name-reactions list: Williamson, Reimer-Tiemann, Kolbe, Friedel-Crafts</li>
+        </ul>
+      </div>
+      <div class="block phys">
+        <div class="bt">Physics evening · 7:30–9:30</div>
+        <ul>
+          <li>Build single-page <b>formula sheet</b> for mechanics, EM, modern physics</li>
+          <li>Skim KCET 2024 Physics paper — just see question types, no solving</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-hd"><span class="d">Day 3 — Mon 20 April</span><span class="when">~7 hrs active study + 1 timed paper</span></div>
+  <div class="day-bd">
+    <p><b>Theme:</b> Finish Chemistry Organic + first full Chemistry timed paper.</p>
+    <div class="blocks">
+      <div class="block chem">
+        <div class="bt">Chemistry AM · 9:00–12:30</div>
+        <ul>
+          <li><a href="../practice/08-carbonyl-q.html">Set 08 Aldehydes/Ketones/CA</a></li>
+          <li><a href="../practice/10-amines-q.html">Set 10 Amines</a></li>
+          <li><a href="../practice/11-biomolecules-q.html">Set 11 Biomolecules</a></li>
+        </ul>
+      </div>
+      <div class="block chem">
+        <div class="bt">Chemistry timed · 2:30–3:50 PM</div>
+        <ul>
+          <li><b>Full KCET 2023 Chemistry</b> under 80-min timer</li>
+          <li>Target: 40+/60. If below, re-attack the Core 10</li>
+          <li>Mark every error in the log</li>
+        </ul>
+      </div>
+      <div class="block phys">
+        <div class="bt">Physics evening · 7:00–9:30</div>
+        <ul>
+          <li>KCET 2023 Physics paper timed (80 min)</li>
+          <li>Target: 45+/60. Note which topics miss.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-hd"><span class="d">Day 4 — Tue 21 April</span><span class="when">~7 hrs study + tactical targeting</span></div>
+  <div class="day-bd">
+    <p><b>Theme:</b> Patch the Chemistry gaps flagged on Day 3; second Physics paper; gentle Maths warm-up.</p>
+    <div class="blocks">
+      <div class="block chem">
+        <div class="bt">Chemistry AM · 9:00–12:30</div>
+        <ul>
+          <li><a href="../practice/04-equilibrium-q.html">Set 04 Equilibrium</a></li>
+          <li>Revisit <a href="conductance-drilldown.html">Conductance drill-down</a> if Day 3 flagged electrochem errors</li>
+          <li>Re-do the 3 worst questions from Day 3's KCET 2023 paper</li>
+        </ul>
+      </div>
+      <div class="block phys">
+        <div class="bt">Physics PM · 2:30–5:00</div>
+        <ul>
+          <li>KCET 2024 Physics paper timed (80 min)</li>
+          <li>Target: 50+/60 — if you're here, Physics is locked</li>
+        </ul>
+      </div>
+      <div class="block math">
+        <div class="bt">Maths evening · 7:00–8:30 (light)</div>
+        <ul>
+          <li>Skim <b>formulas only</b>: conic sections, 3D geometry, definite integrals, probability</li>
+          <li>15 varied questions from KCET 2024 Maths — stay sharp, don't grind</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-hd"><span class="d">Day 5 — Wed 22 April</span><span class="when">Final full-length mocks + recap</span></div>
+  <div class="day-bd">
+    <p><b>Theme:</b> One full PCM mock pattern (simulate exam-day fatigue); then rest.</p>
+    <div class="blocks">
+      <div class="block math">
+        <div class="bt">Maths · 10:30–11:50 AM</div>
+        <ul>
+          <li>KCET 2025 Maths timed (80 min) — just to stay sharp</li>
+          <li>Do <b>not</b> over-analyse errors; 94 JEE percentile handles this</li>
+        </ul>
+      </div>
+      <div class="block chem">
+        <div class="bt">Chemistry · 2:30–3:50 PM (exam slot)</div>
+        <ul>
+          <li><b>KCET 2025 Chemistry timed</b> (Allen paper with solutions)</li>
+          <li>Target: 45+/60. This mirrors Fri's exact time slot — train the body clock.</li>
+        </ul>
+      </div>
+      <div class="block chem">
+        <div class="bt">Chemistry recap · 5:00–7:00 PM</div>
+        <ul>
+          <li>Re-read sticky-note error log (20 min)</li>
+          <li>Flashcard pass: Hydrocarbons, Thermo, Atomic Structure, Periodicity, Mole Concept</li>
+          <li>No new material after 8 PM</li>
+        </ul>
+      </div>
+      <div class="block rest">
+        <div class="bt">Shutdown · 9:30 PM</div>
+        <ul>
+          <li>Lights out by 10. Two more days — sleep is a weapon.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day exam">
+  <div class="day-hd"><span class="d">Day 6 — Thu 23 April · EXAM DAY 1 (Maths only)</span><span class="when">Maths: 2:30–3:50 PM</span></div>
+  <div class="day-bd">
+    <div class="blocks">
+      <div class="block math">
+        <div class="bt">Morning · 8:00–11:00</div>
+        <ul>
+          <li>Flip through <b>Maths formula cards only</b>, 90 min</li>
+          <li>Stop all study by 11:00. Shower, light lunch by 1:00.</li>
+          <li>No new questions. No new concepts.</li>
+        </ul>
+      </div>
+      <div class="block rest">
+        <div class="bt">Exam · 2:30 PM</div>
+        <ul>
+          <li>Reach centre by 1:30. Admit card + ID + 2 blue/black pens</li>
+          <li><b>Attempt all 60 Maths Qs</b> (no negative marking)</li>
+          <li>Easy-first pass (~45 min), hard/long pass (~25 min), review (~10 min)</li>
+        </ul>
+      </div>
+      <div class="block phys">
+        <div class="bt">Evening · 6:00–8:00</div>
+        <ul>
+          <li>Switch head to Physics. Read formula sheet twice.</li>
+          <li>15 mixed conceptual Physics Qs — warm-up, not a test</li>
+          <li>Early dinner. Lights out by 10.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day exam">
+  <div class="day-hd"><span class="d">Day 7 — Fri 24 April · EXAM DAY 2 (Physics AM, Chemistry PM)</span><span class="when">Physics 10:30 AM · Chemistry 2:30 PM</span></div>
+  <div class="day-bd">
+    <div class="blocks">
+      <div class="block phys">
+        <div class="bt">Physics · 10:30–11:50 AM</div>
+        <ul>
+          <li>Wake by 6:30. Physics formula sheet 7:00–8:30 — last pass.</li>
+          <li>Reach centre by 9:30. <b>Watch units and significant figures</b> — KCET punishes these.</li>
+          <li>Attempt all 60. Don't camp on one hard question.</li>
+        </ul>
+      </div>
+      <div class="block rest">
+        <div class="bt">Midday · 12:00–2:00 PM</div>
+        <ul>
+          <li>Light meal. Do NOT discuss the Physics paper.</li>
+          <li>Re-read sticky-note <b>Chemistry error log</b> only — 45 min.</li>
+          <li>No practice Qs. No NCERT. No new facts.</li>
+        </ul>
+      </div>
+      <div class="block chem">
+        <div class="bt">Chemistry · 2:30–3:50 PM</div>
+        <ul>
+          <li>Pass 1: attack Core 10 questions first (Solutions, Electrochem, Kinetics, d/f, Coord, Organic, Biomol, Amines)</li>
+          <li>Pass 2: Support chapters</li>
+          <li>Pass 3: <b>guess the rest</b> — no negative marking means blank answers are pure loss</li>
+          <li>Don't leave before 3:50. Use every minute.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Non-negotiables</h2>
+<div class="rules">
+  <ul>
+    <li><b>Sleep 7+ hrs every night.</b> One late night crushes next-day recall. Non-optional.</li>
+    <li><b>No new material from Day 5 evening onwards.</b> Only error log + formula sheets.</li>
+    <li><b>KCET has no negative marking.</b> Never leave a question blank — even a 25% guess is +EV.</li>
+    <li><b>Time discipline.</b> 60 Qs in 80 min = 80 sec/Q. If stuck &gt;45 sec, mark and move. Return at end.</li>
+    <li><b>Don't discuss papers between exams.</b> Between Physics AM and Chemistry PM on Fri, stay off phone / group chats. Comparing answers destroys confidence.</li>
+    <li><b>Hydration + light meals</b> on exam days. Heavy food before exam = slower brain.</li>
+    <li><b>Admit card, photo ID, pens, transparent bottle</b> — pack the night before.</li>
+  </ul>
+</div>
+
+<h2>Back-up references if time runs short</h2>
+<p>If something slips and you must cut — cut in this order: Maths Day-5 mock → Physics Day-4 paper → Chemistry Set 04 Equilibrium. Never cut Day 3 Chemistry timed paper or Day 5 Chemistry 2:30 slot — those build exam-time stamina.</p>
+
+<footer>
+  <span>Made by Dad &middot; Revised 18 Apr 2026 after JEE S1 result &middot; <a href="../index.html">Back to hub</a></span>
+  <span><a href="https://github.com/rajeshgheware/kcetprep">source</a></span>
+</footer>
+
+</div>
+</body>
+</html>
