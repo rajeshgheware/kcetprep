@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 1 Visual Revision — Solutions, Electrochem, Kinetics</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --rule:#d8d8d8; --soft:#f5f5f2;
+    --accent:#2563a8; --core:#0b6b3a; --warn:#b8700a; --hl:#fff6d6;
+    --bg-sol:#eef5fb; --bg-ele:#f0f7f0; --bg-kin:#fbf4ec;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);background:#fff;font:14px/1.45 "Inter","Segoe UI",system-ui,sans-serif}
+  .page{max-width:1180px;margin:0 auto;padding:22px 28px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:9px;margin-bottom:16px}
+  h1{margin:0;font-size:22px}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:3px}
+  .sub a{color:var(--accent);text-decoration:none}
+  .chap{margin-top:22px;page-break-inside:avoid}
+  .chap-h{display:flex;align-items:center;gap:10px;padding:8px 14px;border-radius:6px;margin-bottom:12px;font-size:17px;font-weight:700;letter-spacing:.3px}
+  .chap-sol{background:var(--bg-sol);color:var(--accent)}
+  .chap-ele{background:var(--bg-ele);color:var(--core)}
+  .chap-kin{background:var(--bg-kin);color:var(--warn)}
+  .chap-h .badge{font-size:11px;padding:2px 8px;border-radius:10px;background:#fff;margin-left:auto;color:var(--muted);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .card{border:1px solid var(--rule);border-radius:6px;padding:10px 12px;background:#fff}
+  .card h3{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink)}
+  .card.sol h3{color:var(--accent)}
+  .card.ele h3{color:var(--core)}
+  .card.kin h3{color:var(--warn)}
+  .formula{background:#fafafa;border-left:3px solid var(--accent);padding:6px 10px;border-radius:3px;font-size:13px;margin:4px 0;font-family:"Georgia",serif}
+  .formula.ele{border-color:var(--core)}
+  .formula.kin{border-color:var(--warn)}
+  .note{font-size:11.5px;color:var(--muted);margin:4px 0 0}
+  .recall{background:var(--hl);padding:5px 9px;border-radius:3px;font-size:11.5px;color:#6b4a00;margin-top:6px;border-left:3px solid #c9a227}
+  svg{display:block;margin:2px auto;max-width:100%;height:auto}
+  .ktable{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+  .ktable th,.ktable td{padding:4px 6px;border:1px solid var(--rule);text-align:center}
+  .ktable th{background:var(--soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
+  .mini{font-size:11.5px;margin:2px 0}
+  .tag{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10.5px;font-weight:600;color:#fff}
+  .tag-up{background:var(--core)}
+  .tag-dn{background:var(--warn)}
+  footer{margin-top:22px;padding-top:10px;border-top:1px solid var(--rule);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media print{
+    .page{max-width:none;padding:10px}
+    .card{padding:8px 10px}
+    .chap{page-break-before:always}
+    .chap:first-of-type{page-break-before:auto}
+    body{font-size:11.5px}
+    h1{font-size:18px}
+    svg{max-height:150px}
+  }
+  @media (max-width:820px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>Day 1 — Visual Revision</h1>
+  <div class="sub">Solutions &middot; Electrochemistry &middot; Chemical Kinetics &middot; scan, recall, then practice &middot; <a href="../practice/index.html">practice sets</a> &middot; <a href="../chemistry-strategy.html">strategy</a></div>
+</header>
+
+<!-- ============================= SOLUTIONS ============================= -->
+<section class="chap">
+<div class="chap-h chap-sol">SOLUTIONS<span class="badge">28 Q / 8 yrs &middot; 3.5 per paper</span></div>
+
+<div class="grid">
+
+<div class="card sol">
+<h3>Raoult's law — ideal binary solution</h3>
+<svg viewBox="0 0 240 150" role="img" aria-label="Raoult ideal plot">
+  <g stroke="#888" stroke-width="1" fill="none">
+    <line x1="30" y1="130" x2="220" y2="130"/>
+    <line x1="30" y1="130" x2="30" y2="15"/>
+  </g>
+  <text x="125" y="145" font-size="9.5" fill="#555" text-anchor="middle">mole fraction of A  →</text>
+  <text x="10" y="75" font-size="9.5" fill="#555" transform="rotate(-90 10 75)">vapour pressure →</text>
+  <line x1="30" y1="130" x2="220" y2="30" stroke="#2563a8" stroke-width="2"/>
+  <text x="200" y="25" font-size="10" fill="#2563a8">P<tspan font-size="7" dy="3">A</tspan> = x<tspan font-size="7" dy="3">A</tspan><tspan dy="-3">P°</tspan><tspan font-size="7" dy="3">A</tspan></text>
+  <line x1="30" y1="50" x2="220" y2="130" stroke="#b8700a" stroke-width="2"/>
+  <text x="40" y="45" font-size="10" fill="#b8700a">P<tspan font-size="7" dy="3">B</tspan></text>
+  <line x1="30" y1="50" x2="220" y2="30" stroke="#0b6b3a" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="95" y="30" font-size="10" fill="#0b6b3a">P<tspan font-size="7" dy="3">total</tspan></text>
+  <circle cx="30" cy="50" r="3" fill="#b8700a"/>
+  <circle cx="220" cy="30" r="3" fill="#2563a8"/>
+  <text x="27" y="42" font-size="9" fill="#b8700a">P°<tspan font-size="7" dy="3">B</tspan></text>
+  <text x="215" y="22" font-size="9" fill="#2563a8">P°<tspan font-size="7" dy="3">A</tspan></text>
+</svg>
+<div class="formula">P<sub>total</sub> = x<sub>A</sub>P°<sub>A</sub> + x<sub>B</sub>P°<sub>B</sub></div>
+<div class="recall">Non-volatile solute: <b>ΔP/P° = x<sub>solute</sub></b> (relative lowering = mole fraction of solute)</div>
+</div>
+
+<div class="card sol">
+<h3>Positive vs negative deviation</h3>
+<svg viewBox="0 0 240 150" role="img" aria-label="Deviations">
+  <g stroke="#888" stroke-width="1" fill="none">
+    <line x1="30" y1="130" x2="220" y2="130"/>
+    <line x1="30" y1="130" x2="30" y2="15"/>
+  </g>
+  <line x1="30" y1="50" x2="220" y2="50" stroke="#bbb" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <text x="185" y="47" font-size="9" fill="#888">ideal</text>
+  <path d="M 30 50 Q 125 10 220 50" fill="none" stroke="#b8700a" stroke-width="2"/>
+  <text x="95" y="25" font-size="10" fill="#b8700a">+ve (e.g. acetone+ethanol)</text>
+  <path d="M 30 50 Q 125 110 220 50" fill="none" stroke="#0b6b3a" stroke-width="2"/>
+  <text x="75" y="125" font-size="10" fill="#0b6b3a">−ve (acetone+chloroform)</text>
+  <text x="125" y="145" font-size="9.5" fill="#555" text-anchor="middle">mole fraction A</text>
+</svg>
+<div class="mini"><span class="tag tag-dn">+ve</span> A–B weaker than A–A/B–B → <b>min BP azeotrope</b></div>
+<div class="mini"><span class="tag tag-up">−ve</span> A–B stronger (H-bond) → <b>max BP azeotrope</b> (HCl+H₂O, CHCl₃+acetone)</div>
+</div>
+
+<div class="card sol">
+<h3>Osmotic pressure — U-tube</h3>
+<svg viewBox="0 0 240 150" role="img" aria-label="Osmotic U-tube">
+  <path d="M 40 20 L 40 110 Q 40 130 60 130 L 180 130 Q 200 130 200 110 L 200 20" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 42 75 Q 60 70 78 75 L 78 130 L 42 130 Z" fill="#cfe4f3"/>
+  <path d="M 162 35 Q 180 30 198 35 L 198 130 L 162 130 Z" fill="#a6cfeb"/>
+  <line x1="120" y1="115" x2="120" y2="130" stroke="#b8700a" stroke-width="4"/>
+  <text x="120" y="112" font-size="9" fill="#b8700a" text-anchor="middle">SPM</text>
+  <path d="M 90 120 L 145 120" stroke="#2563a8" stroke-width="1.5" fill="none" marker-end="url(#ar1)"/>
+  <defs><marker id="ar1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563a8"/></marker></defs>
+  <text x="60" y="90" font-size="9.5" fill="#333">pure</text>
+  <text x="58" y="100" font-size="9.5" fill="#333">solvent</text>
+  <text x="180" y="50" font-size="9.5" fill="#333" text-anchor="middle">solution</text>
+  <text x="180" y="62" font-size="9.5" fill="#333" text-anchor="middle">(higher)</text>
+  <line x1="212" y1="35" x2="212" y2="75" stroke="#0b6b3a" stroke-width="1"/>
+  <text x="220" y="58" font-size="10" fill="#0b6b3a">π = h</text>
+</svg>
+<div class="formula">π = i C R T  &nbsp; (C in mol/L, T in K)</div>
+<div class="recall">Isotonic = same π (0.9% NaCl is iso with blood). Hypertonic shrinks cells; hypotonic bursts them.</div>
+</div>
+
+<div class="card sol">
+<h3>ΔT<sub>b</sub> / ΔT<sub>f</sub> — colligative</h3>
+<svg viewBox="0 0 260 150" role="img" aria-label="BP elevation/FP depression">
+  <g stroke="#888" stroke-width="1" fill="none">
+    <line x1="20" y1="130" x2="250" y2="130"/>
+    <line x1="20" y1="130" x2="20" y2="15"/>
+  </g>
+  <text x="135" y="145" font-size="9.5" fill="#555" text-anchor="middle">Temperature →</text>
+  <text x="10" y="75" font-size="9.5" fill="#555" transform="rotate(-90 10 75)">P →</text>
+  <line x1="100" y1="30" x2="105" y2="130" stroke="#333" stroke-width="1.5"/>
+  <path d="M 105 130 Q 145 90 210 35" stroke="#2563a8" stroke-width="2" fill="none"/>
+  <path d="M 115 130 Q 155 95 225 40" stroke="#b8700a" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+  <line x1="20" y1="55" x2="250" y2="55" stroke="#bbb" stroke-dasharray="2 3"/>
+  <text x="22" y="52" font-size="9" fill="#888">1 atm</text>
+  <circle cx="170" cy="55" r="2.5" fill="#2563a8"/>
+  <circle cx="192" cy="55" r="2.5" fill="#b8700a"/>
+  <line x1="170" y1="55" x2="192" y2="55" stroke="#0b6b3a" stroke-width="2"/>
+  <text x="181" y="48" font-size="9" fill="#0b6b3a" text-anchor="middle">ΔT<tspan font-size="7" dy="3">b</tspan></text>
+  <circle cx="103" cy="130" r="2.5" fill="#2563a8"/>
+  <circle cx="85" cy="130" r="2.5" fill="#b8700a"/>
+  <line x1="85" y1="138" x2="103" y2="138" stroke="#0b6b3a" stroke-width="2"/>
+  <text x="94" y="149" font-size="9" fill="#0b6b3a" text-anchor="middle">ΔT<tspan font-size="7" dy="3">f</tspan></text>
+  <text x="215" y="30" font-size="9" fill="#2563a8">pure</text>
+  <text x="228" y="45" font-size="9" fill="#b8700a">soln</text>
+</svg>
+<div class="formula">ΔT<sub>b</sub> = i·K<sub>b</sub>·m  &nbsp;&middot;&nbsp; ΔT<sub>f</sub> = i·K<sub>f</sub>·m</div>
+<div class="recall">Solute adds ↓vp → <b>BP goes up, FP goes down</b>. Camphor has huge K<sub>f</sub> (40) → Rast method.</div>
+</div>
+
+<div class="card sol">
+<h3>Henry's law &amp; temperature</h3>
+<svg viewBox="0 0 240 130" role="img">
+  <g stroke="#888" stroke-width="1" fill="none">
+    <line x1="30" y1="115" x2="220" y2="115"/>
+    <line x1="30" y1="115" x2="30" y2="15"/>
+  </g>
+  <text x="125" y="128" font-size="9.5" fill="#555" text-anchor="middle">Temperature (K) →</text>
+  <text x="10" y="70" font-size="9.5" fill="#555" transform="rotate(-90 10 70)">K<tspan font-size="7" dy="3">H</tspan> →</text>
+  <path d="M 40 105 Q 100 60 200 25" stroke="#2563a8" stroke-width="2.5" fill="none"/>
+  <text x="85" y="95" font-size="18">🐟</text>
+  <text x="92" y="88" font-size="8.5" fill="#555">cold water holds more O₂</text>
+</svg>
+<div class="formula">p<sub>gas</sub> = K<sub>H</sub> · x<sub>gas</sub></div>
+<div class="recall"><b>K<sub>H</sub> ↑ with T</b> → gas solubility <b>↓ with T</b>. Warm soda goes flat; aquatic life suffers in warm water.</div>
+</div>
+
+<div class="card sol">
+<h3>Van 't Hoff factor (i) — cheat table</h3>
+<table class="ktable">
+<tr><th>Solute</th><th>Type</th><th>i</th></tr>
+<tr><td>Urea, glucose, sucrose</td><td>Non-electrolyte</td><td>1</td></tr>
+<tr><td>NaCl, KCl</td><td>1:1 dissociate</td><td>2</td></tr>
+<tr><td>CaCl₂, K₂SO₄</td><td>1:2 / 2:1</td><td>3</td></tr>
+<tr><td>K<sub>4</sub>[Fe(CN)<sub>6</sub>]</td><td>4:1</td><td>5</td></tr>
+<tr><td>Benzoic acid in C<sub>6</sub>H<sub>6</sub></td><td>Dimerises (assoc.)</td><td>½</td></tr>
+</table>
+<div class="recall"><b>i &gt; 1</b> dissociation &middot; <b>i &lt; 1</b> association &middot; π, ΔT<sub>b</sub>, ΔT<sub>f</sub> all × i</div>
+</div>
+
+</div>
+</section>
+
+<!-- ============================= ELECTROCHEM ============================= -->
+<section class="chap">
+<div class="chap-h chap-ele">ELECTROCHEMISTRY<span class="badge">27 Q / 8 yrs &middot; 3.4 per paper</span></div>
+
+<div class="grid">
+
+<div class="card ele">
+<h3>Galvanic (Daniell) cell</h3>
+<svg viewBox="0 0 320 170" role="img" aria-label="Daniell cell">
+  <circle cx="160" cy="25" r="14" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="160" y="29" font-size="11" text-anchor="middle">V</text>
+  <line x1="60" y1="38" x2="60" y2="25" stroke="#333"/>
+  <line x1="60" y1="25" x2="146" y2="25" stroke="#333"/>
+  <line x1="260" y1="38" x2="260" y2="25" stroke="#333"/>
+  <line x1="260" y1="25" x2="174" y2="25" stroke="#333"/>
+  <path d="M 78 18 L 98 18" stroke="#b8700a" stroke-width="1.5" marker-end="url(#ae)"/>
+  <defs><marker id="ae" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#b8700a"/></marker></defs>
+  <text x="100" y="15" font-size="9" fill="#b8700a">e⁻ flow</text>
+  <path d="M 25 55 L 25 145 L 100 145 L 100 55" fill="none" stroke="#333" stroke-width="1.5"/>
+  <rect x="27" y="85" width="71" height="58" fill="#cfe4f3"/>
+  <rect x="55" y="38" width="10" height="65" fill="#999"/>
+  <text x="60" y="160" font-size="11" text-anchor="middle" fill="#333">Zn (−)</text>
+  <text x="60" y="75" font-size="9.5" text-anchor="middle" fill="#333">anode</text>
+  <text x="60" y="130" font-size="9.5" text-anchor="middle">Zn²⁺</text>
+  <path d="M 220 55 L 220 145 L 295 145 L 295 55" fill="none" stroke="#333" stroke-width="1.5"/>
+  <rect x="222" y="85" width="71" height="58" fill="#f9dbcf"/>
+  <rect x="255" y="38" width="10" height="65" fill="#b76a3d"/>
+  <text x="260" y="160" font-size="11" text-anchor="middle" fill="#333">Cu (+)</text>
+  <text x="260" y="75" font-size="9.5" text-anchor="middle" fill="#333">cathode</text>
+  <text x="260" y="130" font-size="9.5" text-anchor="middle">Cu²⁺</text>
+  <path d="M 100 85 Q 160 60 220 85 L 220 100 Q 160 80 100 100 Z" fill="#ffe9a8" stroke="#8a6e00"/>
+  <text x="160" y="78" font-size="9" text-anchor="middle" fill="#8a6e00">KCl salt bridge</text>
+  <path d="M 105 120 L 135 120" stroke="#0b6b3a" stroke-width="1" marker-end="url(#ae2)"/>
+  <path d="M 215 120 L 185 120" stroke="#0b6b3a" stroke-width="1" marker-end="url(#ae2)"/>
+  <defs><marker id="ae2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0b6b3a"/></marker></defs>
+  <text x="160" y="137" font-size="9" text-anchor="middle" fill="#0b6b3a">cations →</text>
+</svg>
+<div class="mini"><b>Anode (−):</b> Zn → Zn²⁺ + 2e⁻ &nbsp; <b>Cathode (+):</b> Cu²⁺ + 2e⁻ → Cu</div>
+<div class="formula ele">E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub> = +1.10 V</div>
+<div class="recall">Galvanic = <b>spontaneous</b> (ΔG &lt; 0, E° &gt; 0). Electrons flow anode → cathode in external wire; cations move to cathode through salt bridge.</div>
+</div>
+
+<div class="card ele">
+<h3>Nernst equation &amp; ΔG ↔ E° ↔ K</h3>
+<div class="formula ele">E = E° − (0.059/n) log Q &nbsp; (at 298 K)</div>
+<svg viewBox="0 0 300 100" role="img">
+  <rect x="20" y="30" width="70" height="35" fill="#eef7ee" stroke="#0b6b3a" rx="4"/>
+  <text x="55" y="52" font-size="11" text-anchor="middle" fill="#0b6b3a">ΔG°</text>
+  <rect x="115" y="30" width="70" height="35" fill="#eef7ee" stroke="#0b6b3a" rx="4"/>
+  <text x="150" y="52" font-size="11" text-anchor="middle" fill="#0b6b3a">E°<tspan font-size="8" dy="2">cell</tspan></text>
+  <rect x="210" y="30" width="70" height="35" fill="#eef7ee" stroke="#0b6b3a" rx="4"/>
+  <text x="245" y="52" font-size="11" text-anchor="middle" fill="#0b6b3a">K<tspan font-size="8" dy="2">eq</tspan></text>
+  <line x1="90" y1="47" x2="113" y2="47" stroke="#0b6b3a" stroke-width="1.5" marker-end="url(#ag)"/>
+  <line x1="185" y1="47" x2="208" y2="47" stroke="#0b6b3a" stroke-width="1.5" marker-end="url(#ag)"/>
+  <defs><marker id="ag" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0b6b3a"/></marker></defs>
+  <text x="102" y="25" font-size="9" fill="#555" text-anchor="middle">−nFE°</text>
+  <text x="196" y="25" font-size="9" fill="#555" text-anchor="middle">RT ln K</text>
+  <text x="150" y="85" font-size="10" fill="#555" text-anchor="middle">ΔG° = −nFE° &middot; log K = nE°/0.059</text>
+</svg>
+<div class="recall">E° &gt; 0 ⇔ ΔG° &lt; 0 ⇔ K &gt; 1 ⇔ spontaneous</div>
+</div>
+
+<div class="card ele">
+<h3>Conductance relations</h3>
+<svg viewBox="0 0 280 110" role="img">
+  <rect x="30" y="25" width="220" height="60" fill="#fafafa" stroke="#0b6b3a" rx="4"/>
+  <text x="140" y="48" font-size="11" text-anchor="middle" fill="#0b6b3a"><tspan font-weight="600">κ</tspan> (specific conductance, S cm⁻¹)</text>
+  <text x="140" y="65" font-size="11" text-anchor="middle" fill="#2563a8">Λ<tspan font-size="7" dy="3">m</tspan><tspan dy="-3"> = κ × 1000 / C</tspan></text>
+  <text x="140" y="80" font-size="11" text-anchor="middle" fill="#b8700a">Λ°<tspan font-size="7" dy="3">m</tspan><tspan dy="-3"> (limiting, as C → 0)</tspan></text>
+  <text x="140" y="102" font-size="9" text-anchor="middle" fill="#555">S cm² mol⁻¹</text>
+</svg>
+<div class="mini"><b>Strong electrolytes:</b> Λ<sub>m</sub> vs √C is linear → extrapolate to get Λ°<sub>m</sub>.</div>
+<div class="mini"><b>Weak electrolytes:</b> can't extrapolate → use <b>Kohlrausch</b>: Λ°<sub>m</sub>(CH₃COOH) = Λ°<sub>m</sub>(CH₃COONa) + Λ°<sub>m</sub>(HCl) − Λ°<sub>m</sub>(NaCl)</div>
+<div class="recall"><b>Degree of ionisation</b> α = Λ<sub>m</sub> / Λ°<sub>m</sub></div>
+</div>
+
+<div class="card ele">
+<h3>Faraday's laws of electrolysis</h3>
+<svg viewBox="0 0 280 90" role="img">
+  <rect x="20" y="25" width="240" height="40" fill="#f7f3ea" stroke="#b8700a" rx="4"/>
+  <text x="140" y="50" font-size="12" text-anchor="middle" fill="#b8700a" font-family="Georgia,serif">m = Z · I · t &nbsp;=&nbsp; (M/nF) · I · t</text>
+</svg>
+<div class="mini"><b>1 Faraday (F) = 96 500 C</b> deposits 1 mol equivalent (M/n grams).</div>
+<div class="mini">Ag⁺ + e⁻ → Ag needs <b>1 F per mol Ag</b>. Cu²⁺ + 2e⁻ → Cu needs <b>2 F per mol Cu</b>.</div>
+<div class="recall">Mass ratio for same charge: mA/mB = (EA / EB) where E = M/n is equivalent mass.</div>
+</div>
+
+<div class="card ele">
+<h3>Electrochemical series (selected)</h3>
+<svg viewBox="0 0 280 170" role="img">
+  <line x1="140" y1="15" x2="140" y2="160" stroke="#333" stroke-width="1"/>
+  <line x1="135" y1="15" x2="145" y2="15" stroke="#333"/>
+  <line x1="135" y1="160" x2="145" y2="160" stroke="#333"/>
+  <text x="155" y="19" font-size="9.5" fill="#0b6b3a">+ve E° (oxidising power ↑)</text>
+  <text x="155" y="162" font-size="9.5" fill="#b8700a">−ve E° (reducing power ↑)</text>
+  <g font-size="10" fill="#333" font-family="Georgia,serif">
+    <text x="130" y="25" text-anchor="end">F₂/F⁻</text><text x="150" y="25">+2.87</text>
+    <text x="130" y="40" text-anchor="end">MnO₄⁻/Mn²⁺</text><text x="150" y="40">+1.51</text>
+    <text x="130" y="55" text-anchor="end">Cr₂O₇²⁻/Cr³⁺</text><text x="150" y="55">+1.33</text>
+    <text x="130" y="70" text-anchor="end">O₂/H₂O</text><text x="150" y="70">+1.23</text>
+    <text x="130" y="85" text-anchor="end">Cu²⁺/Cu</text><text x="150" y="85">+0.34</text>
+    <text x="130" y="100" text-anchor="end">H⁺/H₂ (SHE)</text><text x="150" y="100">0.00</text>
+    <text x="130" y="115" text-anchor="end">Fe²⁺/Fe</text><text x="150" y="115">−0.44</text>
+    <text x="130" y="130" text-anchor="end">Zn²⁺/Zn</text><text x="150" y="130">−0.76</text>
+    <text x="130" y="145" text-anchor="end">Al³⁺/Al</text><text x="150" y="145">−1.66</text>
+    <text x="130" y="158" text-anchor="end">Li⁺/Li</text><text x="150" y="158">−3.04</text>
+  </g>
+</svg>
+<div class="recall">Higher (more +ve) E° = stronger oxidising agent (gets reduced easily). Li is the strongest reducing agent; F₂ the strongest oxidising agent.</div>
+</div>
+
+<div class="card ele">
+<h3>Galvanic vs Electrolytic</h3>
+<table class="ktable">
+<tr><th></th><th>Galvanic</th><th>Electrolytic</th></tr>
+<tr><td>Driven by</td><td>Spontaneous rxn</td><td>External EMF</td></tr>
+<tr><td>ΔG</td><td>&lt; 0</td><td>&gt; 0</td></tr>
+<tr><td>Anode</td><td>−</td><td>+</td></tr>
+<tr><td>Cathode</td><td>+</td><td>−</td></tr>
+<tr><td>Converts</td><td>Chem → Elec</td><td>Elec → Chem</td></tr>
+</table>
+<div class="recall">In both: oxidation at anode, reduction at cathode. Sign flips only because direction of current flow differs.</div>
+</div>
+
+</div>
+</section>
+
+<!-- ============================= KINETICS ============================= -->
+<section class="chap">
+<div class="chap-h chap-kin">CHEMICAL KINETICS<span class="badge">27 Q / 8 yrs &middot; 3.4 per paper</span></div>
+
+<div class="grid">
+
+<div class="card kin">
+<h3>Rate vs time — order shapes</h3>
+<svg viewBox="0 0 280 160" role="img">
+  <g stroke="#888" stroke-width="1" fill="none">
+    <line x1="30" y1="140" x2="260" y2="140"/>
+    <line x1="30" y1="140" x2="30" y2="15"/>
+  </g>
+  <text x="145" y="154" font-size="9.5" fill="#555" text-anchor="middle">time →</text>
+  <text x="10" y="85" font-size="9.5" fill="#555" transform="rotate(-90 10 85)">[A] →</text>
+  <line x1="30" y1="25" x2="165" y2="140" stroke="#2563a8" stroke-width="2"/>
+  <text x="165" y="22" font-size="10" fill="#2563a8">zero order</text>
+  <text x="82" y="90" font-size="9" fill="#2563a8">[A]=[A₀]−kt</text>
+  <path d="M 30 25 Q 80 70 260 135" stroke="#b8700a" stroke-width="2" fill="none"/>
+  <text x="185" y="100" font-size="10" fill="#b8700a">first order</text>
+  <text x="190" y="112" font-size="9" fill="#b8700a">ln[A]=ln[A₀]−kt</text>
+  <path d="M 30 25 Q 40 85 260 130" stroke="#0b6b3a" stroke-width="2" stroke-dasharray="5 3" fill="none"/>
+  <text x="90" y="135" font-size="10" fill="#0b6b3a">second order</text>
+</svg>
+<div class="recall">Straight line of <b>[A] vs t</b> → zero order &middot; <b>ln[A] vs t</b> → first order &middot; <b>1/[A] vs t</b> → second order</div>
+</div>
+
+<div class="card kin">
+<h3>Half-life by order</h3>
+<table class="ktable">
+<tr><th>Order</th><th>t<sub>½</sub></th><th>Depends on [A₀]?</th></tr>
+<tr><td>0</td><td>[A₀] / 2k</td><td>∝ [A₀]</td></tr>
+<tr><td>1</td><td><b>0.693 / k</b></td><td>independent</td></tr>
+<tr><td>2</td><td>1 / (k[A₀])</td><td>∝ 1/[A₀]</td></tr>
+</table>
+<svg viewBox="0 0 240 80" role="img">
+  <g stroke="#888" stroke-width="1" fill="none"><line x1="20" y1="65" x2="225" y2="65"/><line x1="20" y1="65" x2="20" y2="12"/></g>
+  <line x1="20" y1="65" x2="220" y2="65" stroke="#b8700a" stroke-width="2"/>
+  <text x="225" y="66" font-size="9" fill="#b8700a">1st-order t½ = const</text>
+  <text x="12" y="62" font-size="9" fill="#555">t½</text>
+  <text x="120" y="78" font-size="9" fill="#555" text-anchor="middle">[A₀] →</text>
+</svg>
+<div class="recall"><b>Nuclear decay ≈ 1st order</b> → half-life constant; useful for C-14 dating.</div>
+</div>
+
+<div class="card kin">
+<h3>Arrhenius equation</h3>
+<svg viewBox="0 0 280 140" role="img">
+  <g stroke="#888" stroke-width="1" fill="none">
+    <line x1="30" y1="115" x2="250" y2="115"/>
+    <line x1="30" y1="115" x2="30" y2="15"/>
+  </g>
+  <text x="140" y="130" font-size="9.5" fill="#555" text-anchor="middle">1/T →</text>
+  <text x="10" y="70" font-size="9.5" fill="#555" transform="rotate(-90 10 70)">ln k →</text>
+  <line x1="50" y1="30" x2="230" y2="100" stroke="#b8700a" stroke-width="2.5"/>
+  <text x="165" y="55" font-size="10" fill="#b8700a">slope = −E<tspan font-size="7" dy="3">a</tspan><tspan dy="-3">/R</tspan></text>
+  <text x="232" y="98" font-size="9" fill="#555">(intercept = ln A)</text>
+</svg>
+<div class="formula kin">k = A e<sup>−E<sub>a</sub>/RT</sup>  &nbsp;&middot;&nbsp; ln(k₂/k₁) = (E<sub>a</sub>/R)(1/T₁ − 1/T₂)</div>
+<div class="recall"><b>T ↑ → k ↑↑</b>. Temp coefficient μ = k<sub>T+10</sub>/k<sub>T</sub> ≈ 2–3 (rate doubles/triples per 10 K).</div>
+</div>
+
+<div class="card kin">
+<h3>Activation energy (with vs without catalyst)</h3>
+<svg viewBox="0 0 300 140" role="img" aria-label="energy profile">
+  <g stroke="#888" stroke-width="1" fill="none"><line x1="20" y1="125" x2="285" y2="125"/><line x1="20" y1="125" x2="20" y2="15"/></g>
+  <text x="150" y="138" font-size="9.5" fill="#555" text-anchor="middle">reaction coordinate →</text>
+  <text x="10" y="70" font-size="9.5" fill="#555" transform="rotate(-90 10 70)">Energy →</text>
+  <path d="M 40 100 Q 100 15 160 100" stroke="#b8700a" stroke-width="2.5" fill="none"/>
+  <path d="M 40 100 Q 100 55 160 100" stroke="#0b6b3a" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+  <line x1="160" y1="100" x2="270" y2="115" stroke="#333" stroke-width="1.5"/>
+  <line x1="75" y1="100" x2="75" y2="30" stroke="#b8700a" stroke-width="0.8"/>
+  <text x="80" y="55" font-size="10" fill="#b8700a">E<tspan font-size="7" dy="3">a</tspan><tspan dy="-3"> (no cat.)</tspan></text>
+  <line x1="115" y1="100" x2="115" y2="65" stroke="#0b6b3a" stroke-width="0.8"/>
+  <text x="120" y="80" font-size="10" fill="#0b6b3a">E<tspan font-size="7" dy="3">a</tspan><tspan dy="-3"> (with cat.)</tspan></text>
+  <text x="30" y="96" font-size="9.5" fill="#333">reactants</text>
+  <text x="220" y="108" font-size="9.5" fill="#333">products</text>
+  <line x1="200" y1="100" x2="200" y2="115" stroke="#555" stroke-width="0.7"/>
+  <text x="210" y="112" font-size="9" fill="#555">ΔH</text>
+</svg>
+<div class="recall"><b>Catalyst lowers E<sub>a</sub>, does NOT change ΔH or K.</b> Speeds both forward and reverse equally.</div>
+</div>
+
+<div class="card kin">
+<h3>Order vs molecularity</h3>
+<table class="ktable">
+<tr><th></th><th>Order</th><th>Molecularity</th></tr>
+<tr><td>How obtained</td><td>Experiment</td><td>Elementary step (theoretical)</td></tr>
+<tr><td>Can be zero</td><td>Yes</td><td>No (≥1)</td></tr>
+<tr><td>Fractional</td><td>Possible</td><td>Never</td></tr>
+<tr><td>Scope</td><td>Whole rxn</td><td>Single step</td></tr>
+</table>
+<div class="mini">Rate = k[A]<sup>m</sup>[B]<sup>n</sup>. <b>Overall order = m + n.</b></div>
+<div class="recall"><b>Pseudo first-order:</b> rate = k[ester][H₂O] but [H₂O] ≈ const → rate = k'[ester]. Example: ester hydrolysis, inversion of cane sugar.</div>
+</div>
+
+<div class="card kin">
+<h3>Collision theory requirements</h3>
+<svg viewBox="0 0 280 120" role="img">
+  <circle cx="55" cy="35" r="15" fill="#cfe4f3"/><text x="55" y="40" font-size="10" text-anchor="middle">A</text>
+  <circle cx="120" cy="35" r="15" fill="#f9dbcf"/><text x="120" y="40" font-size="10" text-anchor="middle">B</text>
+  <path d="M 75 35 L 100 35" stroke="#0b6b3a" stroke-width="2" marker-end="url(#ax)"/>
+  <path d="M 105 35 L 80 35" stroke="#0b6b3a" stroke-width="2" marker-start="url(#ax2)"/>
+  <defs>
+    <marker id="ax" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0b6b3a"/></marker>
+    <marker id="ax2" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 Z" fill="#0b6b3a"/></marker>
+  </defs>
+  <text x="87" y="62" font-size="9" text-anchor="middle" fill="#0b6b3a">proper orientation + E ≥ E<tspan font-size="7" dy="3">threshold</tspan></text>
+  <text x="87" y="80" font-size="11" text-anchor="middle" fill="#0b6b3a">✓ reacts</text>
+  <circle cx="190" cy="35" r="15" fill="#cfe4f3"/><text x="190" y="40" font-size="10" text-anchor="middle">A</text>
+  <circle cx="240" cy="80" r="15" fill="#f9dbcf"/><text x="240" y="85" font-size="10" text-anchor="middle">B</text>
+  <path d="M 204 50 L 230 70" stroke="#b8700a" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="220" y="110" font-size="11" text-anchor="middle" fill="#b8700a">✗ wrong angle</text>
+</svg>
+<div class="formula kin">Rate = Z<sub>AB</sub> · p · e<sup>−E<sub>a</sub>/RT</sup>  &nbsp; (p = steric factor)</div>
+<div class="recall">Not every collision reacts — <b>only effective collisions</b> (right orientation AND enough energy) do.</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+  <span>Quick revision for Day 1 — skim, recall, then solve <a href="../practice/01-solutions-q.html">Set 01</a>, <a href="../practice/02-electrochem-q.html">Set 02</a>, <a href="../practice/03-kinetics-q.html">Set 03</a>.</span>
+  <span><a href="../chemistry-strategy.html">Strategy one-pager</a></span>
+</footer>
+
+</div>
+</body>
+</html>
