@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Conductance — Drill-Down · Day 1</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --rule:#d8d8d8; --soft:#f5f5f2;
+    --accent:#2563a8; --core:#0b6b3a; --warn:#b8700a; --hl:#fff6d6; --trap:#fde2e2;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);background:#fff;font:14px/1.45 "Inter","Segoe UI",system-ui,sans-serif}
+  .page{max-width:1100px;margin:0 auto;padding:22px 28px}
+  header{border-bottom:3px solid var(--core);padding-bottom:9px;margin-bottom:16px}
+  h1{margin:0;font-size:22px;color:var(--core)}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:3px}
+  .sub a{color:var(--accent);text-decoration:none}
+  h2{font-size:15px;margin:22px 0 8px;color:var(--core);border-left:4px solid var(--core);padding-left:8px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .card{border:1px solid var(--rule);border-radius:6px;padding:10px 12px;background:#fff}
+  .card h3{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.4px;color:var(--core)}
+  .formula{background:#fafafa;border-left:3px solid var(--core);padding:6px 10px;border-radius:3px;font-size:13px;margin:4px 0;font-family:"Georgia",serif}
+  .note{font-size:11.5px;color:var(--muted);margin:4px 0 0}
+  .recall{background:var(--hl);padding:5px 9px;border-radius:3px;font-size:11.5px;color:#6b4a00;margin-top:6px;border-left:3px solid #c9a227}
+  .trap{background:var(--trap);padding:5px 9px;border-radius:3px;font-size:11.5px;color:#7a1f1f;margin-top:6px;border-left:3px solid #c94040}
+  .ktable{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+  .ktable th,.ktable td{padding:4px 6px;border:1px solid var(--rule);text-align:center}
+  .ktable th{background:var(--soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
+  .ktable td.l{text-align:left}
+  .mini{font-size:11.5px;margin:3px 0}
+  svg{display:block;margin:2px auto;max-width:100%;height:auto}
+  .eg{background:#f0f7f0;border:1px dashed var(--core);border-radius:4px;padding:8px 10px;margin-top:6px;font-size:12px}
+  .eg b{color:var(--core)}
+  .tag{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10.5px;font-weight:600;color:#fff;background:var(--core)}
+  footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--rule);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media (max-width:820px){.grid{grid-template-columns:1fr}}
+  @media print{.page{max-width:none;padding:10px}body{font-size:11.5px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>Conductance — Drill-Down</h1>
+  <div class="sub">High-yield sub-topics for KCET &middot; <a href="day1-visual-revision.html">← back to Day 1 visuals</a> &middot; <a href="../practice/02-electrochem-q.html">practice Set 02</a></div>
+</header>
+
+<h2>1. The ladder of terms — know this cold</h2>
+<div class="grid">
+
+<div class="card">
+<h3>From resistance to Λ°<sub>m</sub></h3>
+<div class="formula">R = ρ · (l/A) &nbsp;&middot;&nbsp; κ = 1/ρ &nbsp;&middot;&nbsp; G = 1/R</div>
+<div class="formula">κ = G × (l/A) = G × G*</div>
+<div class="formula">Λ<sub>m</sub> = κ × 1000 / C <span class="note">(C in mol/L, κ in S cm⁻¹)</span></div>
+<div class="formula">Λ<sub>m</sub> = κ / c <span class="note">(c in mol/m³, κ in S m⁻¹)</span></div>
+<div class="recall"><b>Cell constant G* = l/A</b> (units cm⁻¹ or m⁻¹). Fixed for a given conductivity cell.</div>
+</div>
+
+<div class="card">
+<h3>Units — every single KCET trap lives here</h3>
+<table class="ktable">
+<tr><th>Quantity</th><th>SI</th><th>CGS-ish</th></tr>
+<tr><td>κ (conductivity)</td><td>S m⁻¹</td><td>S cm⁻¹</td></tr>
+<tr><td>Λ<sub>m</sub> (molar)</td><td>S m² mol⁻¹</td><td>S cm² mol⁻¹</td></tr>
+<tr><td>G* (cell const.)</td><td>m⁻¹</td><td>cm⁻¹</td></tr>
+<tr><td>R</td><td>Ω</td><td>Ω</td></tr>
+</table>
+<div class="mini"><b>1 S m⁻¹ = 10⁻² S cm⁻¹</b> &middot; <b>1 S m² mol⁻¹ = 10⁴ S cm² mol⁻¹</b></div>
+<div class="trap"><b>Trap:</b> If κ is in S cm⁻¹ and C in mol/L, use the factor <b>×1000</b>. If κ is in S m⁻¹ and c is in mol/m³, use <b>÷c</b>. Mixing conventions gives answers off by 10⁴.</div>
+</div>
+
+</div>
+
+<h2>2. Strong vs weak electrolytes — graph you must recognise</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Λ<sub>m</sub> vs √C</h3>
+<svg viewBox="0 0 260 160" role="img" aria-label="Lambda_m vs sqrt C">
+  <g stroke="#888" stroke-width="1" fill="none">
+    <line x1="30" y1="140" x2="250" y2="140"/>
+    <line x1="30" y1="140" x2="30" y2="15"/>
+  </g>
+  <text x="140" y="154" font-size="9.5" fill="#555" text-anchor="middle">√C →</text>
+  <text x="10" y="85" font-size="9.5" fill="#555" transform="rotate(-90 10 85)">Λ<tspan font-size="7" dy="3">m</tspan><tspan dy="-3"> →</tspan></text>
+  <!-- strong: straight line with small negative slope, high intercept -->
+  <line x1="30" y1="30" x2="230" y2="55" stroke="#2563a8" stroke-width="2.2"/>
+  <circle cx="30" cy="30" r="3" fill="#2563a8"/>
+  <text x="35" y="25" font-size="9" fill="#2563a8">Λ°<tspan font-size="7" dy="3">m</tspan><tspan dy="-3"> (strong: KCl, HCl)</tspan></text>
+  <text x="185" y="50" font-size="9" fill="#2563a8">Λ<tspan font-size="7" dy="3">m</tspan><tspan dy="-3"> = Λ°<tspan font-size="7" dy="3">m</tspan><tspan dy="-3"> − A√C</tspan></tspan></text>
+  <!-- weak: curves sharply from very high at low C to low at high C -->
+  <path d="M 30 35 Q 40 130 230 135" stroke="#b8700a" stroke-width="2.2" fill="none"/>
+  <circle cx="30" cy="35" r="3" fill="#b8700a"/>
+  <text x="110" y="115" font-size="9" fill="#b8700a">weak (CH₃COOH, NH₄OH)</text>
+  <text x="35" y="46" font-size="9" fill="#b8700a">can't extrapolate</text>
+</svg>
+<div class="recall"><b>Strong:</b> linear, small drop — extrapolate y-intercept → Λ°<sub>m</sub>. <b>Weak:</b> sharp rise near C=0; y-intercept not reachable from data → use Kohlrausch.</div>
+</div>
+
+<div class="card">
+<h3>Why strong is linear, weak is curvy</h3>
+<div class="mini"><b>Strong (fully dissociated):</b> On dilution, ion–ion attraction ↓ → ions move more freely → Λ<sub>m</sub> rises slowly and smoothly toward Λ°<sub>m</sub>.</div>
+<div class="mini"><b>Weak (partially dissociated):</b> On dilution, α ↑ sharply (more molecules ionise) → Λ<sub>m</sub> jumps up near infinite dilution.</div>
+<div class="formula">Strong: Λ<sub>m</sub> = Λ°<sub>m</sub> − A√C <span class="note">(Debye–Hückel–Onsager)</span></div>
+<div class="trap"><b>Trap:</b> "On dilution κ decreases but Λ<sub>m</sub> increases." Reason: κ is per cm³ of solution (fewer ions per volume), Λ<sub>m</sub> is per mole (same moles, better mobility).</div>
+</div>
+
+</div>
+
+<h2>3. Kohlrausch's law — the plug-and-chug template</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Statement</h3>
+<div class="formula">Λ°<sub>m</sub>(salt) = ν<sub>+</sub> λ°<sub>+</sub> + ν<sub>−</sub> λ°<sub>−</sub></div>
+<div class="mini">Limiting molar conductivity of any electrolyte = sum of individual ionic contributions (each weighted by its stoichiometric coefficient).</div>
+<div class="eg"><b>Ex.</b> Λ°<sub>m</sub>(Al₂(SO₄)₃) = 2·λ°(Al³⁺) + 3·λ°(SO₄²⁻)</div>
+<div class="recall"><b>Why it matters:</b> only way to get Λ°<sub>m</sub> of a <b>weak</b> electrolyte (can't extrapolate directly).</div>
+</div>
+
+<div class="card">
+<h3>Template: Λ° of weak acid/base</h3>
+<div class="mini">Build the weak electrolyte as a linear combination of three <b>strong</b> electrolytes whose Λ°<sub>m</sub> are tabulated.</div>
+<table class="ktable">
+<tr><th>Target</th><th>Recipe</th></tr>
+<tr><td class="l">CH₃COOH</td><td class="l">CH₃COONa + HCl − NaCl</td></tr>
+<tr><td class="l">NH₄OH</td><td class="l">NH₄Cl + NaOH − NaCl</td></tr>
+<tr><td class="l">HCOOH</td><td class="l">HCOONa + HCl − NaCl</td></tr>
+<tr><td class="l">H₂O (for K<sub>w</sub>)</td><td class="l">HCl + NaOH − NaCl</td></tr>
+</table>
+<div class="trap"><b>Trap:</b> always subtract the "shared counter-ions" salt (usually NaCl). Students often add instead of subtract.</div>
+</div>
+
+</div>
+
+<h2>4. α and K<sub>a</sub> from conductance</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Degree of dissociation</h3>
+<div class="formula">α = Λ<sub>m</sub> / Λ°<sub>m</sub> <span class="note">(weak electrolyte only)</span></div>
+<div class="mini">At concentration C, measured Λ<sub>m</sub> / limiting Λ°<sub>m</sub> gives the fraction that dissociated.</div>
+<div class="trap"><b>Trap:</b> this <i>only</i> works for weak electrolytes. Strong electrolytes have α ≈ 1 at all dilutions, so the Λ<sub>m</sub>/Λ°<sub>m</sub> ratio loses physical meaning as "α".</div>
+</div>
+
+<div class="card">
+<h3>Ostwald's dilution law (K<sub>a</sub>)</h3>
+<div class="formula">K<sub>a</sub> = Cα² / (1 − α) ≈ Cα² <span class="note">(α ≪ 1)</span></div>
+<div class="formula">K<sub>a</sub> = C · (Λ<sub>m</sub>/Λ°<sub>m</sub>)² / (1 − Λ<sub>m</sub>/Λ°<sub>m</sub>)</div>
+<div class="eg"><b>Chain to remember:</b> Λ<sub>m</sub> (measured) → α = Λ<sub>m</sub>/Λ°<sub>m</sub> → K<sub>a</sub> = Cα²/(1−α).</div>
+<div class="recall">For very weak acids (CH₃COOH, HCN) use the approximation K<sub>a</sub> ≈ Cα² → α = √(K<sub>a</sub>/C).</div>
+</div>
+
+</div>
+
+<h2>5. Fully worked numerical — the one template that covers 80% of asks</h2>
+<div class="card">
+<h3>Example: α and K<sub>a</sub> of 0.1 M acetic acid</h3>
+<div class="mini"><b>Given:</b> κ(0.1 M CH₃COOH) = 5.0 × 10⁻⁴ S cm⁻¹; λ°(H⁺) = 349.6, λ°(CH₃COO⁻) = 40.9 S cm² mol⁻¹.</div>
+<table class="ktable" style="margin-top:8px">
+<tr><th>Step</th><th>Calculation</th><th>Result</th></tr>
+<tr><td class="l">1. Λ<sub>m</sub> at this C</td><td class="l">Λ<sub>m</sub> = κ × 1000 / C = 5.0×10⁻⁴ × 1000 / 0.1</td><td>5.0 S cm² mol⁻¹</td></tr>
+<tr><td class="l">2. Λ°<sub>m</sub> (Kohlrausch)</td><td class="l">349.6 + 40.9</td><td>390.5 S cm² mol⁻¹</td></tr>
+<tr><td class="l">3. α</td><td class="l">Λ<sub>m</sub> / Λ°<sub>m</sub> = 5.0 / 390.5</td><td>0.0128 (≈1.28%)</td></tr>
+<tr><td class="l">4. K<sub>a</sub></td><td class="l">Cα²/(1−α) ≈ 0.1 × (0.0128)²</td><td>1.64 × 10⁻⁵</td></tr>
+</table>
+<div class="recall">KCET-style stems give you any three of {κ, C, λ° values, α, K<sub>a</sub>} and ask the fourth. Always anchor with step 1 (get Λ<sub>m</sub>).</div>
+</div>
+
+<h2>6. Traps that cost marks</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Top 6 exam traps</h3>
+<ol style="padding-left:18px;margin:6px 0;font-size:12.5px;line-height:1.5">
+<li><b>Unit mismatch:</b> κ given in S m⁻¹ but C in mol/L → forgets 10⁻² factor.</li>
+<li><b>×1000 factor:</b> omitting it is the single most common mistake. Λ<sub>m</sub> = κ × 1000 / C (not κ/C).</li>
+<li><b>Kohlrausch sign:</b> for CH₃COOH, you <b>subtract</b> NaCl (not add). Net-ions trick: write each as ions and cancel spectators.</li>
+<li><b>α for strong electrolytes:</b> ratio Λ<sub>m</sub>/Λ°<sub>m</sub> ≠ α for strong; it reflects inter-ionic effects, not dissociation.</li>
+<li><b>Stoichiometry in Kohlrausch:</b> for CaCl₂, Λ° = λ°(Ca²⁺) + <b>2</b>·λ°(Cl⁻). Forgetting the 2 is a classic.</li>
+<li><b>On dilution:</b> κ ↓ and Λ<sub>m</sub> ↑ — direction is opposite. Remember "κ per volume, Λ per mole".</li>
+</ol>
+</div>
+
+<div class="card">
+<h3>Rapid-fire cheat tags</h3>
+<table class="ktable">
+<tr><th>Ask</th><th>Answer key</th></tr>
+<tr><td class="l">Highest λ° ion</td><td class="l"><b>H⁺</b> (349.6) then <b>OH⁻</b> (199)</td></tr>
+<tr><td class="l">Why H⁺/OH⁻ so high?</td><td class="l">Grotthuss (proton-hop) mechanism</td></tr>
+<tr><td class="l">Unit of G* (cell const.)</td><td class="l">cm⁻¹ (or m⁻¹)</td></tr>
+<tr><td class="l">Electrolysis of molten NaCl gives</td><td class="l">Na at cathode, Cl₂ at anode</td></tr>
+<tr><td class="l">κ of metal on heating</td><td class="l">decreases (metallic)</td></tr>
+<tr><td class="l">κ of electrolyte on heating</td><td class="l">increases (ionic mobility ↑)</td></tr>
+</table>
+</div>
+
+</div>
+
+<h2>7. Quick self-check (1 min each)</h2>
+<div class="card">
+<ol style="padding-left:18px;margin:6px 0;font-size:12.5px;line-height:1.7">
+<li>κ of 0.02 M KCl is 2.768×10⁻³ S cm⁻¹. Find Λ<sub>m</sub>. &nbsp;<span class="tag">138.4 S cm² mol⁻¹</span></li>
+<li>Cell constant of a cell filled with 0.1 M KCl (κ=1.29×10⁻² S cm⁻¹) reads R=100 Ω. Find G*. &nbsp;<span class="tag">1.29 cm⁻¹</span></li>
+<li>Λ°(NaCl)=126.4, Λ°(HCl)=425.9, Λ°(CH₃COONa)=91.0. Find Λ°(CH₃COOH). &nbsp;<span class="tag">390.5 S cm² mol⁻¹</span></li>
+<li>For 0.001 M HA, Λ<sub>m</sub>=48.15, Λ°<sub>m</sub>=390.5. Find α and K<sub>a</sub>. &nbsp;<span class="tag">α=0.1233, K<sub>a</sub>=1.73×10⁻⁵</span></li>
+<li>Which has higher κ: 1 M NaCl or 0.1 M NaCl? Which has higher Λ<sub>m</sub>? &nbsp;<span class="tag">κ: 1 M · Λ<sub>m</sub>: 0.1 M</span></li>
+</ol>
+</div>
+
+<footer>
+  <span>Drill-down for <a href="day1-visual-revision.html">Day 1 visual revision → Conductance relations</a>. Practice: <a href="../practice/02-electrochem-q.html">Set 02 (Electrochemistry)</a>.</span>
+  <span><a href="../chemistry-strategy.html">Strategy one-pager</a></span>
+</footer>
+
+</div>
+</body>
+</html>
