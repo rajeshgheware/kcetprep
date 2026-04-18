@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 4 Visual Revision — Alcohols/Phenols, Haloalkanes, Equilibrium</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --rule:#d8d8d8; --soft:#f5f5f2;
+    --accent:#2563a8; --core:#0b6b3a; --warn:#b8700a; --hl:#fff6d6;
+    --alc:#2f5fa8; --hal:#5a6b1a; --eq:#9a4a30;
+    --bg-alc:#e2ecf8; --bg-hal:#eef0d8; --bg-eq:#f8e5db;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);background:#fff;font:14px/1.45 "Inter","Segoe UI",system-ui,sans-serif}
+  .page{max-width:1180px;margin:0 auto;padding:22px 28px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:9px;margin-bottom:16px}
+  h1{margin:0;font-size:22px}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:3px}
+  .sub a{color:var(--accent);text-decoration:none}
+  .chap{margin-top:22px;page-break-inside:avoid}
+  .chap-h{display:flex;align-items:center;gap:10px;padding:8px 14px;border-radius:6px;margin-bottom:12px;font-size:17px;font-weight:700;letter-spacing:.3px}
+  .chap-alc{background:var(--bg-alc);color:var(--alc)}
+  .chap-hal{background:var(--bg-hal);color:var(--hal)}
+  .chap-eq{background:var(--bg-eq);color:var(--eq)}
+  .chap-h .badge{font-size:11px;padding:2px 8px;border-radius:10px;background:#fff;margin-left:auto;color:var(--muted);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .card{border:1px solid var(--rule);border-radius:6px;padding:10px 12px;background:#fff}
+  .card h3{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink)}
+  .card.alc h3{color:var(--alc)}
+  .card.hal h3{color:var(--hal)}
+  .card.eq h3{color:var(--eq)}
+  .formula{background:#fafafa;border-left:3px solid var(--accent);padding:6px 10px;border-radius:3px;font-size:13px;margin:4px 0;font-family:"Georgia",serif}
+  .formula.alc{border-color:var(--alc)}
+  .formula.hal{border-color:var(--hal)}
+  .formula.eq{border-color:var(--eq)}
+  .note{font-size:11.5px;color:var(--muted);margin:4px 0 0}
+  .recall{background:var(--hl);padding:5px 9px;border-radius:3px;font-size:11.5px;color:#6b4a00;margin-top:6px;border-left:3px solid #c9a227}
+  svg{display:block;margin:2px auto;max-width:100%;height:auto}
+  .ktable{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+  .ktable th,.ktable td{padding:4px 6px;border:1px solid var(--rule);text-align:center}
+  .ktable th{background:var(--soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
+  .ktable td.l{text-align:left}
+  .mini{font-size:11.5px;margin:2px 0}
+  footer{margin-top:22px;padding-top:10px;border-top:1px solid var(--rule);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media print{
+    .page{max-width:none;padding:10px}
+    .card{padding:8px 10px}
+    .chap{page-break-before:always}
+    .chap:first-of-type{page-break-before:auto}
+    body{font-size:11.5px}
+    h1{font-size:18px}
+    svg{max-height:150px}
+  }
+  @media (max-width:820px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>Day 4 — Visual Revision</h1>
+  <div class="sub">Alcohols / Phenols / Ethers &middot; Haloalkanes / Haloarenes &middot; Equilibrium &middot; <a href="../practice/07-alcohols-q.html">Set 07</a> &middot; <a href="../practice/09-halo-q.html">Set 09</a> &middot; <a href="../practice/04-equilibrium-q.html">Set 04</a> &middot; <a href="day3-visual-revision.html">← Day 3</a> &middot; <a href="../chemistry-strategy.html">strategy</a></div>
+</header>
+
+<!-- ============================= ALCOHOLS / PHENOLS / ETHERS ============================= -->
+<section class="chap">
+<div class="chap-h chap-alc">ALCOHOLS, PHENOLS &amp; ETHERS<span class="badge">24 Q / 8 yrs &middot; 3.0 per paper</span></div>
+
+<div class="grid">
+
+<div class="card alc">
+<h3>Preparation — four reliable routes</h3>
+<svg viewBox="0 0 280 120" role="img" aria-label="alcohol prep">
+  <rect x="110" y="48" width="60" height="25" fill="#e2ecf8" stroke="#2f5fa8" rx="4"/>
+  <text x="140" y="64" font-size="11" text-anchor="middle" fill="#2f5fa8" font-weight="600">R–OH</text>
+  <g font-size="9" fill="#555">
+    <text x="20" y="18">Alkene + H₂O/H⁺</text>
+    <text x="20" y="28" fill="#888">Markovnikov (acid hydration)</text>
+    <line x1="70" y1="26" x2="110" y2="52" stroke="#555" stroke-width="1" marker-end="url(#ar4)"/>
+    <text x="210" y="18">Alkene + BH₃ / H₂O₂</text>
+    <text x="210" y="28" fill="#888">anti-Markovnikov</text>
+    <line x1="220" y1="26" x2="170" y2="52" stroke="#555" stroke-width="1" marker-end="url(#ar4)"/>
+    <text x="20" y="97">R–CHO, R₂CO</text>
+    <text x="20" y="108" fill="#888">NaBH₄ / LiAlH₄</text>
+    <line x1="70" y1="103" x2="110" y2="72" stroke="#555" stroke-width="1" marker-end="url(#ar4)"/>
+    <text x="210" y="97">RMgX + R'CHO / R₂CO</text>
+    <text x="210" y="108" fill="#888">Grignard (builds C–C)</text>
+    <line x1="220" y1="100" x2="170" y2="72" stroke="#555" stroke-width="1" marker-end="url(#ar4)"/>
+  </g>
+  <defs><marker id="ar4" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#555"/></marker></defs>
+</svg>
+<div class="mini"><b>Grignard patterns:</b> HCHO → 1° alcohol; R'CHO → 2° alcohol; R'₂CO → 3° alcohol; CO₂ → carboxylic acid (1 C more).</div>
+<div class="mini"><b>Phenol prep:</b> (a) Cumene process — cumene + O₂ → cumene hydroperoxide → phenol + acetone (industrial); (b) Dow — chlorobenzene + NaOH @ 350 °C, 150 atm; (c) from diazonium — ArN₂⁺ + H₂O, Δ.</div>
+<div class="mini"><b>Ether prep:</b> Williamson — R–ONa + R'–X → R–O–R' (SN2, use 1° R'X).</div>
+<div class="recall"><b>LiAlH₄</b> reduces everything (ald/ket/COOH/ester/amide/nitrile). <b>NaBH₄</b> only ald/ket. Reagent choice matters in KCET questions.</div>
+</div>
+
+<div class="card alc">
+<h3>Lucas test — distinguishing 1°, 2°, 3° alcohols</h3>
+<svg viewBox="0 0 280 100" role="img">
+  <rect x="10" y="14" width="80" height="76" fill="#e8f4e8" stroke="#0b6b3a" rx="4"/>
+  <text x="50" y="30" font-size="10" text-anchor="middle" font-weight="600" fill="#0b6b3a">3° R–OH</text>
+  <text x="50" y="46" font-size="9" text-anchor="middle">cloudy</text>
+  <text x="50" y="58" font-size="9" text-anchor="middle" fill="#555">immediately</text>
+  <text x="50" y="76" font-size="8" text-anchor="middle" fill="#888">SN1 — stable 3° cation</text>
+  <rect x="100" y="14" width="80" height="76" fill="#fff6d6" stroke="#c9a227" rx="4"/>
+  <text x="140" y="30" font-size="10" text-anchor="middle" font-weight="600" fill="#6b4a00">2° R–OH</text>
+  <text x="140" y="46" font-size="9" text-anchor="middle">cloudy</text>
+  <text x="140" y="58" font-size="9" text-anchor="middle" fill="#555">in ~5 min</text>
+  <text x="140" y="76" font-size="8" text-anchor="middle" fill="#888">SN1/SN2 mix</text>
+  <rect x="190" y="14" width="80" height="76" fill="#fbeeec" stroke="#b3261e" rx="4"/>
+  <text x="230" y="30" font-size="10" text-anchor="middle" font-weight="600" fill="#b3261e">1° R–OH</text>
+  <text x="230" y="46" font-size="9" text-anchor="middle">no rxn</text>
+  <text x="230" y="58" font-size="9" text-anchor="middle" fill="#555">at RT</text>
+  <text x="230" y="76" font-size="8" text-anchor="middle" fill="#888">needs Δ (SN2)</text>
+</svg>
+<div class="formula alc">Reagent: conc. HCl + anhydrous ZnCl₂ (Lucas reagent) at room temperature</div>
+<div class="mini"><b>Why it works:</b> the reaction produces R–Cl which is insoluble in the aqueous reagent → turbidity. Faster = more stable carbocation intermediate.</div>
+<div class="mini"><b>Reactivity with HX overall:</b> 3° &gt; 2° &gt; 1° &gt; CH₃OH. And HI &gt; HBr &gt; HCl (bond strength).</div>
+<div class="recall">Tertiary alcohols + HCl need no ZnCl₂ (they go by SN1 anyway). The ZnCl₂ "activates" 1°/2° for SN1-like kick.</div>
+</div>
+
+<div class="card alc">
+<h3>Oxidation behaviour — 1° vs 2° vs 3°</h3>
+<svg viewBox="0 0 280 110" role="img">
+  <g font-family="Georgia,serif">
+    <text x="15" y="22" font-size="11" fill="#2f5fa8" font-weight="600">1° R–CH₂–OH</text>
+    <text x="150" y="22" font-size="11">—[PCC]→ R–CHO</text>
+    <text x="150" y="40" font-size="11">—[KMnO₄ / K₂Cr₂O₇]→ R–COOH</text>
+    <text x="15" y="62" font-size="11" fill="#2f5fa8" font-weight="600">2° R–CH(OH)–R'</text>
+    <text x="150" y="62" font-size="11">—[mild ox]→ R–CO–R'</text>
+    <text x="15" y="92" font-size="11" fill="#2f5fa8" font-weight="600">3° R₃C–OH</text>
+    <text x="150" y="92" font-size="11">—[no ox]— (no α-H)</text>
+  </g>
+</svg>
+<div class="mini"><b>PCC (pyridinium chlorochromate)</b> is selective — stops 1° alcohol at aldehyde. Strong oxidants (KMnO₄, K₂Cr₂O₇) push to COOH.</div>
+<div class="mini"><b>Dehydration:</b> R–OH + conc. H₂SO₄ / Δ → alkene (Zaitsev). Ease: 3° &gt; 2° &gt; 1°.</div>
+<div class="mini"><b>Oppenauer oxidation:</b> 2° alcohol + Al-tert-butoxide → ketone (selective, no over-oxidation).</div>
+<div class="recall">3° alcohols <b>resist oxidation</b> because there is no α-H on the carbinol C. This is a classic distinguishing test.</div>
+</div>
+
+<div class="card alc">
+<h3>Phenol — acidity &amp; electrophilic substitution</h3>
+<svg viewBox="0 0 280 95" role="img">
+  <rect x="10" y="14" width="260" height="18" fill="url(#pgrad)" stroke="#2f5fa8" rx="2"/>
+  <defs><linearGradient id="pgrad" x1="0" x2="1"><stop offset="0" stop-color="#fbe8a6"/><stop offset="1" stop-color="#b3261e"/></linearGradient></defs>
+  <text x="140" y="26" font-size="9" text-anchor="middle" fill="#6b4a00">R–OH (pKa 16) &lt; H₂O (15.7) &lt; PhOH (10) &lt; RCOOH (4–5) &lt; HCl</text>
+  <text x="140" y="43" font-size="9.5" text-anchor="middle" fill="#555">phenol &gt; alcohol: PhO⁻ is resonance-stabilised</text>
+  <g transform="translate(25,52)">
+    <circle cx="40" cy="18" r="18" fill="#fff" stroke="#2f5fa8"/>
+    <text x="40" y="22" font-size="9" text-anchor="middle">OH</text>
+    <text x="10" y="22" font-size="8">o</text>
+    <text x="70" y="22" font-size="8">o</text>
+    <text x="40" y="42" font-size="8" text-anchor="middle">p</text>
+    <text x="100" y="10" font-size="9" fill="#2f5fa8" font-weight="600">o,p-directing</text>
+    <text x="100" y="22" font-size="8.5" fill="#555">activator (lone pair delocalises)</text>
+    <text x="100" y="34" font-size="8.5" fill="#555">Br₂/H₂O → 2,4,6-tribromo (ppt)</text>
+  </g>
+</svg>
+<div class="formula alc">Reimer-Tiemann: PhOH + CHCl₃ + NaOH → o-HO–C₆H₄–CHO (salicylaldehyde)</div>
+<div class="formula alc">Kolbe: PhO⁻Na⁺ + CO₂ (Δ, P) → o-HO–C₆H₄–COOH (salicylic → aspirin)</div>
+<div class="mini"><b>Acidity boosters (EWG on phenol):</b> p-nitrophenol &gt; m-nitrophenol &gt; phenol &gt; p-cresol. Picric acid (2,4,6-trinitrophenol) is very strong.</div>
+<div class="mini"><b>Bromination:</b> in H₂O (polar) → 2,4,6-tribromophenol (white ppt, fast). In CS₂ (non-polar) → mostly p-bromophenol (monobromo).</div>
+<div class="recall"><b>Phenol:</b> FeCl₃ test → violet colour (enol-like complex). Distinguishes phenols from alcohols.</div>
+</div>
+
+<div class="card alc">
+<h3>Ethers — cleavage with HI</h3>
+<svg viewBox="0 0 280 95" role="img">
+  <rect x="10" y="14" width="125" height="70" fill="#e2ecf8" stroke="#2f5fa8" rx="4"/>
+  <text x="72" y="32" font-size="10" text-anchor="middle" fill="#2f5fa8" font-weight="600">R–O–R' (dialkyl)</text>
+  <text x="72" y="50" font-size="9.5" text-anchor="middle">+ HI / Δ →</text>
+  <text x="72" y="65" font-size="9.5" text-anchor="middle">R–I + R'–OH</text>
+  <text x="72" y="78" font-size="8.5" text-anchor="middle" fill="#555">I⁻ attacks smaller/less hindered R</text>
+  <rect x="145" y="14" width="125" height="70" fill="#fff6d6" stroke="#c9a227" rx="4"/>
+  <text x="207" y="32" font-size="10" text-anchor="middle" fill="#6b4a00" font-weight="600">Ar–O–R (aryl alkyl)</text>
+  <text x="207" y="50" font-size="9.5" text-anchor="middle">+ HI / Δ →</text>
+  <text x="207" y="65" font-size="9.5" text-anchor="middle">Ar–OH + R–I</text>
+  <text x="207" y="78" font-size="8.5" text-anchor="middle" fill="#555">Aryl C–O cannot break (SN on sp² C)</text>
+</svg>
+<div class="mini"><b>Why different?</b> Aryl C–O bond has partial double-bond character (resonance) → very strong, unbreakable by SN. So cleavage happens at the alkyl C–O side.</div>
+<div class="mini"><b>Order of reactivity:</b> HI &gt; HBr &gt; HCl (I⁻ is best Nu).</div>
+<div class="mini"><b>Williamson limits:</b> SN2 on 1° halide only. 3° halide + alkoxide → elimination (alkene), not ether.</div>
+<div class="recall"><b>Anisole + HI →</b> phenol + methyl iodide. Not methanol + phenyl iodide — aryl C–O survives.</div>
+</div>
+
+</div>
+</section>
+
+<!-- ============================= HALOALKANES / HALOARENES ============================= -->
+<section class="chap">
+<div class="chap-h chap-hal">HALOALKANES &amp; HALOARENES<span class="badge">24 Q / 8 yrs &middot; 3.0 per paper</span></div>
+
+<div class="grid">
+
+<div class="card hal">
+<h3>Preparation — get your halide</h3>
+<table class="ktable">
+<tr><th>From</th><th>Reagent</th><th>Gives</th></tr>
+<tr><td>R–OH</td><td>HX (HI &gt; HBr &gt; HCl)</td><td>R–X</td></tr>
+<tr><td>R–OH</td><td>SOCl₂ (best for Cl)</td><td>R–Cl + SO₂ + HCl (clean)</td></tr>
+<tr><td>R–OH</td><td>PCl₃ / PCl₅ / PBr₃</td><td>R–Cl or R–Br</td></tr>
+<tr><td>Alkene + HX</td><td>Markovnikov</td><td>R–X (major)</td></tr>
+<tr><td>Alkene + HBr/peroxide</td><td>Kharasch</td><td>anti-Markovnikov R–Br only</td></tr>
+<tr><td>R–Cl + NaI (acetone)</td><td>Finkelstein</td><td>R–I (NaCl ppts out)</td></tr>
+<tr><td>R–Cl + AgF</td><td>Swarts</td><td>R–F</td></tr>
+<tr><td>ArH + X₂ / FeX₃</td><td>EAS</td><td>Ar–X</td></tr>
+</table>
+<div class="recall"><b>SOCl₂ is preferred</b> for R–OH → R–Cl because the byproducts (SO₂, HCl) are gases → pure product, no separation needed.</div>
+</div>
+
+<div class="card hal">
+<h3>SN1 vs SN2 — the big comparison</h3>
+<table class="ktable">
+<tr><th>Aspect</th><th>SN1</th><th>SN2</th></tr>
+<tr><td class="l">Rate ∝</td><td>[R–X]</td><td>[R–X][Nu]</td></tr>
+<tr><td class="l">Steps</td><td>2 (slow ionisation)</td><td>1 (concerted)</td></tr>
+<tr><td class="l">Substrate</td><td>3° &gt; 2° &gt; 1°</td><td>1° &gt; 2° &gt; 3°</td></tr>
+<tr><td class="l">Stereo</td><td>Racemisation</td><td>Inversion (Walden)</td></tr>
+<tr><td class="l">Solvent</td><td>Polar protic (H₂O, ROH)</td><td>Polar aprotic (acetone, DMSO)</td></tr>
+<tr><td class="l">Intermediate</td><td>Carbocation (R⁺)</td><td>Transition state (pentacoord.)</td></tr>
+<tr><td class="l">Nu effect</td><td>Weak — Nu not in rate</td><td>Strong Nu favoured</td></tr>
+</table>
+<div class="mini"><b>Allyl / benzyl halides:</b> fast by both SN1 and SN2 (resonance-stabilised carbocation AND less hindered).</div>
+<div class="mini"><b>Vinyl / aryl halides:</b> neither SN1 nor SN2 at normal conditions — C–X bond has partial double-bond character, sp² C, no back-side attack.</div>
+<div class="recall"><b>Rule of thumb:</b> 1° methyl halide + strong Nu in acetone → SN2. 3° halide + weak Nu in water → SN1. Work backwards from conditions.</div>
+</div>
+
+<div class="card hal">
+<h3>Elimination vs substitution — when does E win?</h3>
+<svg viewBox="0 0 280 100" role="img">
+  <rect x="10" y="14" width="125" height="76" fill="#eef0d8" stroke="#5a6b1a" rx="4"/>
+  <text x="72" y="30" font-size="10" text-anchor="middle" fill="#5a6b1a" font-weight="600">Substitution wins</text>
+  <text x="72" y="47" font-size="9" text-anchor="middle">• low T</text>
+  <text x="72" y="60" font-size="9" text-anchor="middle">• 1° halide</text>
+  <text x="72" y="73" font-size="9" text-anchor="middle">• weak / small base</text>
+  <text x="72" y="85" font-size="9" text-anchor="middle">• aqueous KOH</text>
+  <rect x="145" y="14" width="125" height="76" fill="#fbeeec" stroke="#b3261e" rx="4"/>
+  <text x="207" y="30" font-size="10" text-anchor="middle" fill="#b3261e" font-weight="600">Elimination wins</text>
+  <text x="207" y="47" font-size="9" text-anchor="middle">• high T</text>
+  <text x="207" y="60" font-size="9" text-anchor="middle">• 3° halide</text>
+  <text x="207" y="73" font-size="9" text-anchor="middle">• bulky strong base</text>
+  <text x="207" y="85" font-size="9" text-anchor="middle">• alcoholic KOH</text>
+</svg>
+<div class="mini"><b>Saytzeff:</b> more substituted alkene is major product (thermodynamic — more hyperconjugation).</div>
+<div class="mini"><b>Hofmann:</b> with <i>very bulky</i> base (t-BuO⁻, NH₂⁻) or quaternary ammonium → <i>less</i>-substituted alkene is major.</div>
+<div class="mini"><b>Aq. KOH vs alc. KOH:</b> aqueous does substitution (R–X → R–OH); alcoholic does elimination (R–X → alkene). Classic KCET question.</div>
+<div class="recall"><b>E1 vs E2:</b> E1 uses carbocation (parallel to SN1). E2 is one-step with anti-periplanar H and X.</div>
+</div>
+
+<div class="card hal">
+<h3>Haloarenes — why they don't do ordinary SN</h3>
+<svg viewBox="0 0 280 100" role="img">
+  <circle cx="90" cy="55" r="30" fill="none" stroke="#5a6b1a" stroke-width="1.5"/>
+  <circle cx="90" cy="55" r="22" fill="none" stroke="#5a6b1a" stroke-width="1" stroke-dasharray="2 2"/>
+  <text x="90" y="58" font-size="9" text-anchor="middle" fill="#555">π cloud</text>
+  <line x1="120" y1="55" x2="150" y2="55" stroke="#5a6b1a" stroke-width="2"/>
+  <line x1="122" y1="51" x2="148" y2="51" stroke="#5a6b1a" stroke-width="1"/>
+  <text x="160" y="58" font-size="13" fill="#5a6b1a" font-weight="600">Cl</text>
+  <text x="135" y="45" font-size="8.5" fill="#888">partial double-bond</text>
+  <text x="135" y="75" font-size="8.5" fill="#888">sp² C–X bond</text>
+  <text x="220" y="30" font-size="10" fill="#b3261e" font-weight="600">stable</text>
+  <text x="220" y="45" font-size="9" fill="#555">no SN1</text>
+  <text x="220" y="58" font-size="9" fill="#555">no SN2</text>
+  <text x="220" y="71" font-size="9" fill="#555">no E1/E2</text>
+</svg>
+<div class="mini"><b>Three reasons Ar–X resists nucleophile:</b> (1) C–X partial double-bond (resonance) → strong bond; (2) sp² C is flat, no back-side attack; (3) aromaticity is lost in SN1 cation.</div>
+<div class="mini"><b>When Ar–X does react:</b> strong EWG at <i>ortho/para</i> stabilises the Meisenheimer intermediate. e.g., 2,4-DNP, 2,4,6-TNB react with OH⁻ to form picric acid.</div>
+<div class="mini"><b>Dow process:</b> chlorobenzene + 15% NaOH / 350 °C / 150 atm → phenol. Only with extreme conditions.</div>
+<div class="recall"><b>Wurtz:</b> 2 R–X + 2 Na → R–R (alkane, even C). <b>Wurtz-Fittig:</b> ArX + RX + Na → Ar–R. <b>Fittig:</b> 2 ArX + 2 Na → Ar–Ar.</div>
+</div>
+
+<div class="card hal">
+<h3>Poly-halogen compounds you'll see named</h3>
+<table class="ktable">
+<tr><th>Compound</th><th>Formula</th><th>Note</th></tr>
+<tr><td class="l">Chloroform</td><td>CHCl₃</td><td>Anaesthetic (obsolete). Stored in dark to prevent COCl₂ (phosgene) formation.</td></tr>
+<tr><td class="l">Iodoform</td><td>CHI₃</td><td>Yellow solid, antiseptic. Positive in iodoform test.</td></tr>
+<tr><td class="l">DDT</td><td>(ClC₆H₄)₂CHCCl₃</td><td>Insecticide. Banned — non-biodegradable.</td></tr>
+<tr><td class="l">BHC / Lindane</td><td>C₆H₆Cl₆</td><td>Insecticide (γ-isomer).</td></tr>
+<tr><td class="l">Freon-12</td><td>CCl₂F₂</td><td>Refrigerant. Ozone-depleting, being phased out.</td></tr>
+<tr><td class="l">Carbon tetrachloride</td><td>CCl₄</td><td>Fire extinguisher "Pyrene". Banned indoors (toxic).</td></tr>
+<tr><td class="l">Teflon</td><td>(CF₂)ₙ</td><td>Polymer of tetrafluoroethene. Non-stick.</td></tr>
+</table>
+<div class="recall"><b>Chloroform + air/light:</b> 2 CHCl₃ + O₂ → 2 COCl₂ + 2 HCl. Phosgene = poisonous. That's why CHCl₃ bottles are dark and contain ~1% ethanol (scavenger).</div>
+</div>
+
+</div>
+</section>
+
+<!-- ============================= EQUILIBRIUM ============================= -->
+<section class="chap">
+<div class="chap-h chap-eq">EQUILIBRIUM<span class="badge">14 Q / 8 yrs &middot; 1.75 per paper (Support 5)</span></div>
+
+<div class="grid">
+
+<div class="card eq">
+<h3>Kc, Kp, Kx — the three equilibrium constants</h3>
+<div class="formula eq">aA + bB ⇌ cC + dD</div>
+<div class="formula eq">K_c = [C]^c[D]^d / [A]^a[B]^b &nbsp; &nbsp; K_p = p_C^c p_D^d / p_A^a p_B^b</div>
+<div class="formula eq">K_p = K_c · (RT)^Δn  &nbsp; where Δn = (c+d) − (a+b)</div>
+<div class="mini"><b>Units:</b> K_c has units (mol/L)^Δn. K_p has units (atm)^Δn. <b>Dimensionless</b> only when Δn = 0.</div>
+<div class="mini"><b>When Δn = 0:</b> K_p = K_c (e.g., H₂ + I₂ ⇌ 2HI).</div>
+<div class="mini"><b>K_x</b> (mole-fraction form): K_p = K_x · P^Δn — pressure changes shift composition if Δn ≠ 0.</div>
+<div class="recall"><b>Pure solids and pure liquids</b> do not appear in K expressions (activity = 1). Water in aqueous equilibria is also omitted.</div>
+</div>
+
+<div class="card eq">
+<h3>Le Chatelier — predict the shift</h3>
+<svg viewBox="0 0 280 90" role="img">
+  <rect x="10" y="14" width="80" height="66" fill="#f8e5db" stroke="#9a4a30" rx="4"/>
+  <text x="50" y="30" font-size="10" text-anchor="middle" font-weight="600" fill="#9a4a30">[Reactant] ↑</text>
+  <text x="50" y="46" font-size="9" text-anchor="middle">→ shift right</text>
+  <text x="50" y="62" font-size="8.5" text-anchor="middle" fill="#555">consume it</text>
+  <rect x="100" y="14" width="80" height="66" fill="#f8e5db" stroke="#9a4a30" rx="4"/>
+  <text x="140" y="30" font-size="10" text-anchor="middle" font-weight="600" fill="#9a4a30">P ↑ (compress)</text>
+  <text x="140" y="46" font-size="9" text-anchor="middle">→ shift to fewer moles</text>
+  <text x="140" y="62" font-size="8.5" text-anchor="middle" fill="#555">of gas</text>
+  <rect x="190" y="14" width="80" height="66" fill="#f8e5db" stroke="#9a4a30" rx="4"/>
+  <text x="230" y="30" font-size="10" text-anchor="middle" font-weight="600" fill="#9a4a30">T ↑ (exo)</text>
+  <text x="230" y="46" font-size="9" text-anchor="middle">→ shift left</text>
+  <text x="230" y="62" font-size="8.5" text-anchor="middle" fill="#555">(K decreases)</text>
+</svg>
+<div class="mini"><b>Catalyst:</b> does NOT shift equilibrium — only speeds up both forward and reverse equally (reaches equilibrium faster).</div>
+<div class="mini"><b>Inert gas at constant V:</b> no effect (partial pressures of reacting species don't change).</div>
+<div class="mini"><b>Inert gas at constant P:</b> total V increases → effectively reduces partial pressures → shift to side with more moles of gas.</div>
+<div class="recall"><b>Temperature is the only factor that changes K itself.</b> Concentration/pressure changes shift position but K stays the same.</div>
+</div>
+
+<div class="card eq">
+<h3>Ionic equilibrium — pH &amp; Kw</h3>
+<div class="formula eq">K_w = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴ at 25 °C</div>
+<div class="formula eq">pH = −log[H⁺] &nbsp; pOH = −log[OH⁻] &nbsp; pH + pOH = 14</div>
+<div class="mini"><b>Strong acid/base:</b> fully dissociate. [H⁺] = C (acid conc). pH = −log C.</div>
+<div class="mini"><b>Weak acid:</b> HA ⇌ H⁺ + A⁻. K_a = Cα² (when α small). [H⁺] = √(K_a · C). pH = ½ (pK_a − log C).</div>
+<div class="mini"><b>Weak base:</b> [OH⁻] = √(K_b · C). pOH = ½ (pK_b − log C).</div>
+<div class="mini"><b>K_w relation:</b> K_a × K_b = K_w for conjugate pair. pK_a + pK_b = 14.</div>
+<div class="recall"><b>Kw varies with T:</b> increases with temperature (water dissociation is endothermic). At 50 °C, Kw ≈ 5×10⁻¹⁴; pH of pure water &lt; 7 but still neutral.</div>
+</div>
+
+<div class="card eq">
+<h3>Buffers — Henderson-Hasselbalch</h3>
+<svg viewBox="0 0 280 75" role="img">
+  <rect x="10" y="12" width="260" height="24" fill="#f8e5db" stroke="#9a4a30" rx="3"/>
+  <text x="140" y="28" font-size="12" text-anchor="middle" font-family="Georgia,serif" fill="#9a4a30">pH = pK_a + log ([A⁻] / [HA])</text>
+  <text x="140" y="48" font-size="9" text-anchor="middle" fill="#555">acidic buffer: weak acid + conjugate base</text>
+  <text x="140" y="62" font-size="9" text-anchor="middle" fill="#555">basic buffer: weak base + conjugate acid</text>
+</svg>
+<div class="mini"><b>Examples:</b> CH₃COOH + CH₃COONa (acidic, pH ≈ pKa = 4.76 when [A⁻]=[HA]); NH₃ + NH₄Cl (basic, pOH ≈ pKb).</div>
+<div class="mini"><b>Buffer capacity</b> is maximum when [A⁻] = [HA] → pH = pKa. Effective buffer range: pKa ± 1.</div>
+<div class="mini"><b>Adding small acid/base:</b> the conjugate pair absorbs it. H⁺ + A⁻ → HA; OH⁻ + HA → A⁻ + H₂O. pH barely changes.</div>
+<div class="recall">Blood is buffered primarily by H₂CO₃ / HCO₃⁻ (pKa ~6.1), kept at pH 7.4. Deviations cause acidosis/alkalosis.</div>
+</div>
+
+<div class="card eq">
+<h3>Solubility product &amp; hydrolysis</h3>
+<div class="formula eq">For A_xB_y(s) ⇌ xA⁺ + yB⁻ &nbsp; K_sp = [A⁺]ˣ [B⁻]ʸ</div>
+<div class="mini"><b>Ionic product (Q):</b> Q &lt; K_sp → unsaturated (more can dissolve); Q = K_sp → saturated; Q &gt; K_sp → precipitates.</div>
+<div class="mini"><b>Common ion effect:</b> adding a shared ion suppresses dissociation. AgCl in NaCl: [Ag⁺] = K_sp / [Cl⁻] → lower solubility.</div>
+<div class="mini"><b>Salt hydrolysis:</b>
+<br>• Strong acid + strong base → neutral (NaCl, KNO₃).
+<br>• Strong acid + weak base → acidic (NH₄Cl, CuSO₄).
+<br>• Weak acid + strong base → basic (CH₃COONa, Na₂CO₃).
+<br>• Weak acid + weak base → depends on Ka vs Kb.</div>
+<div class="recall"><b>Degree of hydrolysis</b> h = √(K_w / (K_a · C)) for salt of weak acid + strong base. pH = 7 + ½(pKa + log C).</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+  <span>Quick revision for Day 4 — skim, recall, then solve <a href="../practice/07-alcohols-q.html">Set 07 (Alcohols)</a> &middot; <a href="../practice/09-halo-q.html">Set 09 (Haloalkanes)</a> &middot; <a href="../practice/04-equilibrium-q.html">Set 04 (Equilibrium)</a>.</span>
+  <span><a href="../chemistry-strategy.html">Strategy</a> &middot; <a href="day3-visual-revision.html">Day 3</a></span>
+</footer>
+
+</div>
+</body>
+</html>
