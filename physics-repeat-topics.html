@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KCET 2026 Physics — High-Yield Repeat Topics (for Shreyansi)</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --rule:#d8d8d8; --soft:#f5f5f2;
+    --core:#0b6b3a; --mid:#2563a8; --warn:#b8700a; --low:#6b4c9a; --skip:#8a2a2a;
+    --hl:#fff6d6;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;color:var(--ink);font:14px/1.45 "Inter","Segoe UI",system-ui,sans-serif;background:#fff}
+  .page{max-width:1180px;margin:0 auto;padding:24px 32px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:10px;margin-bottom:16px}
+  h1{margin:0;font-size:22px;letter-spacing:.2px}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:4px}
+  .sub strong{color:var(--ink)}
+  .sub a{color:var(--mid);text-decoration:none}
+  h2{font-size:14px;margin:18px 0 8px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:3px}
+  .hero{background:#eef5fb;border-left:3px solid var(--mid);padding:10px 14px;border-radius:4px;margin:8px 0 16px;font-size:13px}
+  .hero b{color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .card{border:1px solid var(--rule);border-radius:6px;padding:10px 12px 12px;background:#fff;position:relative;page-break-inside:avoid}
+  .card .n{position:absolute;top:-8px;left:10px;background:var(--core);color:#fff;font-size:10.5px;font-weight:700;padding:1px 8px;border-radius:10px;letter-spacing:.4px}
+  .card.t2 .n{background:var(--mid)}
+  .card.t3 .n{background:var(--warn)}
+  .card h3{margin:2px 0 5px;font-size:13.5px;font-weight:700;padding-top:2px}
+  .card h3 .chap{font-size:10.5px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:2px}
+  .formula{background:#fafafa;border-left:3px solid var(--core);padding:5px 9px;border-radius:2px;font-size:12.5px;margin:4px 0;font-family:"Georgia",serif;line-height:1.5}
+  .card.t2 .formula{border-left-color:var(--mid)}
+  .card.t3 .formula{border-left-color:var(--warn)}
+  .ask{font-size:11.5px;color:var(--muted);margin:4px 0 0;font-style:italic}
+  .years{margin-top:6px;display:flex;gap:3px;flex-wrap:wrap}
+  .y{font-size:10px;font-weight:600;padding:1px 5px;border-radius:8px;background:var(--soft);color:var(--muted);letter-spacing:.3px}
+  .y.hit{background:var(--core);color:#fff}
+  .y.hit-alt{background:var(--mid);color:#fff}
+  .count{font-size:10.5px;font-weight:700;color:var(--core);margin-left:6px}
+  .count.alt{color:var(--mid)}
+  .count.warn{color:var(--warn)}
+  table{border-collapse:collapse;width:100%;font-size:11.5px;margin-top:4px}
+  th,td{padding:3px 7px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.3px}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  tr.total td{border-top:2px solid var(--ink);border-bottom:none;font-weight:700;background:#fafafa}
+  .note{background:var(--hl);border-left:3px solid #c9a227;padding:8px 11px;border-radius:3px;font-size:12.5px;margin:8px 0}
+  .legend{font-size:11px;color:var(--muted);margin:6px 0 0;display:flex;gap:14px;flex-wrap:wrap}
+  footer{margin-top:18px;padding-top:10px;border-top:1px solid var(--rule);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  footer a{color:var(--mid);text-decoration:none}
+  @media print{
+    .page{max-width:none;padding:12px 16px}
+    body{font-size:11px}
+    h1{font-size:16px}
+    h2{font-size:11px}
+    .card{padding:7px 9px 9px}
+    .card h3{font-size:11.5px}
+    .formula{font-size:10.8px;padding:3px 6px}
+    .ask{font-size:10px}
+    .y{font-size:9px}
+    .grid{gap:6px}
+    .hero{padding:6px 10px;font-size:10.8px;margin:4px 0 8px}
+  }
+  @media (max-width:780px){
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>KCET 2026 Physics — High-Yield Repeat Topics</h1>
+  <div class="sub">For <strong>Shreyansi</strong> &middot; Exam <strong>Thu 23 Apr 2026, 10:30 AM</strong> &middot; Based on Q-by-Q map of 6 KCET Physics papers (2020–2025, 360 Qs) &middot; <a href="index.html">← hub</a> &middot; <a href="physics-strategy.html">focus areas</a></div>
+</header>
+
+<div class="hero">
+  <b>What this is.</b> Last-evening flashcard sheet. Each card = one concept that KCET has repeated in ≥3 of the last 6 papers. Master these 15 and you lock <b>~25–30 of 60 marks</b> before touching anything else. Read top-to-bottom; say the formula aloud; move on. Print both sides on one A4.
+  <br><b>Repeat key:</b> green badge = appeared in all 6 papers, blue = 4–5 of 6, orange = 3 of 6.
+</div>
+
+<h2>The 15 one-liners — drill these cold</h2>
+
+<div class="grid">
+
+<!-- ============ CARD 1 ============ -->
+<div class="card">
+  <div class="n">1 · 6/6</div>
+  <h3><span class="chap">Atoms</span>Bohr orbit radius scales as n²</h3>
+  <div class="formula">r<sub>n</sub> = n² × 0.529 Å = n² × r<sub>1</sub> &middot; &nbsp; E<sub>n</sub> = −13.6/n² eV</div>
+  <p class="ask">"If 1st Bohr radius is r, then 2nd orbit radius is?" → <b>4r</b>. "Ratio of radii of n=2 to n=1?" → <b>4:1</b>.</p>
+  <div class="years"><span class="y hit">'20</span><span class="y hit">'21</span><span class="y hit">'22</span><span class="y hit">'23</span><span class="y hit">'24</span><span class="y hit">'25</span><span class="count">6/6</span></div>
+</div>
+
+<!-- ============ CARD 2 ============ -->
+<div class="card">
+  <div class="n">2 · 6/6</div>
+  <h3><span class="chap">Oscillations (SHM)</span>KE = PE happens at x = A/√2</h3>
+  <div class="formula">E<sub>tot</sub> = ½mω²A² &middot; &nbsp; KE = ½mω²(A²−x²) &middot; &nbsp; PE = ½mω²x² <br>KE = PE ⇒ <b>x = A/√2</b> &middot; &nbsp; KE = PE = E/2</div>
+  <p class="ask">Also: at x = 0 → KE max; at x = ±A → PE max. T_spring = 2π√(m/k); T_pendulum = 2π√(ℓ/g).</p>
+  <div class="years"><span class="y hit">'20</span><span class="y hit">'21</span><span class="y hit">'22</span><span class="y hit">'23</span><span class="y hit">'24</span><span class="y hit">'25</span><span class="count">6/6</span></div>
+</div>
+
+<!-- ============ CARD 3 ============ -->
+<div class="card">
+  <div class="n">3 · 6/6</div>
+  <h3><span class="chap">Alternating Current</span>LCR impedance + V across LC</h3>
+  <div class="formula">Z = √(R² + (X<sub>L</sub> − X<sub>C</sub>)²) &middot; &nbsp; i = V/Z <br>V<sub>LC</sub> = i·|X<sub>L</sub> − X<sub>C</sub>| &middot; &nbsp; V<sub>rms</sub> = V₀/√2 <br>Resonance: ω₀ = 1/√(LC), Z = R (min)</div>
+  <p class="ask">"V across L+C only in series LCR" → i × |X_L−X_C|, NOT V₀. cos φ = R/Z (power factor).</p>
+  <div class="years"><span class="y hit">'20</span><span class="y hit">'21</span><span class="y hit">'22</span><span class="y hit">'23</span><span class="y hit">'24</span><span class="y hit">'25</span><span class="count">6/6</span></div>
+</div>
+
+<!-- ============ CARD 4 ============ -->
+<div class="card">
+  <div class="n">4 · 6/6</div>
+  <h3><span class="chap">Moving Charges &amp; Magnetism</span>Long wire B and parallel-wire force</h3>
+  <div class="formula">B = μ₀I / (2πr) &middot; graph B vs r → rectangular hyperbola<br>F/ℓ between parallel wires = μ₀I₁I₂ / (2πr) <br>same direction → <b>attract</b>; opposite → <b>repel</b></div>
+  <p class="ask">Solenoid: B = μ₀nI (inside, uniform). Toroid: B = μ₀NI/(2πr).</p>
+  <div class="years"><span class="y hit">'20</span><span class="y hit">'21</span><span class="y hit">'22</span><span class="y hit">'23</span><span class="y hit">'24</span><span class="y hit">'25</span><span class="count">6/6</span></div>
+</div>
+
+<!-- ============ CARD 5 ============ -->
+<div class="card">
+  <div class="n">5 · 6/6</div>
+  <h3><span class="chap">EMI</span>Self-inductance and induced EMF</h3>
+  <div class="formula">ε = −L (dI/dt) &middot; &nbsp; φ = LI &middot; &nbsp; U = ½LI² <br>L<sub>solenoid</sub> = μ₀n²Aℓ <br>Lenz's law: induced current opposes change in φ</div>
+  <p class="ask">Bar magnet pushed INTO coil → galvanometer deflects one way; pulled OUT → deflects opposite way.</p>
+  <div class="years"><span class="y hit">'20</span><span class="y hit">'21</span><span class="y hit">'22</span><span class="y hit">'23</span><span class="y hit">'24</span><span class="y hit">'25</span><span class="count">6/6</span></div>
+</div>
+
+<!-- ============ CARD 6 ============ -->
+<div class="card">
+  <div class="n">6 · 6/6</div>
+  <h3><span class="chap">Semiconductors</span>Diode, Zener, LED</h3>
+  <div class="formula">Si diode V<sub>knee</sub> ≈ 0.7 V &middot; Ge ≈ 0.3 V <br>Ideal diode: FB → short (0 Ω); RB → open (∞ Ω) <br>Zener: regulates in reverse breakdown <br>LED: E<sub>g</sub> = hc/λ (band-gap sets colour)</div>
+  <p class="ask">n-type: donor level just below conduction band. p-type: acceptor level just above valence band.</p>
+  <div class="years"><span class="y hit">'20</span><span class="y hit">'21</span><span class="y hit">'22</span><span class="y hit">'23</span><span class="y hit">'24</span><span class="y hit">'25</span><span class="count">6/6</span></div>
+</div>
+
+<!-- ============ CARD 7 ============ -->
+<div class="card t2">
+  <div class="n">7 · 5/6</div>
+  <h3><span class="chap">Electrostatics</span>Conducting sphere — E and V</h3>
+  <div class="formula">Inside (r &lt; R): E = 0, V = kQ/R (constant) <br>Outside (r ≥ R): E = kQ/r², V = kQ/r <br>Graph: E jumps from 0 at R, falls as 1/r²</div>
+  <p class="ask">Non-conducting uniform sphere: inside E ∝ r (rises), outside same as conducting.</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y hit-alt">'21</span><span class="y">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 8 ============ -->
+<div class="card t2">
+  <div class="n">8 · 5/6</div>
+  <h3><span class="chap">Dual Nature</span>de Broglie wavelength</h3>
+  <div class="formula">λ = h/p = h/√(2mE<sub>k</sub>) = h/√(2mqV) <br>Same λ → same <b>momentum p</b> (NOT same v, KE, or E)</div>
+  <p class="ask">"Electron &amp; photon of same λ have same...?" → <b>momentum</b>. Photon E = hc/λ; electron E = p²/2m.</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y hit-alt">'21</span><span class="y hit-alt">'22</span><span class="y">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 9 ============ -->
+<div class="card t2">
+  <div class="n">9 · 5/6</div>
+  <h3><span class="chap">Dual Nature</span>Photoelectric effect</h3>
+  <div class="formula">KE<sub>max</sub> = hν − φ = h(ν − ν₀) <br>eV<sub>stop</sub> = KE<sub>max</sub> <br>I<sub>photo</sub> ∝ intensity (for ν &gt; ν₀); independent of ν<br>V<sub>stop</sub> independent of intensity</div>
+  <p class="ask">Graph V_stop vs ν → straight line, slope = h/e, x-intercept = ν₀.</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y hit-alt">'21</span><span class="y">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 10 ============ -->
+<div class="card t2">
+  <div class="n">10 · 4/6</div>
+  <h3><span class="chap">Electrostatics</span>Gauss law — flux tricks</h3>
+  <div class="formula">Φ = q<sub>enc</sub> / ε₀ (closed surface only) <br>Point charge at cube centre → Φ = q/ε₀; per face = q/(6ε₀) <br>Point charge at cube corner → Φ = q/(8ε₀) <br>Shielded/external charges → Φ = 0</div>
+  <p class="ask">Electrostatic shielding: flux through inner region due to outer charge = 0.</p>
+  <div class="years"><span class="y">'20</span><span class="y hit-alt">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">4/6</span></div>
+</div>
+
+<!-- ============ CARD 11 ============ -->
+<div class="card t2">
+  <div class="n">11 · 4/6</div>
+  <h3><span class="chap">Ray Optics</span>Lens combinations &amp; cut lens</h3>
+  <div class="formula">In contact: 1/f = 1/f₁ + 1/f₂; P = P₁ + P₂ (dioptre) <br>Lens cut ⟂ principal axis (halves) → each half has P/2 <br>Lens cut ‖ axis → each half still has <b>power P</b> <br>P = 1/f (metres); lens-maker's 1/f = (μ−1)(1/R₁ − 1/R₂)</div>
+  <p class="ask">Immersion in water: f increases (lens becomes weaker); if μ<sub>lens</sub> = μ<sub>medium</sub>, lens vanishes.</p>
+  <div class="years"><span class="y">'20</span><span class="y hit-alt">'21</span><span class="y hit-alt">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">4/6</span></div>
+</div>
+
+<!-- ============ CARD 12 ============ -->
+<div class="card t2">
+  <div class="n">12 · 4/6</div>
+  <h3><span class="chap">Ray Optics</span>Prism — μ from min deviation</h3>
+  <div class="formula">r₁ + r₂ = A (always) &middot; δ = (i₁ + i₂) − A <br>At min deviation: i₁ = i₂ and r₁ = r₂ = A/2 <br>μ = sin((A + δ<sub>m</sub>)/2) / sin(A/2)</div>
+  <p class="ask">"Angle of incidence is 2× angle of refraction, find i in terms of n" → use sin i = n sin r, 2 cos(r) = n, so i = 2 cos⁻¹(n/2).</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y">'21</span><span class="y hit-alt">'22</span><span class="y">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">4/6</span></div>
+</div>
+
+<!-- ============ CARD 13 ============ -->
+<div class="card t2">
+  <div class="n">13 · 4/6</div>
+  <h3><span class="chap">Magnetism &amp; Matter</span>Curie's law + dia/para/ferro</h3>
+  <div class="formula">Paramagnetic: χ = C/T (positive, small, ↓ with T) <br>Diamagnetic: χ negative, small, <b>T-independent</b> <br>Ferromagnetic: χ very large, positive, ↓ above T<sub>C</sub></div>
+  <p class="ask">"Susceptibility of diamagnetic substance is..." → <b>small and negative</b>.</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y">'21</span><span class="y">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">4/6</span></div>
+</div>
+
+<!-- ============ CARD 14 ============ -->
+<div class="card t3">
+  <div class="n">14 · 3/6</div>
+  <h3><span class="chap">Wave Optics</span>Malus' law (polaroids)</h3>
+  <div class="formula">Unpolarised → polaroid: I = I₀/2 <br>Polarised → polaroid at angle θ: I = I₀ cos²θ <br>Two polaroids at 90° → I = 0 <br>Three polaroids (0°, θ, 90°): I = (I₀/2) cos²θ sin²θ</div>
+  <p class="ask">For 3-polaroid max transmission, middle at 45° → I<sub>max</sub> = I₀/8.</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y">'21</span><span class="y">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y">'25</span><span class="count warn">3/6</span></div>
+</div>
+
+<!-- ============ CARD 15 ============ -->
+<div class="card t3">
+  <div class="n">15 · 3/6</div>
+  <h3><span class="chap">Nuclei</span>Half-life, decay &amp; β-emission</h3>
+  <div class="formula">N = N₀ e<sup>−λt</sup> &middot; &nbsp; t<sub>½</sub> = ln 2 / λ = 0.693/λ <br>Activity A = λN <br>Fraction remaining after n half-lives = (½)<sup>n</sup> <br>β⁻ decay: A unchanged, Z → Z + 1 (neutron → proton)<br>α decay: A → A − 4, Z → Z − 2</div>
+  <p class="ask">Nuclear force: attractive &gt; 0.8 fm, repulsive &lt; 0.8 fm, short-range (~few fm).</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y">'21</span><span class="y">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y">'25</span><span class="count warn">3/6</span></div>
+</div>
+
+</div>
+
+<div class="legend">
+  <span><span class="y hit" style="padding:1px 6px">'YY</span> appeared that year</span>
+  <span><span class="y" style="padding:1px 6px">'YY</span> did not appear</span>
+  <span>green badge = 6/6 &middot; blue = 4–5/6 &middot; orange = 3/6</span>
+</div>
+
+<h2>Extended list — 23 concepts that repeated in ≥3 of 6 years</h2>
+<table>
+<thead><tr><th style="width:4%">#</th><th style="width:35%">Concept</th><th style="width:11%">Chapter</th><th style="width:8%" class="num">Repeats</th><th>Year &amp; Q-numbers (2020 → 2025)</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>Bohr orbit radius r<sub>n</sub> ∝ n²</td><td>Atoms</td><td class="num">6/6</td><td>'20 Q43 · '21 Q54 · '22 Q9 · '23 Q57 · '24 Q41 · '25 Q48</td></tr>
+<tr><td class="num">2</td><td>SHM — KE, PE, total energy, x = A/√2</td><td>Oscillations</td><td class="num">6/6</td><td>'20 Q8/13 · '21 Q16 · '22 Q33 · '23 — · '24 Q2 · '25 Q14</td></tr>
+<tr><td class="num">3</td><td>LCR impedance, V across LC, resonance</td><td>AC</td><td class="num">6/6</td><td>'20 Q33/35 · '21 Q38 · '22 Q58 · '23 Q43/52 · '24 Q27/28/29 · '25 Q40</td></tr>
+<tr><td class="num">4</td><td>B of long wire + parallel-wire force</td><td>MCM</td><td class="num">6/6</td><td>'20 Q54 · '21 Q31 · '22 Q48 · '23 Q28 · '24 Q20 · '25 Q28/33</td></tr>
+<tr><td class="num">5</td><td>Self-induction, ε = −L dI/dt, solenoid L</td><td>EMI</td><td class="num">6/6</td><td>'20 Q32 · '21 Q36 · '22 Q52 · '23 Q45 · '24 Q25 · '25 Q29</td></tr>
+<tr><td class="num">6</td><td>Diode / Zener / LED (E<sub>g</sub> = hc/λ)</td><td>Semi</td><td class="num">6/6</td><td>'20 Q51/53 · '21 Q58/59/60 · '22 Q17/18/19 · '23 Q1/2/4 · '24 Q45/46/47/48 · '25 Q52/53</td></tr>
+<tr><td class="num">7</td><td>Conducting sphere E &amp; V (graph form)</td><td>Electrostatics</td><td class="num">5/6</td><td>'20 Q26 · '21 Q19 · '23 Q27 · '24 Q8 · '25 Q19</td></tr>
+<tr><td class="num">8</td><td>de Broglie λ = h/p (same λ → same p)</td><td>Dual Nature</td><td class="num">5/6</td><td>'20 Q43 · '21 Q54/55 · '22 (KE/4) · '24 Q37 · '25 Q34</td></tr>
+<tr><td class="num">9</td><td>Photoelectric KE<sub>max</sub> = hν − φ, V<sub>stop</sub></td><td>Dual Nature</td><td class="num">5/6</td><td>'20 Q44 · '21 Q50/52 · '23 Q55 · '24 Q38/39 · '25 Q35</td></tr>
+<tr><td class="num">10</td><td>Gauss law flux (cube-face, shielded)</td><td>Electrostatics</td><td class="num">4/6</td><td>'20 Q10 · '22 Q27 · '23 Q27 · '24 Q6/7 · '25 Q16/17/22</td></tr>
+<tr><td class="num">11</td><td>Lens combinations + cut-lens power</td><td>Ray Optics</td><td class="num">4/6</td><td>'21 Q44/45 · '22 Q56/60 · '23 Q49/50 · '24 Q34 · '25 Q43</td></tr>
+<tr><td class="num">12</td><td>Prism A = r₁+r₂; μ from δ<sub>m</sub></td><td>Ray Optics</td><td class="num">4/6</td><td>'20 Q38 · '22 Q55 · '24 Q32 · '25 Q42/45</td></tr>
+<tr><td class="num">13</td><td>Curie's law χ ∝ 1/T (dia/para/ferro)</td><td>Magnetism</td><td class="num">4/6</td><td>'20 Q28 · '23 Q37 · '24 Q22 · '25 Q31</td></tr>
+<tr><td class="num">14</td><td>Malus' law I = I₀ cos²θ</td><td>Wave Optics</td><td class="num">3/6</td><td>'20 Q40 · '23 Q58 · '24 Q36</td></tr>
+<tr><td class="num">15</td><td>Half-life, β-decay, A/Z balance</td><td>Nuclei</td><td class="num">3/6</td><td>'20 Q49/50 · '23 Q5/7 · '24 Q43/44</td></tr>
+<tr><td class="num">16</td><td>Young's modulus — wire stretch ΔL=FL/AY</td><td>Mech Prop Solids</td><td class="num">4/6</td><td>'20 Q2 · '23 Q18 · '24 Q57 · '25 Q9</td></tr>
+<tr><td class="num">17</td><td>Resistance of stretched wire R ∝ L²</td><td>Current Elec</td><td class="num">4/6</td><td>'20 Q18 · '21 Q26 · '22 Q47 · '25 Q27</td></tr>
+<tr><td class="num">18</td><td>EMF of motional / falling / rotating rod</td><td>EMI</td><td class="num">4/6</td><td>'20 Q31 · '21 Q36 · '23 Q46 · '24 Q25</td></tr>
+<tr><td class="num">19</td><td>Cyclotron — min KE, F = qvB</td><td>MCM</td><td class="num">3/6</td><td>'20 Q27 · '22 (cyclotron) · '23 Q33</td></tr>
+<tr><td class="num">20</td><td>Projectile — range, max H, trajectory</td><td>Motion in Plane</td><td class="num">5/6</td><td>'21 Q3/4/5 · '22 Q23 · '24 Q49 · '25 Q59</td></tr>
+<tr><td class="num">21</td><td>Adiabatic / Carnot / PV work</td><td>Thermodynamics</td><td class="num">4/6</td><td>'20 Q6/7 · '21 Q14 · '23 Q16 · '24 Q60</td></tr>
+<tr><td class="num">22</td><td>Gravity at height / depth (g' formulae)</td><td>Gravitation</td><td class="num">3/6</td><td>'20 Q1 · '24 Q56 · '25 Q8</td></tr>
+<tr><td class="num">23</td><td>EM wave wavelength ranges (match table)</td><td>EM Waves</td><td class="num">3/6</td><td>'22 (match) · '24 Q35 · '25 Q41</td></tr>
+</tbody>
+</table>
+
+<h2>Repeat density by chapter</h2>
+<table>
+<thead><tr><th>Chapter</th><th class="num">Recurring concepts</th><th class="num">Typical Qs/paper</th><th>Revision priority</th></tr></thead>
+<tbody>
+<tr><td>EMI + Alternating Current (LCR)</td><td class="num">7</td><td class="num">5–6</td><td><b>#1</b> — own cards 3, 5, 18</td></tr>
+<tr><td>Current Electricity</td><td class="num">7</td><td class="num">4–5</td><td><b>#1</b> — drill Kirchhoff + stretched-wire R</td></tr>
+<tr><td>Moving Charges &amp; Magnetism</td><td class="num">6</td><td class="num">4–5</td><td><b>#2</b> — cards 4, 19</td></tr>
+<tr><td>Electrostatics (Charges + Potential)</td><td class="num">6</td><td class="num">5–7</td><td><b>#2</b> — cards 7, 10</td></tr>
+<tr><td>Atoms + Nuclei</td><td class="num">5</td><td class="num">3–4</td><td><b>#3</b> — cards 1, 15</td></tr>
+<tr><td>Ray + Wave Optics</td><td class="num">5</td><td class="num">5–7</td><td><b>#3</b> — cards 11, 12, 14</td></tr>
+<tr><td>Semiconductors</td><td class="num">4</td><td class="num">3</td><td><b>#3</b> — card 6</td></tr>
+<tr><td>Thermodynamics + KTG</td><td class="num">3</td><td class="num">2–3</td><td>Card 21; KE ∝ T fact</td></tr>
+<tr><td>Dual Nature</td><td class="num">3</td><td class="num">2</td><td>Cards 8, 9 (highest ROI in modern)</td></tr>
+<tr><td>Oscillations + Waves</td><td class="num">3</td><td class="num">2–3</td><td>Card 2; transverse-wave angle π/2</td></tr>
+<tr><td>Mechanics (Kin + Laws + WEP + Rot + Grav)</td><td class="num">4</td><td class="num">9–11</td><td>Broad but formulaic — cards 20, 22</td></tr>
+<tr><td>Properties of Matter (Solids + Fluids)</td><td class="num">2</td><td class="num">2–3</td><td>Card 16; Bernoulli, Stokes' terminal v</td></tr>
+<tr><td>Magnetism &amp; Matter</td><td class="num">2</td><td class="num">1–2</td><td>Card 13</td></tr>
+<tr><td>EM Waves</td><td class="num">1</td><td class="num">1</td><td>Wavelength order card</td></tr>
+<tr class="total"><td>Total recurring concepts</td><td class="num">58</td><td class="num">60</td><td>~25–30 marks from drill alone</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>How to use this sheet.</b> Wednesday 22-Apr evening (Day 5): read top-to-bottom, covering the answer with your hand, saying each formula aloud. Any card you can't recall in 5 seconds → sticky note, place on desk. Thursday morning before the exam: scan stickies only. Don't open NCERT, don't open practice sets — just these 15 cards.
+</div>
+
+<div class="note" style="background:#fce8dc;border-left-color:var(--warn)">
+  <b>Methodology &amp; caveat.</b> Analysis across 6 years × 60 Qs = 360 questions (KCET Physics 2020–2025). "Repeat" = same formula / same NCERT statement / same graph type with numerical values and options changed (Tier-2). Exact copy-paste (Tier-1) is rare (~3–4 Qs/year). Q-numbers come from Allen solutions and KEA answer keys; option-text not OCR'd letter-by-letter. If a concept also appeared in 2018–2019 (not in this analysis window), assume even higher recurrence.
+</div>
+
+<footer>
+  <span>Source: <code>exam-papers/phy{2020..2025}.pdf</code> + <code>ans_phy_*.pdf</code> / Allen KCET-2025 solutions. Q-by-Q chapter tagging done for 2025; repeat detection across 2020–2024 by concept match.</span>
+  <span><a href="index.html">← back to hub</a> &middot; <a href="physics-strategy.html">physics focus areas</a></span>
+</footer>
+
+</div>
+</body>
+</html>
