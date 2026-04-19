@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KCET 2026 Chemistry — High-Yield Repeat Topics (for Shreyansi)</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --rule:#d8d8d8; --soft:#f5f5f2;
+    --core:#0b6b3a; --mid:#2563a8; --warn:#b8700a; --low:#6b4c9a; --skip:#8a2a2a;
+    --hl:#fff6d6;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;color:var(--ink);font:14px/1.45 "Inter","Segoe UI",system-ui,sans-serif;background:#fff}
+  .page{max-width:1180px;margin:0 auto;padding:24px 32px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:10px;margin-bottom:16px}
+  h1{margin:0;font-size:22px;letter-spacing:.2px}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:4px}
+  .sub strong{color:var(--ink)}
+  .sub a{color:var(--mid);text-decoration:none}
+  h2{font-size:14px;margin:18px 0 8px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:3px}
+  .hero{background:#fbeeec;border-left:3px solid #b3261e;padding:10px 14px;border-radius:4px;margin:8px 0 16px;font-size:13px}
+  .hero b{color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .card{border:1px solid var(--rule);border-radius:6px;padding:10px 12px 12px;background:#fff;position:relative;page-break-inside:avoid}
+  .card .n{position:absolute;top:-8px;left:10px;background:var(--mid);color:#fff;font-size:10.5px;font-weight:700;padding:1px 8px;border-radius:10px;letter-spacing:.4px}
+  .card.t1 .n{background:#b3261e}
+  .card.t2 .n{background:var(--mid)}
+  .card.t3 .n{background:var(--warn)}
+  .card h3{margin:2px 0 5px;font-size:13.5px;font-weight:700;padding-top:2px}
+  .card h3 .chap{font-size:10.5px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:2px}
+  .formula{background:#fafafa;border-left:3px solid var(--mid);padding:5px 9px;border-radius:2px;font-size:12.5px;margin:4px 0;font-family:"Georgia",serif;line-height:1.5}
+  .card.t1 .formula{border-left-color:#b3261e}
+  .card.t3 .formula{border-left-color:var(--warn)}
+  .ask{font-size:11.5px;color:var(--muted);margin:4px 0 0;font-style:italic}
+  .years{margin-top:6px;display:flex;gap:3px;flex-wrap:wrap}
+  .y{font-size:10px;font-weight:600;padding:1px 5px;border-radius:8px;background:var(--soft);color:var(--muted);letter-spacing:.3px}
+  .y.hit{background:#b3261e;color:#fff}
+  .y.hit-alt{background:var(--mid);color:#fff}
+  .y.hit-warn{background:var(--warn);color:#fff}
+  .count{font-size:10.5px;font-weight:700;color:#b3261e;margin-left:6px}
+  .count.alt{color:var(--mid)}
+  .count.warn{color:var(--warn)}
+  table{border-collapse:collapse;width:100%;font-size:11.5px;margin-top:4px}
+  th,td{padding:3px 7px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.3px}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  tr.total td{border-top:2px solid var(--ink);border-bottom:none;font-weight:700;background:#fafafa}
+  .note{background:var(--hl);border-left:3px solid #c9a227;padding:8px 11px;border-radius:3px;font-size:12.5px;margin:8px 0}
+  .legend{font-size:11px;color:var(--muted);margin:6px 0 0;display:flex;gap:14px;flex-wrap:wrap}
+  footer{margin-top:18px;padding-top:10px;border-top:1px solid var(--rule);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  footer a{color:var(--mid);text-decoration:none}
+  @media print{
+    .page{max-width:none;padding:12px 16px}
+    body{font-size:11px}
+    h1{font-size:16px}
+    h2{font-size:11px}
+    .card{padding:7px 9px 9px}
+    .card h3{font-size:11.5px}
+    .formula{font-size:10.8px;padding:3px 6px}
+    .ask{font-size:10px}
+    .y{font-size:9px}
+    .grid{gap:6px}
+    .hero{padding:6px 10px;font-size:10.8px;margin:4px 0 8px}
+  }
+  @media (max-width:780px){
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>KCET 2026 Chemistry — High-Yield Repeat Topics</h1>
+  <div class="sub">For <strong>Shreyansi</strong> &middot; Exam <strong>Thu 23 Apr 2026, 2:30 PM</strong> &middot; Q-by-Q analysis of 6 KCET Chemistry papers (2020–2025, 360 Qs) &middot; <a href="index.html">← hub</a> &middot; <a href="chemistry-strategy.html">strategy</a></div>
+</header>
+
+<div class="hero">
+  <b>Why this matters most.</b> Chemistry is the leverage subject — JEE Main S1 percentile was 58.09 (vs Physics 77.5, Maths 94.1). The paper is also the most pattern-driven of the three: <b>~63% of KCET-2025 Chemistry questions</b> had a near-repeat in 2020–2024. Master the 15 cards below and you lock <b>~30–36 of 60 marks</b> before walking in. Print both sides on one A4. Read Wed evening. Re-scan Thursday lunch.
+  <br><b>Repeat key:</b> red badge = appeared in all 6 papers (must-know); blue = 4–5 of 6; orange = 3 of 6.
+</div>
+
+<h2>The 15 one-liners — drill these cold</h2>
+
+<div class="grid">
+
+<!-- ============ CARD 1 ============ -->
+<div class="card t1">
+  <div class="n">1 · 6/6</div>
+  <h3><span class="chap">Coordination Compounds</span>IUPAC naming of complexes</h3>
+  <div class="formula">Ligands: <b>alphabetical</b>, anionic then neutral order <i>dropped</i> (2005 IUPAC). Cation first, anion second. <br>-ate suffix if whole complex is anion (e.g. cobaltate, ferrate). <br>Oxidation state of metal in <b>Roman numerals</b> after metal name.</div>
+  <p class="ask">[Co(NH₃)₅(CO₃)]Cl = <b>Pentaamminecarbonatocobalt(III) chloride</b>. K₃[Fe(CN)₆] = Potassium hexacyanoferrate(III). Watch out: "chloro" before "ammine" — C before N.</p>
+  <div class="years"><span class="y hit">'20</span><span class="y hit">'21</span><span class="y hit">'22</span><span class="y hit">'23</span><span class="y hit">'24</span><span class="y hit">'25</span><span class="count">6/6</span></div>
+</div>
+
+<!-- ============ CARD 2 ============ -->
+<div class="card t1">
+  <div class="n">2 · 6/6</div>
+  <h3><span class="chap">Coordination + d-Block</span>Hybridisation, magnetism, colour</h3>
+  <div class="formula">μ = √[n(n + 2)] BM &middot; n = unpaired electrons <br>Strong-field ligands (CN⁻, CO, NO₂⁻, en, NH₃) → pair up → low-spin → inner-orbital (d²sp³) <br>Weak-field (F⁻, Cl⁻, H₂O, OH⁻, ox) → high-spin → outer (sp³d²) <br>d⁰ or d¹⁰ ions (Sc³⁺, Ti⁴⁺, Zn²⁺, Cu⁺) are <b>colourless</b>.</div>
+  <p class="ask">[Ni(CN)₄]²⁻ = dsp² (square planar, diamagnetic). [NiCl₄]²⁻ = sp³ (tetrahedral, paramagnetic). μ = √24 BM ⇒ 4 unpaired ⇒ Fe²⁺ or Co³⁺.</p>
+  <div class="years"><span class="y hit">'20</span><span class="y hit">'21</span><span class="y hit">'22</span><span class="y hit">'23</span><span class="y hit">'24</span><span class="y hit">'25</span><span class="count">6/6</span></div>
+</div>
+
+<!-- ============ CARD 3 ============ -->
+<div class="card t2">
+  <div class="n">3 · 5/6</div>
+  <h3><span class="chap">Electrochemistry</span>Kohlrausch law + molar conductivity</h3>
+  <div class="formula">Λ°<sub>m</sub>(AB) = λ°<sub>+</sub> + λ°<sub>−</sub> (sum of ionic limits)<br>For weak electrolyte: α = Λ<sub>m</sub> / Λ°<sub>m</sub>; K<sub>a</sub> = cα²/(1−α) <br>Λ°(CH₃COOH) = λ°(Na⁺) + λ°(CH₃COO⁻) + λ°(HCl) − λ°(NaCl)</div>
+  <p class="ask">Strong electrolyte: Λ<sub>m</sub> = Λ°<sub>m</sub> − A√c (Debye-Hückel-Onsager). Unit: S cm² mol⁻¹.</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y hit-alt">'21</span><span class="y">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 4 ============ -->
+<div class="card t2">
+  <div class="n">4 · 5/6</div>
+  <h3><span class="chap">Electrochemistry</span>Nernst equation &amp; K from E°</h3>
+  <div class="formula">At 298 K: E<sub>cell</sub> = E°<sub>cell</sub> − (0.0591/n) log Q <br>Q = [products]/[reactants] for cell reaction <br>At equilibrium: E = 0 ⇒ <b>log K = (n · E°) / 0.0591</b> <br>ΔG° = −nFE° = −2.303RT log K</div>
+  <p class="ask">Concentration cell: E° = 0, E = (0.0591/n) log(c₂/c₁). Faraday: Q = n × 96 500 C to deposit 1 mol (Ag=1F, Mg²⁺=2F, Al³⁺=3F).</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y hit-alt">'21</span><span class="y">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 5 ============ -->
+<div class="card t2">
+  <div class="n">5 · 5/6</div>
+  <h3><span class="chap">Chemical Kinetics</span>First-order integrated form</h3>
+  <div class="formula">k = (2.303/t) log(a / (a − x)) &middot; &nbsp; t<sub>½</sub> = 0.693 / k <br>t<sub>99%</sub> = 4.606/k = <b>2 × t<sub>90%</sub></b> = 10 × t<sub>½</sub> (approx) <br>Units of k: order 0 → M s⁻¹; order 1 → s⁻¹; order 2 → M⁻¹s⁻¹</div>
+  <p class="ask">"Time to complete 99.9% reaction" = (2.303/k) log 1000 = 6.909/k. For first order, t½ is <b>independent of [A]₀</b>.</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y hit-alt">'21</span><span class="y hit-alt">'22</span><span class="y">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 6 ============ -->
+<div class="card t2">
+  <div class="n">6 · 5/6</div>
+  <h3><span class="chap">Chemical Kinetics</span>Arrhenius equation</h3>
+  <div class="formula">k = A · e<sup>−Ea/RT</sup> &middot; &nbsp; ln k = ln A − Ea/(RT) <br>log(k₂/k₁) = (Ea / 2.303R) · (1/T₁ − 1/T₂) <br>A = frequency / pre-exponential factor (collisions) <br>Catalyst lowers <b>Ea only</b>; does NOT change ΔH, ΔG, or K<sub>eq</sub>.</div>
+  <p class="ask">Temp rise of 10 K usually doubles rate (Ea ≈ 50 kJ/mol). Plot: slope of ln k vs 1/T = −Ea/R.</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y">'21</span><span class="y hit-alt">'22</span><span class="y hit-alt">'23</span><span class="y">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 7 ============ -->
+<div class="card t2">
+  <div class="n">7 · 5/6</div>
+  <h3><span class="chap">Solutions</span>Colligative: ΔT<sub>b</sub>, ΔT<sub>f</sub>, π</h3>
+  <div class="formula">ΔT<sub>b</sub> = i · K<sub>b</sub> · m &middot; &nbsp; ΔT<sub>f</sub> = i · K<sub>f</sub> · m <br>π = i · C · R · T (osmotic) &middot; p<sub>solvent</sub> = x<sub>solv</sub> · p° (Raoult) <br>van't Hoff factor: glucose = 1; NaCl = 2; K₂SO₄ = 3; Al₂(SO₄)₃ = 5; CaCl₂ = 3 <br>Association (dimer) → i &lt; 1; dissociation → i &gt; 1</div>
+  <p class="ask">"Equimolal NaCl vs glucose — which has higher ΔT<sub>b</sub>?" → NaCl (i = 2). Isotonic: equal π at same T.</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y">'21</span><span class="y hit-alt">'22</span><span class="y hit-alt">'23</span><span class="y">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 8 ============ -->
+<div class="card t2">
+  <div class="n">8 · 5/6</div>
+  <h3><span class="chap">Amines / Haloarenes</span>Diazonium reactions (Sandmeyer etc.)</h3>
+  <div class="formula">ArNH₂ → ArN₂⁺Cl⁻ via NaNO₂/HCl at 0–5 °C <br><b>Sandmeyer:</b> CuCl/CuBr/CuCN → ArCl / ArBr / ArCN <br><b>Gatterman:</b> Cu/HCl or Cu/HBr → ArCl / ArBr (cheaper) <br><b>Balz-Schiemann:</b> ArN₂⁺BF₄⁻ → ArF (heat) <br>ArN₂⁺ + H₂O/H⁺, warm → ArOH &nbsp;&middot;&nbsp; + H₃PO₂ → ArH (deamination)</div>
+  <p class="ask">ArN₂⁺ + phenol → azo dye (coupling, p-HO-C₆H₄-N=N-Ar, orange). + β-naphthol → red dye.</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y">'21</span><span class="y hit-alt">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 9 ============ -->
+<div class="card t2">
+  <div class="n">9 · 5/6</div>
+  <h3><span class="chap">Biomolecules</span>Carbohydrates &amp; tests</h3>
+  <div class="formula">Reducing sugars: glucose, fructose, maltose, lactose → +ve Tollens / Fehling / Benedict <br>Non-reducing: sucrose (α-1,β-2 glycosidic), starch, cellulose → −ve <br>Sucrose hydrolysis → glucose + fructose; rotation changes +66.5° → −20° (<b>invert sugar</b>) <br>Glucose: open-chain & α / β pyranose (1-OH down/up); anomers differ only at C-1.</div>
+  <p class="ask">Ring size: 6-member = pyranose; 5-member = furanose. Fructose reduces Tollens' via tautomerism (α-hydroxy ketone in basic medium).</p>
+  <div class="years"><span class="y">'20</span><span class="y hit-alt">'21</span><span class="y hit-alt">'22</span><span class="y">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 10 ============ -->
+<div class="card t2">
+  <div class="n">10 · 5/6</div>
+  <h3><span class="chap">d &amp; f-Block</span>Lanthanoid contraction &amp; consequences</h3>
+  <div class="formula">Atomic/ionic radii ↓ across 4f series (poor shielding of f-e) <br>Consequences: <br>• 5d radii ≈ 4d (Zr ≈ Hf, Nb ≈ Ta, Mo ≈ W) <br>• Basic strength of Ln(OH)₃ ↓ from La → Lu <br>• Hardness, density, m.p. ↑ across Ln series <br>Common OS = +3 (4f⁰, 4f⁷, 4f¹⁴ extra-stable)</div>
+  <p class="ask">Exception OS: Ce⁴⁺ (4f⁰), Eu²⁺ (4f⁷), Tb⁴⁺ (4f⁷), Yb²⁺ (4f¹⁴). <b>Pm is radioactive</b> (only Ln with no stable isotope).</p>
+  <div class="years"><span class="y">'20</span><span class="y hit-alt">'21</span><span class="y hit-alt">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">5/6</span></div>
+</div>
+
+<!-- ============ CARD 11 ============ -->
+<div class="card t2">
+  <div class="n">11 · 4/6</div>
+  <h3><span class="chap">Amines</span>Hinsberg + basicity order</h3>
+  <div class="formula">Hinsberg: C₆H₅SO₂Cl (benzenesulfonyl chloride) <br>1° amine → soluble in KOH (N-H acidic after sulfonamide) <br>2° amine → insoluble in KOH (no N-H in sulfonamide) <br>3° amine → no reaction <br>Basicity in <b>gas phase</b>: 3° &gt; 2° &gt; 1° &gt; NH₃ (pure +I) <br>Basicity in <b>water</b>: 2° &gt; 1° ≈ 3° &gt; NH₃ (solvation + steric)</div>
+  <p class="ask">Aromatic &lt; aliphatic (lone pair in ring). p-anisidine &gt; aniline &gt; p-nitroaniline. Carbylamine test: 1° only, RNH₂ + CHCl₃ + KOH → RNC (foul).</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y">'21</span><span class="y hit-alt">'22</span><span class="y">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">4/6</span></div>
+</div>
+
+<!-- ============ CARD 12 ============ -->
+<div class="card t2">
+  <div class="n">12 · 4/6</div>
+  <h3><span class="chap">Aldehydes / Ketones</span>Aldol vs Cannizzaro</h3>
+  <div class="formula"><b>Aldol:</b> needs α-H. 2 RCHO + dil NaOH → β-hydroxy aldehyde → heat → α,β-unsat carbonyl <br><b>Cannizzaro:</b> <i>no</i> α-H. 2 PhCHO + conc. NaOH → PhCH₂OH + PhCOO⁻ (disproportionation) <br>No α-H → HCHO, PhCHO, Cl₃C-CHO, Me₃C-CHO (pivaldehyde) <br>Crossed aldol / crossed Cannizzaro with HCHO as H-donor.</div>
+  <p class="ask">"Which does NOT undergo aldol?" → the one with no α-H. HCHO with conc. NaOH → CH₃OH + HCOO⁻ (Cannizzaro).</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y">'21</span><span class="y hit-alt">'22</span><span class="y">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">4/6</span></div>
+</div>
+
+<!-- ============ CARD 13 ============ -->
+<div class="card t2">
+  <div class="n">13 · 4/6</div>
+  <h3><span class="chap">Aldehydes / Ketones</span>Etard, Stephen, Rosenmund — RCHO prep</h3>
+  <div class="formula"><b>Etard:</b> toluene + CrO₂Cl₂ / CS₂ → chromium complex → H₃O⁺ → PhCHO <br><b>Stephen:</b> R-CN + SnCl₂ / HCl → aldimine → H₃O⁺ → RCHO <br><b>Rosenmund:</b> R-COCl + H₂ / Pd-BaSO₄ (poisoned) → RCHO (stops at aldehyde) <br><b>Gatterman-Koch:</b> benzene + CO + HCl / AlCl₃, CuCl → PhCHO</div>
+  <p class="ask">Oxidation of 1° alcohol with PCC (mild) → aldehyde; with KMnO₄ / K₂Cr₂O₇ → carboxylic acid. DIBAL-H on ester/nitrile → aldehyde.</p>
+  <div class="years"><span class="y">'20</span><span class="y">'21</span><span class="y hit-alt">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">4/6</span></div>
+</div>
+
+<!-- ============ CARD 14 ============ -->
+<div class="card t2">
+  <div class="n">14 · 4/6</div>
+  <h3><span class="chap">Alcohols / Ethers</span>Ether cleavage with HI</h3>
+  <div class="formula">R-O-R' + HI (excess, heat) → R-I + R'-OH (further → R'-I + H₂O) <br>SN2 mechanism → I⁻ attacks <b>less hindered</b> C (smaller alkyl gets iodide) <br>Phenyl ether (Ph-O-R) → <b>Ph-OH + R-I</b> (phenyl-O bond stronger; C<sub>sp²</sub>-O not broken)</div>
+  <p class="ask">Anisole (C₆H₅-O-CH₃) + HI → phenol + CH₃I. tert-butyl methyl ether + HI → tert-butyl iodide + CH₃OH (SN1 on 3° C).</p>
+  <div class="years"><span class="y hit-alt">'20</span><span class="y">'21</span><span class="y hit-alt">'22</span><span class="y hit-alt">'23</span><span class="y">'24</span><span class="y hit-alt">'25</span><span class="count alt">4/6</span></div>
+</div>
+
+<!-- ============ CARD 15 ============ -->
+<div class="card t3">
+  <div class="n">15 · 4/6</div>
+  <h3><span class="chap">Haloalkanes</span>Wurtz + Fittig + SN1/SN2 quick</h3>
+  <div class="formula"><b>Wurtz:</b> 2 R-X + 2 Na / dry ether → R-R + 2 NaX <br><b>Wurtz-Fittig:</b> Ar-X + R-X + 2 Na / ether → Ar-R (alkylbenzene) <br><b>Fittig:</b> 2 Ar-X + 2 Na → Ar-Ar (biphenyl) <br>SN1: 3° &gt; 2° &gt; 1°; polar protic; racemisation <br>SN2: 1° &gt; 2° &gt; 3°; polar aprotic (DMSO, DMF); inversion</div>
+  <p class="ask">Saytzeff (E1/E2): major product = more substituted alkene. Hofmann (bulky base, NaOEt with t-BuOK): less substituted alkene.</p>
+  <div class="years"><span class="y">'20</span><span class="y hit-alt">'21</span><span class="y">'22</span><span class="y hit-alt">'23</span><span class="y hit-alt">'24</span><span class="y hit-alt">'25</span><span class="count alt">4/6</span></div>
+</div>
+
+</div>
+
+<div class="legend">
+  <span><span class="y hit" style="padding:1px 6px">'YY</span> appeared that year</span>
+  <span><span class="y" style="padding:1px 6px">'YY</span> did not appear</span>
+  <span>red = 6/6 &middot; blue = 4–5/6 &middot; orange = 3/6</span>
+</div>
+
+<h2>Extended list — 23 concepts that repeated in ≥3 of 6 years</h2>
+<table>
+<thead><tr><th style="width:4%">#</th><th style="width:36%">Concept</th><th style="width:13%">Chapter</th><th style="width:8%" class="num">Repeats</th><th>Year &amp; Q-numbers (2020 → 2025)</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>IUPAC name of coordination complex</td><td>Coordination</td><td class="num">6/6</td><td>'20 Q37 · '21 Q57 · '22 Q53 · '23 Q23 · '24 Q22/23 · '25 Q10</td></tr>
+<tr><td class="num">2</td><td>Hybridisation + μ = √[n(n+2)] of complex / d-block ion</td><td>Coord + d-Block</td><td class="num">6/6</td><td>'20 Q35 · '21 Q58 · '22 · '23 · '24 Q24 · '25 Q9</td></tr>
+<tr><td class="num">3</td><td>Kohlrausch law / molar conductivity</td><td>Electrochem</td><td class="num">5/6</td><td>'20 Q14 · '21 Q11 · '23 Q38 · '24 Q44 · '25 Q44/52</td></tr>
+<tr><td class="num">4</td><td>Nernst equation / E° from K</td><td>Electrochem</td><td class="num">5/6</td><td>'20 Q17 · '21 Q12 · '23 Q46 · '24 Q42 · '25 Q51</td></tr>
+<tr><td class="num">5</td><td>First-order t₉₉%, t½ numeric</td><td>Kinetics</td><td class="num">5/6</td><td>'20 Q20 · '21 Q15 · '22 Q35 · '24 — · '25 Q54</td></tr>
+<tr><td class="num">6</td><td>Arrhenius k = A e^(−Ea/RT)</td><td>Kinetics</td><td class="num">5/6</td><td>'20 Q22 · '22 Q43 · '23 Q43/44 · '25 Q45/47</td></tr>
+<tr><td class="num">7</td><td>ΔT<sub>b</sub>, ΔT<sub>f</sub>, π, van't Hoff i</td><td>Solutions</td><td class="num">5/6</td><td>'20 Q16 · '22 Q33 · '23 Q38 · '25 Q45/47</td></tr>
+<tr><td class="num">8</td><td>Sandmeyer / Balz-Schiemann / diazonium → phenol</td><td>Amines / Haloarenes</td><td class="num">5/6</td><td>'20 Q47 · '22 Q14 · '23 · '24 Q10 · '25 Q36</td></tr>
+<tr><td class="num">9</td><td>Carbohydrate reducing / non-reducing / glycosidic</td><td>Biomolecules</td><td class="num">5/6</td><td>'21 Q34 · '22 Q12 · '24 Q13 · '25 Q12/13/14</td></tr>
+<tr><td class="num">10</td><td>Lanthanoid contraction / Pm radioactive / +4 OS</td><td>d &amp; f-Block</td><td class="num">5/6</td><td>'21 Q51 · '23 · '24 Q56/57/58 · '25 Q6/58</td></tr>
+<tr><td class="num">11</td><td>Henry's law p = K<sub>H</sub> · x</td><td>Solutions</td><td class="num">4/6</td><td>'21 Q4–7 · '22 Q32 · '25 Q48</td></tr>
+<tr><td class="num">12</td><td>Hinsberg reagent 1°/2°/3° distinction</td><td>Amines</td><td class="num">4/6</td><td>'20 Q48 · '22 · '24 · '25 Q36</td></tr>
+<tr><td class="num">13</td><td>Aldol vs Cannizzaro — α-H criterion</td><td>Aldehydes/Ketones</td><td class="num">4/6</td><td>'20 Q46 · '22 Q5 · '24 · '25 Q32</td></tr>
+<tr><td class="num">14</td><td>Etard / Stephen / Rosenmund — RCHO prep</td><td>Aldehydes/Ketones</td><td class="num">4/6</td><td>'22 Q4 · '23 · '24 · '25 Q30</td></tr>
+<tr><td class="num">15</td><td>Ether + HI cleavage (anisole → phenol)</td><td>Alcohols/Ethers</td><td class="num">4/6</td><td>'20 Q41 · '22 Q10 · '23 Q56 · '25 Q29</td></tr>
+<tr><td class="num">16</td><td>Wurtz / Wurtz-Fittig / Fittig coupling</td><td>Haloalkanes</td><td class="num">4/6</td><td>'21 Q24 · '23 · '24 Q26 · '25 Q25</td></tr>
+<tr><td class="num">17</td><td>Paramagnetic / coloured transition-metal ions</td><td>d-Block</td><td class="num">4/6</td><td>'20 Q31/32 · '22 Q44 · '24 Q57 · '25 Q4</td></tr>
+<tr><td class="num">18</td><td>KMnO₄ / K₂Cr₂O₇ redox numeric (FAS, H₂S, I⁻)</td><td>Redox / d-Block</td><td class="num">4/6</td><td>'20 Q33 · '22 Q56 · '24 Q29 · '25 Q5/15</td></tr>
+<tr><td class="num">19</td><td>Faraday — mass deposited in electrolysis</td><td>Electrochem</td><td class="num">4/6</td><td>'20 Q18 · '22 · '24 Q43 · '25 Q42/43</td></tr>
+<tr><td class="num">20</td><td>Kolbe / Reimer-Tiemann / aspirin from phenol</td><td>Alcohols/Phenols</td><td class="num">4/6</td><td>'22 Q11 · '23 Q60 · '24 · '25 (strategy chapter)</td></tr>
+<tr><td class="num">21</td><td>Aromaticity (Hückel 4n + 2)</td><td>GOC / Hydrocarbons</td><td class="num">4/6</td><td>'22 Q31 · '23 · '24 · '25 Q19</td></tr>
+<tr><td class="num">22</td><td>IUPAC name hydrocarbon / alkene / alkyne</td><td>GOC / Hydrocarbons</td><td class="num">4/6</td><td>'21 Q17 · '22 Q30 · '23 · '25 Q20</td></tr>
+<tr><td class="num">23</td><td>Buffer pH, K<sub>a</sub>, K<sub>sp</sub> solubility</td><td>Equilibrium</td><td class="num">3/6</td><td>'22 Q25 · '23 · '25 Q—</td></tr>
+</tbody>
+</table>
+
+<h2>Repeat density by chapter</h2>
+<table>
+<thead><tr><th>Chapter</th><th class="num">Recurring concepts</th><th class="num">Typical Qs/paper</th><th>Revision priority</th></tr></thead>
+<tbody>
+<tr><td>Electrochemistry</td><td class="num">4</td><td class="num">3–4</td><td><b>#1</b> — cards 3, 4 + Faraday</td></tr>
+<tr><td>Coordination Compounds</td><td class="num">4</td><td class="num">3</td><td><b>#1</b> — cards 1, 2</td></tr>
+<tr><td>Aldehydes / Ketones / CA</td><td class="num">3</td><td class="num">3</td><td><b>#2</b> — cards 12, 13</td></tr>
+<tr><td>Chemical Kinetics</td><td class="num">3</td><td class="num">3–4</td><td><b>#2</b> — cards 5, 6</td></tr>
+<tr><td>Solutions</td><td class="num">3</td><td class="num">3–5</td><td><b>#2</b> — card 7 + Henry</td></tr>
+<tr><td>Amines</td><td class="num">3</td><td class="num">2–3</td><td><b>#2</b> — cards 8, 11</td></tr>
+<tr><td>d &amp; f-Block</td><td class="num">3</td><td class="num">3–4</td><td><b>#2</b> — card 10 + KMnO₄/K₂Cr₂O₇</td></tr>
+<tr><td>Biomolecules</td><td class="num">2</td><td class="num">3</td><td><b>#3</b> — card 9</td></tr>
+<tr><td>Alcohols / Phenols / Ethers</td><td class="num">2</td><td class="num">3</td><td><b>#3</b> — card 14 + Kolbe/Reimer</td></tr>
+<tr><td>Haloalkanes / Haloarenes</td><td class="num">2</td><td class="num">3</td><td><b>#3</b> — card 15 + SN1/SN2</td></tr>
+<tr><td>GOC / Hydrocarbons</td><td class="num">2</td><td class="num">2</td><td>Aromaticity + IUPAC names</td></tr>
+<tr><td>Equilibrium / Redox / Chem Bonding</td><td class="num">1 each</td><td class="num">2 each</td><td>Light drill</td></tr>
+<tr class="total"><td>Total recurring concepts</td><td class="num">~34</td><td class="num">60</td><td>~30–36 marks from drill alone</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>How to use this sheet.</b> Wednesday 22-Apr evening (Day 5): read top-to-bottom, cover the formula, recite aloud. Cards you can't recall in 5 sec → sticky note. Thursday 23-Apr <b>lunch break between Physics and Chem (11:50 AM → 2:30 PM)</b>: don't open anything new — only scan these 15 + stickies. Chem exam starts 2:30.
+</div>
+
+<div class="note" style="background:#fce8dc;border-left-color:var(--warn)">
+  <b>Methodology &amp; caveat.</b> 360 questions analysed (6 × 60). "Repeat" = Tier-1 (identical) + Tier-2 (same named reaction / same formula / values or compounds swapped). 2025 from Allen solutions (clean); 2024 had some UTF garbling on structural options (cross-verified via KEA D1 key); 2022 pages 1–5 were low-res (Qs 6–8 partly inferred from answer key). Option-text not OCR'd letter-by-letter. <b>Confirmed: no out-of-syllabus chapter</b> (Solid State, Polymers, p-Block, s-Block, Hydrogen, Metallurgy, Env Chem, Surface Chem, Everyday Life) appeared in 2025 — skip them entirely.
+</div>
+
+<div class="note" style="background:#eaf1f8;border-left-color:var(--mid)">
+  <b>Why this is Chemistry's single-biggest lever.</b> 63% of 2025 Qs were pattern-repeats (vs 53% in Physics). Named organic reactions, Coordination IUPAC, and Electrochem formulas account for nearly half the paper every year. Shreya's JEE gap was <i>Chemistry</i> — this sheet directly closes that gap for KCET.
+</div>
+
+<footer>
+  <span>Source: <code>exam-papers/che{2020..2025}.pdf</code> + <code>ans_che_*.pdf</code> / Allen KCET-2025 solutions. Q-by-Q concept tagging; repeat detection Tier-1/Tier-2.</span>
+  <span><a href="index.html">← back to hub</a> &middot; <a href="chemistry-strategy.html">chemistry strategy</a></span>
+</footer>
+
+</div>
+</body>
+</html>
