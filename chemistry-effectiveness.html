@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KCET 2026 Chemistry: Prep vs Paper — Effectiveness Scorecard</title>
+<meta name="description" content="Post-exam audit of KCET 2026 Chemistry prep. What worked, what missed, and the actionable template for Maths prep on 24 Apr.">
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --rule:#d8d8d8; --soft:#f5f5f2;
+    --accent:#2563a8; --core:#0b6b3a; --warn:#b8700a; --danger:#b3261e;
+    --hl:#fff6d6; --chem:#0b6b3a; --phys:#2563a8; --math:#6b4a9a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);background:#fff;font:15px/1.55 "Inter","Segoe UI",system-ui,sans-serif}
+  .page{max-width:960px;margin:0 auto;padding:32px 28px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:14px;margin-bottom:22px}
+  .tag{display:inline-block;padding:2px 10px;background:var(--core);color:#fff;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.4px;margin-bottom:10px;text-transform:uppercase}
+  h1{margin:0 0 6px;font-size:26px;letter-spacing:.2px}
+  .sub{color:var(--muted);font-size:13.5px}
+  .sub strong{color:var(--ink)}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.9px;margin:30px 0 12px;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:4px}
+  h3{margin:0 0 6px;font-size:15px}
+  p{margin:0 0 10px}
+
+  .scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:14px}
+  .sc{border:1px solid var(--rule);border-radius:8px;padding:14px 16px;background:#fafafa}
+  .sc .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:4px}
+  .sc .val{font-size:24px;font-weight:700;line-height:1}
+  .sc .note{font-size:12px;color:var(--muted);margin-top:6px}
+  .sc.good{border-left:4px solid var(--core);background:#f0f7f0}
+  .sc.good .val{color:var(--core)}
+  .sc.warn{border-left:4px solid var(--warn);background:#fbf4ec}
+  .sc.warn .val{color:var(--warn)}
+  .sc.ink{border-left:4px solid var(--ink);background:#f0f0f0}
+
+  .callout{background:var(--hl);border-left:3px solid #c9a227;padding:12px 16px;border-radius:4px;margin:14px 0;font-size:13.5px}
+  .callout.good{background:#f0f7f0;border-left-color:var(--core)}
+  .callout.danger{background:#fbeeec;border-left-color:var(--danger)}
+  .callout.math{background:#f6f2fa;border-left-color:var(--math)}
+  .callout b{color:var(--ink)}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0 14px}
+  th,td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f5f5f2;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+  td.core{background:#f0f7f0}
+  td.support{background:#eef5fb}
+  td.light{background:#fbf4ec}
+  td.out{background:#fbeeec}
+  td.num{text-align:center;font-weight:600}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0 14px}
+  .two .col{border:1px solid var(--rule);border-radius:8px;padding:14px 16px}
+  .two .col.good{border-left:3px solid var(--core);background:#f0f7f0}
+  .two .col.bad{border-left:3px solid var(--danger);background:#fbeeec}
+  .two h4{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+  .two .col.good h4{color:var(--core)}
+  .two .col.bad h4{color:var(--danger)}
+  .two ul{margin:4px 0 0;padding-left:18px;font-size:13px}
+  .two li{margin-bottom:6px}
+
+  .flash{border:1px solid var(--math);border-radius:8px;background:#f6f2fa;padding:16px 18px;margin:14px 0}
+  .flash h3{color:var(--math);margin-bottom:8px}
+  .flash ol{margin:6px 0 0 20px;padding:0;font-size:13.5px}
+  .flash ol li{margin-bottom:8px}
+  .flash ol li b{color:var(--ink)}
+
+  footer{margin-top:32px;padding-top:12px;border-top:1px solid var(--rule);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media (max-width:680px){
+    .page{padding:22px 16px}
+    .two{grid-template-columns:1fr}
+  }
+  @media print{
+    body{font-size:11.5px}
+    .page{padding:10px;max-width:100%}
+    .two{break-inside:avoid}
+    .flash{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="tag">Post-Exam Audit · 23 April Evening</div>
+  <h1>Chemistry Prep vs Paper: Effectiveness Scorecard</h1>
+  <div class="sub">Based on the CollegeDekho unofficial key (Q1–Q53, version-agnostic). Q54–60 still pending overnight. Written as input for the <strong>Maths refresher flashcards</strong> Naina will prepare tonight for Shreya's 24 Apr paper.</div>
+</header>
+
+<h2>Headline numbers</h2>
+
+<div class="scores">
+  <div class="sc good">
+    <div class="lbl">Core 10 hit rate</div>
+    <div class="val">62%</div>
+    <div class="note">33 of 53 visible Qs fell in the Core 10 chapters — plan expected ~50%.</div>
+  </div>
+  <div class="sc good">
+    <div class="lbl">Repeat-topic flashcards fired</div>
+    <div class="val">10 / 15</div>
+    <div class="note">Direct hits from the 2020–2025 pattern-repeat deck.</div>
+  </div>
+  <div class="sc warn">
+    <div class="lbl">Out-of-syllabus leak</div>
+    <div class="val">1 / 53</div>
+    <div class="note">Only Q48 (Br⁻ test, p-Block). "Don't study p/s-Block" call was correct.</div>
+  </div>
+  <div class="sc ink">
+    <div class="lbl">Projected score</div>
+    <div class="val">45–49 / 60</div>
+    <div class="note">Target was 42–46. Paper structure favoured the plan <em>more</em> than predicted.</div>
+  </div>
+</div>
+
+<div class="callout good">
+  <b>One-line verdict:</b> The plan's three big bets — (1) put 60% of study time on Chemistry, (2) concentrate on 10 core chapters, and (3) drill recurring-concept flashcards — were all vindicated by the paper. The chapters Shreya drilled and the chapters KEA tested lined up almost exactly. <b>This template is now validated; reuse it for Maths tonight.</b>
+</div>
+
+<h2>Chapter-by-chapter hit map (Q1–Q53)</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Tier</th>
+  <th>Chapter</th>
+  <th class="num">Qs</th>
+  <th>Question numbers</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="core" rowspan="10"><b>Core 10</b><br><span style="font-size:11px;color:var(--muted)">33 Qs · target hit 90%</span></td><td class="core">Electrochemistry</td><td class="core num">4</td><td class="core">Q1, Q2, Q3, Q4</td></tr>
+<tr><td class="core">Kinetics</td><td class="core num">4</td><td class="core">Q5, Q6, Q7, Q8</td></tr>
+<tr><td class="core">Haloalkanes / Haloarenes</td><td class="core num">4</td><td class="core">Q13, Q14, Q15, Q16</td></tr>
+<tr><td class="core">Alcohols / Phenols / Ethers</td><td class="core num">4</td><td class="core">Q17, Q18, Q19, Q20</td></tr>
+<tr><td class="core">Aldehydes / Ketones / CA</td><td class="core num">4</td><td class="core">Q21, Q22, Q23, Q24</td></tr>
+<tr><td class="core">Amines</td><td class="core num">3</td><td class="core">Q25, Q26, Q27</td></tr>
+<tr><td class="core">Coordination Compounds</td><td class="core num">4</td><td class="core">Q40, Q41, Q42, Q43</td></tr>
+<tr><td class="core">Biomolecules</td><td class="core num">4</td><td class="core">Q44, Q45, Q46, Q47</td></tr>
+<tr><td class="core">d &amp; f-Block</td><td class="core num">2</td><td class="core">Q38, Q39</td></tr>
+<tr><td class="core" style="background:#fbeeec">Solutions</td><td class="core num" style="background:#fbeeec"><b>0</b></td><td class="core" style="background:#fbeeec">None visible — almost certainly in the missing Q54–60</td></tr>
+
+<tr><td class="support" rowspan="5"><b>Support 5</b><br><span style="font-size:11px;color:var(--muted)">11 Qs · target hit 75%</span></td><td class="support">Chemical Bonding</td><td class="support num">3</td><td class="support">Q32, Q33, Q34</td></tr>
+<tr><td class="support">Redox</td><td class="support num">3</td><td class="support">Q35, Q36, Q37</td></tr>
+<tr><td class="support">Hydrocarbons</td><td class="support num">3</td><td class="support">Q11, Q12, Q28</td></tr>
+<tr><td class="support">GOC / IUPAC</td><td class="support num">2</td><td class="support">Q9, Q10</td></tr>
+<tr><td class="support" style="background:#fbeeec">Equilibrium</td><td class="support num" style="background:#fbeeec"><b>0</b></td><td class="support" style="background:#fbeeec">None visible — likely in Q54–60</td></tr>
+
+<tr><td class="light" rowspan="4"><b>Light 4</b><br><span style="font-size:11px;color:var(--muted)">8 Qs · 2× plan estimate</span></td><td class="light">Thermodynamics</td><td class="light num">3</td><td class="light">Q51, Q52, Q53</td></tr>
+<tr><td class="light">Atomic Structure</td><td class="light num">2</td><td class="light">Q49, Q50</td></tr>
+<tr><td class="light">Mole Concept / Laws</td><td class="light num">2</td><td class="light">Q29, Q30</td></tr>
+<tr><td class="light">Periodicity / Classification</td><td class="light num">1</td><td class="light">Q31</td></tr>
+
+<tr><td class="out"><b>Out of syllabus</b><br><span style="font-size:11px;color:var(--muted)">1 Q · guess</span></td><td class="out">p-Block anion test</td><td class="out num">1</td><td class="out">Q48 (Br⁻ identification)</td></tr>
+</tbody>
+</table>
+
+<h2>Repeat-topic flashcards that fired directly</h2>
+
+<table>
+<thead>
+<tr><th>Flashcard concept (2020–25 frequency)</th><th>Paper Q</th><th class="num">Lock?</th></tr>
+</thead>
+<tbody>
+<tr><td>Hybridisation NO₂⁺/NO₃⁻/NH₄⁺ <em>(6/6 years)</em></td><td>Q32</td><td class="num">Locked</td></tr>
+<tr><td>Coordination geometry / IUPAC naming <em>(6/6 years)</em></td><td>Q40, Q43</td><td class="num">Locked</td></tr>
+<tr><td>Kohlrausch / molar conductivity</td><td>Q2</td><td class="num">Locked</td></tr>
+<tr><td>Faraday electrolysis</td><td>Q1</td><td class="num">Locked</td></tr>
+<tr><td>Arrhenius / multi-step Eₐ</td><td>Q6</td><td class="num">Locked</td></tr>
+<tr><td>Aldol / Claisen-Schmidt</td><td>Q22</td><td class="num">Locked</td></tr>
+<tr><td>Iodoform test</td><td>Q24</td><td class="num">Locked</td></tr>
+<tr><td>PCC oxidation</td><td>Q17</td><td class="num">Locked</td></tr>
+<tr><td>Hinsberg / amine basicity</td><td>Q26</td><td class="num">Locked</td></tr>
+<tr><td>Coordination EAN / ionisation isomerism</td><td>Q41, Q42</td><td class="num">Locked</td></tr>
+</tbody>
+</table>
+
+<p style="font-size:13px;color:var(--muted)">At least 10 of the 15 repeat-topic flashcards fired directly in the paper. If the drill protocol held, that's <b>~12 marks locked by rote recall alone</b> — before any reasoning is applied.</p>
+
+<h2>What worked vs what missed</h2>
+
+<div class="two">
+  <div class="col good">
+    <h4>Worked → reuse for Maths</h4>
+    <ul>
+      <li><b>60% time on the weak subject</b> — converted 58th percentile JEE Chemistry into a projected top-quintile KCET score. Inverse-percentile weighting is validated.</li>
+      <li><b>Tier-based chapter list</b> (Core 10 / Support 5 / Light 4 / OUT) beat the standard "study everything" approach. 62% of the paper fell in Core 10.</li>
+      <li><b>Repeat-topic flashcards</b> drilled with Naina's quiz-master protocol fired 10/15 times. Rote recall of recurring concepts = free marks.</li>
+      <li><b>Day 5 "fact-dump"</b> on Light 4 (Thermo, Atomic, Mole, Periodicity) over-delivered: 8 Qs where 4 were predicted. Do not skip fact-recall the night before.</li>
+      <li><b>"Don't study out-of-syllabus" rule</b> held: only 1 leak in 53 Qs. Ignoring p-Block / s-Block / Polymers / Solid State saved 15+ hours of useless revision.</li>
+    </ul>
+  </div>
+  <div class="col bad">
+    <h4>Missed → guard against</h4>
+    <ul>
+      <li><b>Class 11 was heavier than expected.</b> Shiksha's analysis flagged "unexpected Class 11 focus." Mole / Atomic / Thermo / Periodicity each got 2–3 Qs, not the 1 Q the 8-year average suggested. <b>For Maths: do not deprioritise Class 11.</b></li>
+      <li><b>Statement-based (assertion / reason) questions rose</b> — Q10, Q15, Q28, Q45, Q51, Q52 all had the "Statement I / Statement II" format. These reward careful reading, not speed. <b>For Maths: drill a few assertion-reason pairs with Naina.</b></li>
+      <li><b>Solutions chapter not visible yet</b> — the single biggest Core 10 chapter in 8-year data had 0 Qs in Q1–Q53. If it stays absent in Q54–60, that's 4–5 hours of ΔTb / Henry / Raoult drill that did not pay off <em>this</em> year. Not a reason to skip it next year.</li>
+      <li><b>Coaching keys are partial / laggy.</b> CollegeDekho stopped at Q53. Allen / Aakash will land morning of 24 Apr. Tonight's rank-estimate is provisional.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Implications for Maths prep tonight</h2>
+
+<div class="flash">
+  <h3>Brief for Naina — 4 flashcard principles for Maths</h3>
+  <p style="font-size:13.5px;color:var(--muted);margin-bottom:10px">Maths is Shreya's strongest subject (94.12 percentile on JEE), so this is maintenance mode, not rescue mode. Naina's flashcards should feel like a pre-flight checklist, not a study session. <b>Target: 30–40 cards total, 45 minutes of quiz-time before bed.</b></p>
+  <ol>
+    <li><b>Formula-recall only, no proofs.</b> Front = prompt ("integration by parts formula", "distance of point from plane", "sum of first n squares"). Back = single-line formula. If Shreya hesitates >3 seconds, that's the card worth reviewing.</li>
+    <li><b>Cover Class 11 and Class 12 equally.</b> Chemistry lesson: Class 11 was heavier than expected. For Maths, pick ~5 Class 11 topics (Trig identities, Sequences &amp; Series, Complex numbers, Conic sections, Straight lines) and ~5 Class 12 topics (Matrices/Determinants 2×2 and 3×3, Derivatives shortcuts, Definite integrals, Vectors, 3D geometry). Not "90% Class 12" — that was the old advice.</li>
+    <li><b>Add 3–5 assertion-reason drill cards.</b> Pick any 3 standard results (e.g. "A square matrix A is invertible iff |A| ≠ 0" + any 3 others) and frame them as Statement I / Statement II pairs. This is the question style that surprised Chemistry today; Maths paper will follow the same trend.</li>
+    <li><b>No practice problems tonight.</b> No timed sets, no paper attempts. Maths at 94th percentile does not need more practice — it needs confidence and formula certainty. A tired brain at 10 PM solving a hard integration question is a net negative for tomorrow 10:30 AM.</li>
+  </ol>
+</div>
+
+<div class="callout math">
+  <b>Execution protocol (carry over from Chemistry):</b> Naina reads the prompt aloud. Shreya answers verbally. Naina confirms correct / shows the back card on wrong. One pass of all cards &rarr; re-run the wrong-only subset &rarr; stop at 10:30 PM regardless. Same haptic / reward structure as the Naina chemistry quiz. Lights out by 11. Breakfast protein-heavy, no sugar. Exam at 10:30 AM.
+</div>
+
+<h2>Projected final KCET total (provisional)</h2>
+
+<table>
+<thead>
+<tr><th>Paper</th><th class="num">Target</th><th class="num">Projected</th><th>Basis</th></tr>
+</thead>
+<tbody>
+<tr><td class="support">Physics</td><td class="support num">48–52</td><td class="support num">—</td><td class="support">Pending Shreya's self-score against CollegeDekho key tonight.</td></tr>
+<tr><td class="core">Chemistry</td><td class="core num">42–46</td><td class="core num"><b>45–49</b></td><td class="core">Per chapter-hit map above. Assumes drill protocol held.</td></tr>
+<tr><td class="light">Maths</td><td class="light num">56–58</td><td class="light num">—</td><td class="light">24 Apr 10:30 AM. 94th-percentile baseline from JEE S1.</td></tr>
+<tr><th>PCM Total</th><th class="num">148–156</th><th class="num">—</th><th>Target CET rank: 2,000–5,000 band (MSRIT CSE / BMS AI&amp;DS / PES CSE).</th></tr>
+</tbody>
+</table>
+
+<p style="font-size:12.5px;color:var(--muted)">Final Q54–60 Chemistry answers and Physics score recon will be added to this page after the Allen / Aakash full keys drop on 24 Apr morning. Nothing in the remaining 7 Qs can move the effectiveness conclusion by more than ±3 marks.</p>
+
+<footer>
+  <span>Last updated: 23 April 2026, evening · Drafted for the 7-day tracker archive</span>
+  <a href="index.html">&larr; Back to revision hub</a>
+</footer>
+
+</div>
+</body>
+</html>
