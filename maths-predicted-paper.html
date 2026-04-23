@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KCET 2026 Maths — Predicted Paper (Pattern-Based)</title>
+<meta name="description" content="60-question predicted KCET Maths paper built from 6-year (2020-2025) pattern analysis. Chapter distribution mirrors the historical average; assertion-reason Qs reflect 2022-25 trend.">
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --rule:#d8d8d8; --soft:#f5f5f2;
+    --accent:#2563a8; --core:#0b6b3a; --warn:#b8700a; --danger:#b3261e;
+    --hl:#fff6d6; --math:#6b4a9a; --math-soft:#f6f2fa;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);background:#fff;font:15px/1.55 "Inter","Segoe UI",system-ui,sans-serif}
+  .page{max-width:920px;margin:0 auto;padding:28px 24px 60px}
+  header{border-bottom:3px solid var(--math);padding-bottom:12px;margin-bottom:20px}
+  .tag{display:inline-block;padding:2px 10px;background:var(--math);color:#fff;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.4px;margin-bottom:10px;text-transform:uppercase}
+  h1{margin:0 0 6px;font-size:24px;letter-spacing:.2px;color:var(--math)}
+  .sub{color:var(--muted);font-size:13.5px}
+  .sub strong{color:var(--ink)}
+  h2{font-size:12.5px;text-transform:uppercase;letter-spacing:.9px;margin:24px 0 10px;color:var(--math);border-bottom:1px solid var(--rule);padding-bottom:4px}
+  h3{font-size:13.5px;text-transform:uppercase;letter-spacing:.6px;margin:20px 0 10px;color:var(--ink);padding:6px 10px;background:var(--math-soft);border-left:3px solid var(--math);border-radius:2px}
+  p{margin:0 0 10px}
+
+  .callout{background:var(--hl);border-left:3px solid #c9a227;padding:10px 14px;border-radius:4px;margin:12px 0;font-size:13px}
+  .callout.math{background:var(--math-soft);border-left-color:var(--math)}
+  .callout.warn{background:#fbf4ec;border-left-color:var(--warn)}
+  .callout b{color:var(--ink)}
+
+  .instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:8px 0 16px}
+  .instr .i{border:1px solid var(--rule);border-radius:6px;padding:10px 12px;background:#fafafa;font-size:12.5px}
+  .instr .i .k{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+  .instr .i .v{font-size:14px;font-weight:600;margin-top:2px}
+
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 14px}
+  th,td{border:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:#f5f5f2;font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px}
+  td.num{text-align:center;font-weight:600}
+
+  .q{border:1px solid var(--rule);border-radius:6px;padding:12px 14px;margin:10px 0;background:#fff;page-break-inside:avoid}
+  .q .qh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+  .q .qn{font-weight:700;color:var(--math);font-size:14px}
+  .q .ch{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;background:var(--math-soft);padding:2px 8px;border-radius:10px}
+  .q .ch.ar{background:#fbeeec;color:var(--danger)}
+  .q .body{font-size:14px;line-height:1.6;margin:6px 0 8px}
+  .q .body em{color:var(--muted);font-style:normal;font-size:13px}
+  .q .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:4px 16px;margin:6px 0 8px;font-size:13.5px}
+  .q .opts .o{padding:2px 0}
+  .q .opts .o b{color:var(--math);margin-right:4px}
+  .reveal{display:inline-block;margin-top:4px;padding:4px 10px;font-size:11.5px;border:1px solid var(--math);color:var(--math);background:#fff;border-radius:4px;cursor:pointer;font-weight:600;letter-spacing:.3px;text-transform:uppercase}
+  .reveal:hover{background:var(--math);color:#fff}
+  .ans{display:none;margin-top:6px;padding:8px 12px;background:#f0f7f0;border-left:3px solid var(--core);border-radius:2px;font-size:13px}
+  .ans.show{display:block}
+  .ans b{color:var(--core)}
+
+  .keytable{font-size:12px;margin-top:14px}
+  .keytable th{background:var(--math-soft);color:var(--math)}
+  .keytable td.num{color:var(--math);font-weight:700}
+
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 4px}
+  .actions button{padding:6px 14px;font-size:12.5px;border:1px solid var(--math);background:#fff;color:var(--math);border-radius:4px;cursor:pointer;font-weight:600;letter-spacing:.3px;text-transform:uppercase}
+  .actions button:hover{background:var(--math);color:#fff}
+
+  footer{margin-top:32px;padding-top:12px;border-top:1px solid var(--rule);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  footer a{color:var(--math);text-decoration:none}
+
+  @media (max-width:680px){
+    .page{padding:20px 14px}
+    .q .opts{grid-template-columns:1fr}
+  }
+  @media print{
+    body{font-size:11.5px}
+    .page{padding:8px;max-width:100%}
+    .reveal,.actions{display:none}
+    .ans{display:block !important;break-inside:avoid}
+    .q{break-inside:avoid;border:none;border-bottom:1px solid #ddd;border-radius:0;padding:8px 0}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="tag">Pattern-Based Prediction · 60 MCQ · 80 min</div>
+  <h1>KCET 2026 Maths — Predicted Paper</h1>
+  <div class="sub">Built from 6 years of KCET Maths papers (2020–2025, 360 Qs analysed). Chapter mix mirrors the historical distribution. <strong>Assertion-reason Qs (5–6 of them)</strong> reflect the 2022–25 trend toward conceptual questions. <strong>Use for morning warm-up on 24 Apr, not as fresh study tonight.</strong></div>
+</header>
+
+<div class="callout warn">
+  <b>How to use this paper:</b> Do not attempt tonight. Sleep comes first. Tomorrow morning after breakfast, set an 80-minute timer, attempt under exam conditions, self-score against the answer key at the bottom. If you run short on time, skip to the <b>Answer Key &amp; Chapter Map</b> at the bottom and skim the sheet for formula refresh. <b>No negative marking — attempt all 60.</b>
+</div>
+
+<h2>Exam instructions (mirror of real paper)</h2>
+<div class="instr">
+  <div class="i"><div class="k">Total Qs</div><div class="v">60</div></div>
+  <div class="i"><div class="k">Duration</div><div class="v">80 min</div></div>
+  <div class="i"><div class="k">Each Q</div><div class="v">+1 correct</div></div>
+  <div class="i"><div class="k">Wrong</div><div class="v">0 (no negative)</div></div>
+  <div class="i"><div class="k">Class 12</div><div class="v">35 Qs (58%)</div></div>
+  <div class="i"><div class="k">Class 11</div><div class="v">25 Qs (42%)</div></div>
+</div>
+
+<h2>Chapter distribution (matches 2020–25 average)</h2>
+<table>
+  <thead><tr><th>Class 12 chapters</th><th class="num">Qs</th><th>Class 11 chapters</th><th class="num">Qs</th></tr></thead>
+  <tbody>
+    <tr><td>Integrals</td><td class="num">5</td><td>Trigonometry</td><td class="num">4</td></tr>
+    <tr><td>Continuity &amp; Differentiability</td><td class="num">5</td><td>Sequences &amp; Series</td><td class="num">3</td></tr>
+    <tr><td>Probability</td><td class="num">4</td><td>Straight Lines</td><td class="num">2</td></tr>
+    <tr><td>Matrices &amp; Determinants</td><td class="num">4</td><td>Conic Sections</td><td class="num">2</td></tr>
+    <tr><td>Applications of Derivatives</td><td class="num">4</td><td>Complex Numbers</td><td class="num">2</td></tr>
+    <tr><td>3D Geometry</td><td class="num">4</td><td>Quadratic Equations</td><td class="num">2</td></tr>
+    <tr><td>Vectors</td><td class="num">3</td><td>Permutations &amp; Combinations</td><td class="num">2</td></tr>
+    <tr><td>Relations &amp; Functions</td><td class="num">2</td><td>Binomial Theorem</td><td class="num">2</td></tr>
+    <tr><td>Inverse Trigonometry</td><td class="num">2</td><td>Statistics</td><td class="num">2</td></tr>
+    <tr><td>Applications of Integrals</td><td class="num">1</td><td>Limits</td><td class="num">2</td></tr>
+    <tr><td>Differential Equations</td><td class="num">1</td><td>Mathematical Reasoning</td><td class="num">2</td></tr>
+    <tr><td><b>Total</b></td><td class="num"><b>35</b></td><td><b>Total</b></td><td class="num"><b>25</b></td></tr>
+  </tbody>
+</table>
+
+<div class="actions">
+  <button onclick="document.querySelectorAll('.ans').forEach(a=>a.classList.add('show'))">Show all answers</button>
+  <button onclick="document.querySelectorAll('.ans').forEach(a=>a.classList.remove('show'))">Hide all answers</button>
+  <button onclick="window.print()">Print paper</button>
+</div>
+
+<h3>Class 12 — Q1 to Q35</h3>
+
+<!-- Matrices & Determinants (Q1-Q4) -->
+<div class="q"><div class="qh"><span class="qn">Q1</span><span class="ch">Matrices</span></div>
+  <div class="body">If A = [[2, 3], [1, 2]], then A⁻¹ equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> [[2, −3], [−1, 2]]</span><span class="o"><b>(2)</b> [[2, 3], [1, 2]]</span><span class="o"><b>(3)</b> [[−2, 3], [1, −2]]</span><span class="o"><b>(4)</b> [[1, 0], [0, 1]]</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — det(A) = 4 − 3 = 1. A⁻¹ = (1/det) · adj(A) = [[2, −3], [−1, 2]].</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q2</span><span class="ch">Determinants</span></div>
+  <div class="body">If A is a 3×3 matrix with |A| = 5, then |2A| equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 10</span><span class="o"><b>(2)</b> 20</span><span class="o"><b>(3)</b> 40</span><span class="o"><b>(4)</b> 80</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — |kA| = kⁿ|A| for n×n matrix. |2A| = 2³ · 5 = 40.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q3</span><span class="ch ar">Matrices · Assertion–Reason</span></div>
+  <div class="body"><b>Statement I:</b> If A is a square matrix such that A² = A, then (I − A)³ = I − A.<br>
+  <b>Statement II:</b> For any matrix A with A² = A, we have Aⁿ = A for all positive integers n.</div>
+  <div class="opts"><span class="o"><b>(1)</b> Both I and II are true; II is the correct explanation of I</span><span class="o"><b>(2)</b> Both I and II are true; II is NOT the correct explanation of I</span><span class="o"><b>(3)</b> I is true, II is false</span><span class="o"><b>(4)</b> I is false, II is true</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — Expand (I − A)³ = I − 3A + 3A² − A³ = I − 3A + 3A − A = I − A (using A² = A and A³ = A·A² = A·A = A). II explains it.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q4</span><span class="ch">Determinants</span></div>
+  <div class="body">The system of equations x + 2y = 3, 3x + ky = 9 has a unique solution if:</div>
+  <div class="opts"><span class="o"><b>(1)</b> k = 6</span><span class="o"><b>(2)</b> k ≠ 6</span><span class="o"><b>(3)</b> k = 3</span><span class="o"><b>(4)</b> k ≠ 0</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Unique solution requires det ≠ 0 → 1·k − 2·3 ≠ 0 → k ≠ 6.</div>
+</div>
+
+<!-- Relations & Functions (Q5-Q6) -->
+<div class="q"><div class="qh"><span class="qn">Q5</span><span class="ch">Relations &amp; Functions</span></div>
+  <div class="body">The number of equivalence relations on the set {1, 2, 3} is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 3</span><span class="o"><b>(2)</b> 5</span><span class="o"><b>(3)</b> 8</span><span class="o"><b>(4)</b> 15</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Equivalence relations correspond to partitions. Bell number B₃ = 5.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q6</span><span class="ch">Relations &amp; Functions</span></div>
+  <div class="body">The function f : R → R defined by f(x) = x² is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> one-one and onto</span><span class="o"><b>(2)</b> one-one but not onto</span><span class="o"><b>(3)</b> neither one-one nor onto</span><span class="o"><b>(4)</b> onto but not one-one</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — f(−2) = f(2) = 4 (not injective); no real x gives f(x) = −1 (not surjective).</div>
+</div>
+
+<!-- Inverse Trigonometry (Q7-Q8) -->
+<div class="q"><div class="qh"><span class="qn">Q7</span><span class="ch">Inverse Trigonometry</span></div>
+  <div class="body">The domain of f(x) = sin⁻¹(2x − 1) is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> [−1, 1]</span><span class="o"><b>(2)</b> [0, 1]</span><span class="o"><b>(3)</b> [−1, 0]</span><span class="o"><b>(4)</b> [0, 2]</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Need −1 ≤ 2x − 1 ≤ 1 → 0 ≤ x ≤ 1.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q8</span><span class="ch">Inverse Trigonometry</span></div>
+  <div class="body">The value of tan⁻¹(1) + cos⁻¹(−1/2) + sin⁻¹(−1/2) is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> π/4</span><span class="o"><b>(2)</b> π/2</span><span class="o"><b>(3)</b> 3π/4</span><span class="o"><b>(4)</b> π</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — π/4 + 2π/3 + (−π/6) = 3π/12 + 8π/12 − 2π/12 = 9π/12 = 3π/4.</div>
+</div>
+
+<!-- Continuity & Differentiability (Q9-Q13) -->
+<div class="q"><div class="qh"><span class="qn">Q9</span><span class="ch">Continuity</span></div>
+  <div class="body">If f(x) = kx² for x &lt; 2 and f(x) = 3 for x ≥ 2 is continuous at x = 2, then k =</div>
+  <div class="opts"><span class="o"><b>(1)</b> 3/4</span><span class="o"><b>(2)</b> 4/3</span><span class="o"><b>(3)</b> 1/2</span><span class="o"><b>(4)</b> 2</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — Continuity at 2: lim(x→2⁻) kx² = 4k = 3 → k = 3/4.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q10</span><span class="ch">Differentiability</span></div>
+  <div class="body">If y = x^x, then dy/dx equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> x·x^(x−1)</span><span class="o"><b>(2)</b> x^x · ln x</span><span class="o"><b>(3)</b> x^x (1 + ln x)</span><span class="o"><b>(4)</b> x^x / x</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — Take ln: ln y = x ln x; differentiate: (1/y) y' = ln x + 1; so y' = x^x (1 + ln x).</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q11</span><span class="ch">Differentiability</span></div>
+  <div class="body">If y = e^(tan x), then dy/dx equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> e^(tan x)</span><span class="o"><b>(2)</b> sec²x · e^(tan x)</span><span class="o"><b>(3)</b> tan x · e^(tan x)</span><span class="o"><b>(4)</b> sec x · tan x · e^(tan x)</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Chain rule: dy/dx = e^(tan x) · d(tan x)/dx = sec²x · e^(tan x).</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q12</span><span class="ch ar">Differentiability · Assertion–Reason</span></div>
+  <div class="body"><b>Statement I:</b> f(x) = |x − 1| is continuous at x = 1 but not differentiable at x = 1.<br>
+  <b>Statement II:</b> Every differentiable function is continuous, but not every continuous function is differentiable.</div>
+  <div class="opts"><span class="o"><b>(1)</b> Both I and II true; II explains I</span><span class="o"><b>(2)</b> Both true; II does NOT explain I</span><span class="o"><b>(3)</b> I true, II false</span><span class="o"><b>(4)</b> I false, II true</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — Both correct; II justifies I (continuity does not imply differentiability, shown by |x−1| at x=1).</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q13</span><span class="ch">Differentiability</span></div>
+  <div class="body">If y = sin⁻¹(x), then (1 − x²) y″ − x y′ equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 0</span><span class="o"><b>(2)</b> 1</span><span class="o"><b>(3)</b> −1</span><span class="o"><b>(4)</b> x</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — Standard NCERT result: (1 − x²) y″ − x y′ = 0 for y = sin⁻¹x.</div>
+</div>
+
+<!-- Applications of Derivatives (Q14-Q17) -->
+<div class="q"><div class="qh"><span class="qn">Q14</span><span class="ch">App. of Derivatives</span></div>
+  <div class="body">The maximum value of f(x) = x(1 − x)² on [0, 1] is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 1/4</span><span class="o"><b>(2)</b> 4/27</span><span class="o"><b>(3)</b> 1/27</span><span class="o"><b>(4)</b> 2/27</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — f'(x) = (1 − x)² + x·2(1 − x)(−1) = (1 − x)(1 − 3x). f'(x) = 0 at x = 1/3. f(1/3) = (1/3)(2/3)² = 4/27.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q15</span><span class="ch">App. of Derivatives</span></div>
+  <div class="body">Approximate value of √25.3 using differentials is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 5.03</span><span class="o"><b>(2)</b> 5.3</span><span class="o"><b>(3)</b> 5.015</span><span class="o"><b>(4)</b> 5.06</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — y = √x, dy = (1/(2√x))dx. At x = 25, dy = (1/10)(0.3) = 0.03. So √25.3 ≈ 5 + 0.03 = 5.03.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q16</span><span class="ch">App. of Derivatives</span></div>
+  <div class="body">A spherical balloon is inflated so its radius increases at 1 cm/s. The rate of change of volume (cm³/s) when r = 5 cm is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 50π</span><span class="o"><b>(2)</b> 75π</span><span class="o"><b>(3)</b> 100π</span><span class="o"><b>(4)</b> 125π</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — V = (4/3)πr³ → dV/dt = 4πr² · dr/dt = 4π(25)(1) = 100π.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q17</span><span class="ch">App. of Derivatives</span></div>
+  <div class="body">The equation of the tangent to y = x² at the point (1, 1) is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> y = 2x − 1</span><span class="o"><b>(2)</b> y = x + 1</span><span class="o"><b>(3)</b> y = 2x + 1</span><span class="o"><b>(4)</b> y = x − 1</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — dy/dx = 2x; slope at (1,1) = 2. Line: y − 1 = 2(x − 1) → y = 2x − 1.</div>
+</div>
+
+<!-- Integrals (Q18-Q22) -->
+<div class="q"><div class="qh"><span class="qn">Q18</span><span class="ch">Integrals</span></div>
+  <div class="body">∫ x · eˣ dx equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> x·eˣ + C</span><span class="o"><b>(2)</b> eˣ(x − 1) + C</span><span class="o"><b>(3)</b> eˣ(x + 1) + C</span><span class="o"><b>(4)</b> x²eˣ/2 + C</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Integration by parts: ∫x·eˣ dx = x·eˣ − ∫eˣ dx = x·eˣ − eˣ = eˣ(x − 1).</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q19</span><span class="ch">Integrals</span></div>
+  <div class="body">∫₀^(π/2) sin²x dx equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> π/2</span><span class="o"><b>(2)</b> π/3</span><span class="o"><b>(3)</b> π/4</span><span class="o"><b>(4)</b> π/6</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — ∫sin²x dx = ∫(1 − cos 2x)/2 dx = x/2 − sin 2x/4. Evaluated 0 to π/2: (π/4 − 0) − (0 − 0) = π/4.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q20</span><span class="ch">Integrals</span></div>
+  <div class="body">∫ dx / ((x − 1)(x − 2)) equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> ln|x − 2| − ln|x − 1| + C</span><span class="o"><b>(2)</b> ln|x − 1| + ln|x − 2| + C</span><span class="o"><b>(3)</b> ln|(x − 1)(x − 2)| + C</span><span class="o"><b>(4)</b> −ln|x − 2| − ln|x − 1| + C</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — Partial fractions: 1/((x−1)(x−2)) = −1/(x−1) + 1/(x−2). Integrating gives −ln|x−1| + ln|x−2| + C.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q21</span><span class="ch">Integrals</span></div>
+  <div class="body">∫ sec²x / tan x dx equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> tan²x/2 + C</span><span class="o"><b>(2)</b> ln|tan x| + C</span><span class="o"><b>(3)</b> ln|sec x| + C</span><span class="o"><b>(4)</b> tan x + C</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Let u = tan x, du = sec²x dx. Integral becomes ∫du/u = ln|u| + C = ln|tan x| + C.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q22</span><span class="ch">Integrals</span></div>
+  <div class="body">∫₀¹ x/(1 + x²) dx equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> ln 2</span><span class="o"><b>(2)</b> (1/2) ln 2</span><span class="o"><b>(3)</b> ln(1/2)</span><span class="o"><b>(4)</b> π/4</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Let u = 1 + x². ∫x/(1+x²)dx = (1/2)ln(1+x²). Evaluated 0 to 1: (1/2)(ln 2 − 0) = (1/2) ln 2.</div>
+</div>
+
+<!-- Applications of Integrals (Q23) -->
+<div class="q"><div class="qh"><span class="qn">Q23</span><span class="ch">App. of Integrals</span></div>
+  <div class="body">The area bounded by y = x² and y = 2x is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 2/3</span><span class="o"><b>(2)</b> 4/3</span><span class="o"><b>(3)</b> 8/3</span><span class="o"><b>(4)</b> 1</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Curves intersect at x = 0 and x = 2. Area = ∫₀² (2x − x²) dx = [x² − x³/3]₀² = 4 − 8/3 = 4/3.</div>
+</div>
+
+<!-- Differential Equations (Q24) -->
+<div class="q"><div class="qh"><span class="qn">Q24</span><span class="ch">Differential Equations</span></div>
+  <div class="body">The integrating factor of the linear DE dy/dx + y = eˣ is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> eˣ</span><span class="o"><b>(2)</b> e^(−x)</span><span class="o"><b>(3)</b> x</span><span class="o"><b>(4)</b> 1</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — For dy/dx + Py = Q, IF = e^(∫P dx). Here P = 1 → IF = e^x.</div>
+</div>
+
+<!-- Vectors (Q25-Q27) -->
+<div class="q"><div class="qh"><span class="qn">Q25</span><span class="ch">Vectors</span></div>
+  <div class="body">The angle between the vectors a = i + j + k and b = i − j + k is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> cos⁻¹(1/3)</span><span class="o"><b>(2)</b> cos⁻¹(1/√3)</span><span class="o"><b>(3)</b> π/3</span><span class="o"><b>(4)</b> π/2</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — a·b = 1 − 1 + 1 = 1. |a| = |b| = √3. cosθ = 1/(√3·√3) = 1/3 → θ = cos⁻¹(1/3).</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q26</span><span class="ch">Vectors</span></div>
+  <div class="body">The projection of a = 2i + 3j + 2k on b = i + 2j + k is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> √6</span><span class="o"><b>(2)</b> 10/√6</span><span class="o"><b>(3)</b> 5/√6</span><span class="o"><b>(4)</b> 10</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Projection = (a·b)/|b| = (2 + 6 + 2)/√(1+4+1) = 10/√6.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q27</span><span class="ch">Vectors</span></div>
+  <div class="body">If |a| = 3, |b| = 4, and a·b = 6, then |a × b| equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 6</span><span class="o"><b>(2)</b> 6√3</span><span class="o"><b>(3)</b> 12</span><span class="o"><b>(4)</b> 12√3</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — |a×b|² + (a·b)² = |a|²|b|² → |a×b|² = 9·16 − 36 = 108 → |a×b| = 6√3.</div>
+</div>
+
+<!-- 3D Geometry (Q28-Q31) -->
+<div class="q"><div class="qh"><span class="qn">Q28</span><span class="ch">3D Geometry</span></div>
+  <div class="body">Distance from the point (1, −2, 3) to the plane 2x − y + 2z − 9 = 0 is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 1/3</span><span class="o"><b>(2)</b> 1</span><span class="o"><b>(3)</b> 2/3</span><span class="o"><b>(4)</b> 3</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — |2(1) − (−2) + 2(3) − 9| / √(4+1+4) = |2+2+6−9| / 3 = 1/3.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q29</span><span class="ch">3D Geometry</span></div>
+  <div class="body">The equation of the plane through (1, 2, 3) with normal vector i + 2j + 3k is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> x + 2y + 3z = 14</span><span class="o"><b>(2)</b> x + 2y + 3z = 6</span><span class="o"><b>(3)</b> x + y + z = 14</span><span class="o"><b>(4)</b> 2x + 3y + z = 11</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — n·(r − r₀) = 0 → x + 2y + 3z = 1 + 4 + 9 = 14.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q30</span><span class="ch">3D Geometry</span></div>
+  <div class="body">The angle between the lines (x−1)/1 = y/2 = (z+1)/2 and x/2 = (y−1)/−2 = z/1 is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 0</span><span class="o"><b>(2)</b> π/4</span><span class="o"><b>(3)</b> π/2</span><span class="o"><b>(4)</b> π/3</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — DRs: (1,2,2) and (2,−2,1). Dot product = 2 − 4 + 2 = 0 → perpendicular → π/2.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q31</span><span class="ch ar">3D Geometry · Assertion–Reason</span></div>
+  <div class="body"><b>Statement I:</b> The lines r = i + 2j + (i − j + k)t and r = 2i + 3j + k + (2i − 2j + 2k)s are parallel.<br>
+  <b>Statement II:</b> Two lines are parallel iff their direction ratios are proportional.</div>
+  <div class="opts"><span class="o"><b>(1)</b> Both true; II explains I</span><span class="o"><b>(2)</b> Both true; II does NOT explain I</span><span class="o"><b>(3)</b> I true, II false</span><span class="o"><b>(4)</b> I false, II true</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — DRs (1,−1,1) and (2,−2,2): the second is 2 × the first, so lines are parallel. Statement II is the standard parallelism condition.</div>
+</div>
+
+<!-- Probability (Q32-Q35) -->
+<div class="q"><div class="qh"><span class="qn">Q32</span><span class="ch">Probability</span></div>
+  <div class="body">A fair die is thrown twice. The probability that the sum of scores is 7 is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 1/6</span><span class="o"><b>(2)</b> 1/9</span><span class="o"><b>(3)</b> 5/36</span><span class="o"><b>(4)</b> 7/36</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — Favourable pairs: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6. Total = 36. P = 6/36 = 1/6.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q33</span><span class="ch">Probability</span></div>
+  <div class="body">If P(A) = 1/3, P(B) = 1/2, P(A ∩ B) = 1/6, then A and B are:</div>
+  <div class="opts"><span class="o"><b>(1)</b> mutually exclusive</span><span class="o"><b>(2)</b> independent</span><span class="o"><b>(3)</b> dependent</span><span class="o"><b>(4)</b> exhaustive</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — P(A)·P(B) = (1/3)(1/2) = 1/6 = P(A ∩ B) → independent.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q34</span><span class="ch">Probability · Bayes</span></div>
+  <div class="body">Urn A contains 3 red and 2 black balls; Urn B contains 2 red and 3 black balls. An urn is chosen at random and a red ball is drawn. The probability it came from Urn A is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 2/5</span><span class="o"><b>(2)</b> 3/5</span><span class="o"><b>(3)</b> 1/2</span><span class="o"><b>(4)</b> 3/4</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — P(A|R) = [P(R|A)P(A)] / [P(R|A)P(A) + P(R|B)P(B)] = (3/5·1/2) / (3/5·1/2 + 2/5·1/2) = (3/10)/(5/10) = 3/5.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q35</span><span class="ch">Probability · Binomial</span></div>
+  <div class="body">If X ~ B(5, 1/3), the variance of X is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 5/3</span><span class="o"><b>(2)</b> 10/3</span><span class="o"><b>(3)</b> 10/9</span><span class="o"><b>(4)</b> 5/9</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — Var = npq = 5 · (1/3) · (2/3) = 10/9.</div>
+</div>
+
+<h3>Class 11 — Q36 to Q60</h3>
+
+<!-- Trigonometry (Q36-Q39) -->
+<div class="q"><div class="qh"><span class="qn">Q36</span><span class="ch">Trigonometry</span></div>
+  <div class="body">If sin x = 3/5 and x is in the first quadrant, then cos 2x equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 7/25</span><span class="o"><b>(2)</b> 24/25</span><span class="o"><b>(3)</b> −7/25</span><span class="o"><b>(4)</b> 16/25</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — cos 2x = 1 − 2sin²x = 1 − 2(9/25) = 1 − 18/25 = 7/25.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q37</span><span class="ch">Trigonometry</span></div>
+  <div class="body">The value of tan 15° is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 2 + √3</span><span class="o"><b>(2)</b> 2 − √3</span><span class="o"><b>(3)</b> √3 − 1</span><span class="o"><b>(4)</b> √3 + 1</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — tan 15° = tan(45° − 30°) = (1 − 1/√3)/(1 + 1/√3) = (√3 − 1)/(√3 + 1) = 2 − √3.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q38</span><span class="ch">Trigonometry</span></div>
+  <div class="body">The period of f(x) = sin 2x + cos 3x is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> π</span><span class="o"><b>(2)</b> 2π/3</span><span class="o"><b>(3)</b> 2π</span><span class="o"><b>(4)</b> π/6</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — Period of sin 2x is π; of cos 3x is 2π/3. LCM(π, 2π/3) = 2π.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q39</span><span class="ch">Trigonometry</span></div>
+  <div class="body">The number of solutions of sin x = 1/2 in [0, 2π] is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 1</span><span class="o"><b>(2)</b> 2</span><span class="o"><b>(3)</b> 3</span><span class="o"><b>(4)</b> 4</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — x = π/6 and x = 5π/6.</div>
+</div>
+
+<!-- Straight Lines (Q40-Q41) -->
+<div class="q"><div class="qh"><span class="qn">Q40</span><span class="ch">Straight Lines</span></div>
+  <div class="body">The distance from the origin to the line 3x + 4y − 12 = 0 is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 12</span><span class="o"><b>(2)</b> 5</span><span class="o"><b>(3)</b> 12/5</span><span class="o"><b>(4)</b> 5/12</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — |3·0 + 4·0 − 12| / √(9 + 16) = 12 / 5.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q41</span><span class="ch">Straight Lines</span></div>
+  <div class="body">Equation of the line through (1, 2) perpendicular to 2x + 3y = 6 is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 3x − 2y + 1 = 0</span><span class="o"><b>(2)</b> 2x + 3y − 8 = 0</span><span class="o"><b>(3)</b> 3x + 2y − 7 = 0</span><span class="o"><b>(4)</b> 3x − 2y − 1 = 0</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — Slope of given = −2/3 → perpendicular slope = 3/2. Line: y − 2 = (3/2)(x − 1) → 3x − 2y + 1 = 0.</div>
+</div>
+
+<!-- Conic Sections (Q42-Q43) -->
+<div class="q"><div class="qh"><span class="qn">Q42</span><span class="ch">Conic Sections</span></div>
+  <div class="body">The eccentricity of the ellipse x²/9 + y²/4 = 1 is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> √5/3</span><span class="o"><b>(2)</b> √5/2</span><span class="o"><b>(3)</b> 2/3</span><span class="o"><b>(4)</b> 1/3</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — a² = 9, b² = 4. e = √(1 − b²/a²) = √(1 − 4/9) = √5/3.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q43</span><span class="ch">Conic Sections</span></div>
+  <div class="body">The length of the latus rectum of the parabola y² = 8x is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 2</span><span class="o"><b>(2)</b> 4</span><span class="o"><b>(3)</b> 8</span><span class="o"><b>(4)</b> 16</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — y² = 4ax with 4a = 8. Latus rectum = 4a = 8.</div>
+</div>
+
+<!-- Sequences & Series (Q44-Q46) -->
+<div class="q"><div class="qh"><span class="qn">Q44</span><span class="ch">Sequences &amp; Series</span></div>
+  <div class="body">Sum of the first 20 terms of the AP 2, 5, 8, … is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 590</span><span class="o"><b>(2)</b> 600</span><span class="o"><b>(3)</b> 610</span><span class="o"><b>(4)</b> 620</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — S₂₀ = (20/2)[2·2 + 19·3] = 10(4 + 57) = 610.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q45</span><span class="ch">Sequences &amp; Series</span></div>
+  <div class="body">In a GP, the 3rd term is 12 and the 6th term is 96. The first term is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 2</span><span class="o"><b>(2)</b> 3</span><span class="o"><b>(3)</b> 4</span><span class="o"><b>(4)</b> 6</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — ar² = 12, ar⁵ = 96 → r³ = 8 → r = 2. Then a·4 = 12 → a = 3.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q46</span><span class="ch">Sequences &amp; Series</span></div>
+  <div class="body">The sum 1² + 2² + 3² + … + 10² equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 285</span><span class="o"><b>(2)</b> 385</span><span class="o"><b>(3)</b> 330</span><span class="o"><b>(4)</b> 440</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Formula n(n+1)(2n+1)/6 = 10·11·21/6 = 385.</div>
+</div>
+
+<!-- Complex Numbers (Q47-Q48) -->
+<div class="q"><div class="qh"><span class="qn">Q47</span><span class="ch">Complex Numbers</span></div>
+  <div class="body">|3 + 4i| equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 3</span><span class="o"><b>(2)</b> 4</span><span class="o"><b>(3)</b> 5</span><span class="o"><b>(4)</b> 7</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — √(9 + 16) = √25 = 5.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q48</span><span class="ch">Complex Numbers</span></div>
+  <div class="body">If z = 1 + i, then z² equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 2</span><span class="o"><b>(2)</b> 2i</span><span class="o"><b>(3)</b> 1 + 2i</span><span class="o"><b>(4)</b> 2 + 2i</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — (1 + i)² = 1 + 2i + i² = 1 + 2i − 1 = 2i.</div>
+</div>
+
+<!-- Quadratic Equations (Q49-Q50) -->
+<div class="q"><div class="qh"><span class="qn">Q49</span><span class="ch">Quadratic Equations</span></div>
+  <div class="body">If α and β are the roots of x² − 3x + 2 = 0, then α² + β² equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 5</span><span class="o"><b>(2)</b> 9</span><span class="o"><b>(3)</b> 13</span><span class="o"><b>(4)</b> 7</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — α + β = 3, αβ = 2. α² + β² = (α+β)² − 2αβ = 9 − 4 = 5.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q50</span><span class="ch">Quadratic Equations</span></div>
+  <div class="body">The nature of the roots of 2x² + 3x + 5 = 0 is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> real and distinct</span><span class="o"><b>(2)</b> real and equal</span><span class="o"><b>(3)</b> complex conjugate</span><span class="o"><b>(4)</b> rational</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — Discriminant = 9 − 40 = −31 &lt; 0 → complex conjugate roots.</div>
+</div>
+
+<!-- Permutations & Combinations (Q51-Q52) -->
+<div class="q"><div class="qh"><span class="qn">Q51</span><span class="ch">P &amp; C</span></div>
+  <div class="body">Number of arrangements of the letters of the word ALLAHABAD is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 7560</span><span class="o"><b>(2)</b> 5040</span><span class="o"><b>(3)</b> 9! </span><span class="o"><b>(4)</b> 2520</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — 9 letters with 4 A's and 2 L's → 9! / (4! · 2!) = 362880 / 48 = 7560.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q52</span><span class="ch">P &amp; C</span></div>
+  <div class="body">The number of ways to choose 3 members from a group of 10 is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 30</span><span class="o"><b>(2)</b> 120</span><span class="o"><b>(3)</b> 720</span><span class="o"><b>(4)</b> 1000</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — C(10, 3) = 10·9·8 / 6 = 120.</div>
+</div>
+
+<!-- Binomial Theorem (Q53-Q54) -->
+<div class="q"><div class="qh"><span class="qn">Q53</span><span class="ch">Binomial Theorem</span></div>
+  <div class="body">The coefficient of x³ in the expansion of (1 + x)⁵ is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 5</span><span class="o"><b>(2)</b> 10</span><span class="o"><b>(3)</b> 15</span><span class="o"><b>(4)</b> 20</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — C(5, 3) = 10.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q54</span><span class="ch">Binomial Theorem</span></div>
+  <div class="body">The middle term in the expansion of (x + 1/x)⁸ is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 70</span><span class="o"><b>(2)</b> 56</span><span class="o"><b>(3)</b> 28</span><span class="o"><b>(4)</b> 8</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — For (x + 1/x)⁸, middle term = T₅ = C(8, 4) · x⁴ · (1/x)⁴ = 70.</div>
+</div>
+
+<!-- Statistics (Q55-Q56) -->
+<div class="q"><div class="qh"><span class="qn">Q55</span><span class="ch">Statistics</span></div>
+  <div class="body">The variance of the first 10 natural numbers is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 33/4</span><span class="o"><b>(2)</b> 99/12</span><span class="o"><b>(3)</b> 10</span><span class="o"><b>(4)</b> 5.5</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — Var = (N² − 1)/12 = (100 − 1)/12 = 99/12 = 8.25.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q56</span><span class="ch ar">Statistics · Assertion–Reason</span></div>
+  <div class="body"><b>Statement I:</b> The mean of 2, 4, 6, 8, 10 is 6.<br>
+  <b>Statement II:</b> The mean of an AP is the average of the first and last terms.</div>
+  <div class="opts"><span class="o"><b>(1)</b> Both true; II explains I</span><span class="o"><b>(2)</b> Both true; II does NOT explain I</span><span class="o"><b>(3)</b> I true, II false</span><span class="o"><b>(4)</b> I false, II true</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — Mean = 30/5 = 6. Also (2 + 10)/2 = 6. II directly explains I.</div>
+</div>
+
+<!-- Limits (Q57-Q58) -->
+<div class="q"><div class="qh"><span class="qn">Q57</span><span class="ch">Limits</span></div>
+  <div class="body">lim(x→0) (sin 3x)/x equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 0</span><span class="o"><b>(2)</b> 1</span><span class="o"><b>(3)</b> 3</span><span class="o"><b>(4)</b> 1/3</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — = 3 · lim(x→0)(sin 3x)/(3x) = 3·1 = 3.</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q58</span><span class="ch">Limits</span></div>
+  <div class="body">lim(x→2) (x² − 4)/(x − 2) equals:</div>
+  <div class="opts"><span class="o"><b>(1)</b> 0</span><span class="o"><b>(2)</b> 2</span><span class="o"><b>(3)</b> 4</span><span class="o"><b>(4)</b> does not exist</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(3)</b> — = lim(x→2)(x + 2) = 4.</div>
+</div>
+
+<!-- Mathematical Reasoning (Q59-Q60) -->
+<div class="q"><div class="qh"><span class="qn">Q59</span><span class="ch">Mathematical Reasoning</span></div>
+  <div class="body">The negation of "All students are intelligent" is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> All students are not intelligent</span><span class="o"><b>(2)</b> There exists a student who is not intelligent</span><span class="o"><b>(3)</b> No student is intelligent</span><span class="o"><b>(4)</b> Some students are intelligent</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(2)</b> — ¬(∀x, P(x)) ≡ (∃x, ¬P(x)).</div>
+</div>
+
+<div class="q"><div class="qh"><span class="qn">Q60</span><span class="ch">Mathematical Reasoning</span></div>
+  <div class="body">The contrapositive of "If it rains, then the match is cancelled" is:</div>
+  <div class="opts"><span class="o"><b>(1)</b> If the match is not cancelled, then it is not raining</span><span class="o"><b>(2)</b> If it is not raining, then the match is not cancelled</span><span class="o"><b>(3)</b> If the match is cancelled, then it is raining</span><span class="o"><b>(4)</b> If it rains, then the match is not cancelled</span></div>
+  <span class="reveal" onclick="this.nextElementSibling.classList.toggle('show')">Show answer</span>
+  <div class="ans"><b>(1)</b> — Contrapositive of p → q is ¬q → ¬p.</div>
+</div>
+
+<h2>Answer Key &amp; Chapter Map</h2>
+
+<table class="keytable">
+<thead><tr><th>Q</th><th class="num">Ans</th><th>Chapter</th><th>Q</th><th class="num">Ans</th><th>Chapter</th><th>Q</th><th class="num">Ans</th><th>Chapter</th></tr></thead>
+<tbody>
+<tr><td>1</td><td class="num">1</td><td>Matrices</td><td>21</td><td class="num">2</td><td>Integrals</td><td>41</td><td class="num">1</td><td>Straight Lines</td></tr>
+<tr><td>2</td><td class="num">3</td><td>Determinants</td><td>22</td><td class="num">2</td><td>Integrals</td><td>42</td><td class="num">1</td><td>Conic Sections</td></tr>
+<tr><td>3</td><td class="num">1</td><td>Matrices (AR)</td><td>23</td><td class="num">2</td><td>App. Integrals</td><td>43</td><td class="num">3</td><td>Conic Sections</td></tr>
+<tr><td>4</td><td class="num">2</td><td>Determinants</td><td>24</td><td class="num">1</td><td>DiffEqns</td><td>44</td><td class="num">3</td><td>Seq &amp; Series</td></tr>
+<tr><td>5</td><td class="num">2</td><td>Relations</td><td>25</td><td class="num">1</td><td>Vectors</td><td>45</td><td class="num">2</td><td>Seq &amp; Series</td></tr>
+<tr><td>6</td><td class="num">3</td><td>Functions</td><td>26</td><td class="num">2</td><td>Vectors</td><td>46</td><td class="num">2</td><td>Seq &amp; Series</td></tr>
+<tr><td>7</td><td class="num">2</td><td>Inverse Trig</td><td>27</td><td class="num">2</td><td>Vectors</td><td>47</td><td class="num">3</td><td>Complex Nos</td></tr>
+<tr><td>8</td><td class="num">3</td><td>Inverse Trig</td><td>28</td><td class="num">1</td><td>3D Geometry</td><td>48</td><td class="num">2</td><td>Complex Nos</td></tr>
+<tr><td>9</td><td class="num">1</td><td>Continuity</td><td>29</td><td class="num">1</td><td>3D Geometry</td><td>49</td><td class="num">1</td><td>Quadratic</td></tr>
+<tr><td>10</td><td class="num">3</td><td>Differentiability</td><td>30</td><td class="num">3</td><td>3D Geometry</td><td>50</td><td class="num">3</td><td>Quadratic</td></tr>
+<tr><td>11</td><td class="num">2</td><td>Differentiability</td><td>31</td><td class="num">1</td><td>3D Geom (AR)</td><td>51</td><td class="num">1</td><td>P &amp; C</td></tr>
+<tr><td>12</td><td class="num">1</td><td>Diff'bility (AR)</td><td>32</td><td class="num">1</td><td>Probability</td><td>52</td><td class="num">2</td><td>P &amp; C</td></tr>
+<tr><td>13</td><td class="num">1</td><td>Differentiability</td><td>33</td><td class="num">2</td><td>Probability</td><td>53</td><td class="num">2</td><td>Binomial</td></tr>
+<tr><td>14</td><td class="num">2</td><td>App. Derivatives</td><td>34</td><td class="num">2</td><td>Prob · Bayes</td><td>54</td><td class="num">1</td><td>Binomial</td></tr>
+<tr><td>15</td><td class="num">1</td><td>App. Derivatives</td><td>35</td><td class="num">3</td><td>Prob · Binomial</td><td>55</td><td class="num">2</td><td>Statistics</td></tr>
+<tr><td>16</td><td class="num">3</td><td>App. Derivatives</td><td>36</td><td class="num">1</td><td>Trigonometry</td><td>56</td><td class="num">1</td><td>Stats (AR)</td></tr>
+<tr><td>17</td><td class="num">1</td><td>App. Derivatives</td><td>37</td><td class="num">2</td><td>Trigonometry</td><td>57</td><td class="num">3</td><td>Limits</td></tr>
+<tr><td>18</td><td class="num">2</td><td>Integrals</td><td>38</td><td class="num">3</td><td>Trigonometry</td><td>58</td><td class="num">3</td><td>Limits</td></tr>
+<tr><td>19</td><td class="num">3</td><td>Integrals</td><td>39</td><td class="num">2</td><td>Trigonometry</td><td>59</td><td class="num">2</td><td>Math Reasoning</td></tr>
+<tr><td>20</td><td class="num">1</td><td>Integrals</td><td>40</td><td class="num">3</td><td>Straight Lines</td><td>60</td><td class="num">1</td><td>Math Reasoning</td></tr>
+</tbody>
+</table>
+
+<div class="callout math">
+  <b>Scoring guide:</b> 50+/60 = on track for the 56–58 target (Maths 94-percentile holds up). 40–49 = warm-up did its job; spots are visible and fixable. Below 40 = focus on formula recall, not problem types — skim the <a href="chemistry-effectiveness.html">Chemistry Effectiveness</a> page for the flashcard-recall principles.<br><br>
+  <b>Assertion-Reason Qs in this paper:</b> Q3, Q12, Q31, Q56 (plus embedded concept-judgement in Q6, Q33, Q50). Real paper may carry 5–7 such Qs; drill the structure, not the specific statements.
+</div>
+
+<footer>
+  <span>Built 23 Apr evening from 6-year KCET Maths pattern analysis (2020–2025, 360 Qs) · Covers the 25 highest-recurring archetypes</span>
+  <a href="index.html">&larr; Back to revision hub</a>
+</footer>
+
+</div>
+</body>
+</html>
